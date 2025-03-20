@@ -5,60 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Support & Privacy Policy - Pathsight, Dot Crush & Eggsplore</title>
     <style>
+        :root {
+            --cyan: #00bcd4;
+            --dark-gray: #424242;
+            --light-gray: #f4f4f4;
+            --black: #000000;
+            --white: #ffffff;
+        }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             padding: 20px;
             margin: 0;
-            background-color: #f4f4f4;
+            background-color: var(--light-gray);
+            color: var(--dark-gray);
         }
         .container {
             max-width: 800px;
             margin: auto;
-            background: white;
+            background: var(--white);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border: 2px solid var(--cyan);
         }
-        h1, h2 {
-            color: #333;
+        h1, h2, h3 {
+            color: var(--black);
         }
         p, li {
-            color: #666;
             font-size: 16px;
         }
         a {
-            color: #d6336c;
+            color: var(--cyan);
         }
-        ol {
+        ol, ul {
             padding-left: 20px;
         }
         .contact, .privacy {
-            background-color: #e9ecef;
+            background-color: #e0f7fa;
             padding: 15px;
             margin: 20px 0;
-            border-left: 4px solid #d6336c;
+            border-left: 4px solid var(--cyan);
         }
         .footer {
             text-align: center;
             margin-top: 40px;
-            color: #888;
+            color: var(--dark-gray);
         }
         .app-section {
             margin-bottom: 40px;
             padding: 20px;
-            background-color: #fff;
+            background-color: var(--white);
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-top: 5px solid var(--cyan);
+        }
+        .app-divider {
+            text-align: center;
+            margin: 40px 0;
+            font-size: 20px;
+            color: var(--cyan);
+            border-top: 2px dashed var(--cyan);
+            border-bottom: 2px dashed var(--cyan);
+            padding: 10px 0;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Support</h1>
+        <h1>Support 😊</h1>
         
         <div class="app-section">
-            <h2>Pathsight FAQs:</h2>
+            <h2>🧭 Pathsight FAQs:</h2>
             <p>Frequently Asked Questions (FAQs):</p>
             <ol>
                 <li>
@@ -106,7 +124,7 @@
                 </li>
             </ol>
 
-            <div style="background-color: #e9ecef; padding: 15px; margin: 20px 0; border-left: 4px solid #d6336c;">
+            <div class="contact">
                 <h2>Subscription Information</h2>
                 <p>Pathsight offers multiple subscription options:</p>
                 <ul>
@@ -122,9 +140,11 @@
                 </ul>
             </div>
         </div>
-
+        
+        <div class="app-divider">🧭 | 🎮 | 🥚</div>
+        
         <div class="app-section">
-            <h2>Dot Crush FAQs:</h2>
+            <h2>🎮 Dot Crush FAQs:</h2>
             <p>Frequently Asked Questions (FAQs):</p>
             <ol>
                 <li>
@@ -153,7 +173,7 @@
                 </li>
             </ol>
 
-            <div style="background-color: #e9ecef; padding: 15px; margin: 20px 0; border-left: 4px solid #d6336c;">
+            <div class="contact">
                 <h2>In-App Purchase Information</h2>
                 <p>Dot Crush offers a single in-app purchase:</p>
                 <ul>
@@ -167,9 +187,11 @@
                 </ul>
             </div>
         </div>
-
+        
+        <div class="app-divider">🧭 | 🎮 | 🥚</div>
+        
         <div class="app-section">
-            <h2>Eggsplore FAQs:</h2>
+            <h2>🥚 Eggsplore FAQs:</h2>
             <p>Frequently Asked Questions (FAQs):</p>
             <ol>
                 <li>
@@ -206,7 +228,7 @@
                 </li>
             </ol>
 
-            <div style="background-color: #e9ecef; padding: 15px; margin: 20px 0; border-left: 4px solid #d6336c;">
+            <div class="contact">
                 <h2>Subscription Information</h2>
                 <p>Eggsplore offers two subscription options:</p>
                 <ul>
@@ -224,11 +246,11 @@
         </div>
 
         <div class="contact">
-            <h2>Contact Us:</h2>
+            <h2>Contact Us ✉️:</h2>
             <p>If you have any further questions or encounter any issues while using any of our apps, please don't hesitate to contact us. You can reach us via email at heverlym@gmail.com. We're here to help and will do our best to assist you as quickly as possible.</p>
         </div>
 
-        <h1>Privacy Policy</h1>
+        <h1>Privacy Policy 🔒</h1>
         <p>Last updated: February 11, 2025</p>
         
         <p>We take your privacy seriously. This Privacy Policy explains how we collect, use, and protect your information when you use our apps.</p>
@@ -273,7 +295,7 @@
             <p>We reserve the right to update or change this Privacy Policy at any time. Any changes will be effective immediately upon posting the updated Privacy Policy on the Apps. Your continued use of the Apps after any changes to this Privacy Policy will constitute your acceptance of such changes.</p>
         </div>
 
-        <h1>Terms of Service</h1>
+        <h1>Terms of Service 📜</h1>
         <p>By downloading or using our apps, you agree to these terms. Please read them carefully.</p>
 
         <div class="app-section">
@@ -286,8 +308,8 @@
             <ul>
                 <li>Premium Subscription Terms:
                     <ul>
-                        <li>Basic subscription: Monthly access to premium features ($3.99/month)</li>
-                        <li>Pro subscription: Monthly access to premium features ($7.99/month)</li>
+                        <li>Basic subscription: Monthly access to premium features ($2.99/month)</li>
+                        <li>Pro subscription: Monthly access to premium features ($6.99/month)</li>
                         <li>Subscription automatically renews unless turned off at least 24 hours before the current period ends</li>
                         <li>Payment will be charged to your Apple ID account</li>
                         <li>Manage subscriptions through your Apple ID account settings</li>
