@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eggsplore - Connect with Local Egg Sellers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #e2703a;
+            --secondary: #e8845a;
+            --accent: #f09f72;
+            --dark: #1c1c1e;
+            --light: #ffffff;
+            --card-bg: #2c2c2e;
+            --cream: #f5f2e8;
+            --brown: #896A67;
+            --gold: #FFD700;
+            --yellow: #FFDB58;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            padding: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: #e0e0e0;
+        }
+        
+        .app-store-btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+            margin-top: 20px;
+        }
+        
+        .app-store-btn:hover {
+            background-color: transparent;
+            color: var(--primary);
+        }
+        
+        .badge {
+            background-color: var(--accent);
+            color: var(--light);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-right: 10px;
+            display: inline-block;
+        }
+        
+        .features {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            color: var(--accent);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+        
+        .how-it-works {
+            padding: 80px 0;
+            background-color: rgba(226, 112, 58, 0.05);
+        }
+        
+        .steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .step {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .pricing {
+            padding: 80px 0;
+        }
+        
+        .pricing-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .pricing-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            flex: 1;
+            min-width: 300px;
+            max-width: 350px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing-card.popular::before {
+            content: 'Best Value';
+            position: absolute;
+            top: 15px;
+            right: -35px;
+            background: var(--gold);
+            color: var(--dark);
+            transform: rotate(45deg);
+            padding: 8px 40px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .pricing-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .pricing-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .pricing-card .price {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+        
+        .pricing-card ul {
+            list-style: none;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        
+        .pricing-card ul li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .pricing-card ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+        
+        .testimonials {
+            padding: 80px 0;
+            background-color: rgba(226, 112, 58, 0.05);
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            font-size: 5rem;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            color: rgba(240, 159, 114, 0.2);
+            font-family: serif;
+        }
+        
+        .testimonial-content {
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--accent);
+        }
+        
+        footer {
+            background-color: var(--card-bg);
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .social-links {
+            margin-bottom: 20px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            color: var(--light);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent);
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            color: #888;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease forwards;
+            opacity: 0;
+        }
+        
+        .fade-in-1 { animation-delay: 0.2s; }
+        .fade-in-2 { animation-delay: 0.4s; }
+        .fade-in-3 { animation-delay: 0.6s; }
+        .fade-in-4 { animation-delay: 0.8s; }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .features-grid, .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        /* Icon font */
+        .icon {
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            stroke-width: 0;
+            stroke: currentColor;
+            fill: currentColor;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div style="display: flex; justify-content: center; align-items: center;">
+                <h2 style="color: var(--accent); font-weight: 700; font-size: 1.8rem;">Eggsplore</h2>
+            </div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <div class="badge fade-in fade-in-1">Farm Fresh Marketplace</div>
+            <h1 class="fade-in fade-in-1">Crack Into Local Eggs</h1>
+            <p class="fade-in fade-in-2">Eggsplore connects egg enthusiasts with local sellers, making it simple to discover fresh, farm-to-table eggs from trusted sources in your community.</p>
+            <div class="fade-in fade-in-3">
+                <a href="https://apps.apple.com/us/app/eggsplore/id6739508309" class="app-store-btn">Download on the App Store</a>
+            </div>
+            <div style="margin-top: 50px;">
+                <img src="egg-app.png" alt="Eggsplore App Screenshots" style="max-width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.3);" class="fade-in fade-in-4">
+            </div>
+        </div>
+    </section>
+    
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose Eggsplore?</h2>
+            <div class="features-grid">
+                <div class="feature-card fade-in fade-in-1">
+                    <div class="feature-icon">🥚</div>
+                    <h3>Fresh Local Eggs</h3>
+                    <p>Connect directly with local egg producers to get the freshest, tastiest eggs from farms near you.</p>
+                </div>
+                <div class="feature-card fade-in fade-in-2">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Simple Search</h3>
+                    <p>Filter by distance, price, and egg types to find exactly what you're looking for, when you need it.</p>
+                </div>
+                <div class="feature-card fade-in fade-in-3">
+                    <div class="feature-icon">📱</div>
+                    <h3>Easy Communication</h3>
+                    <p>Our app provides a secure communication bridge between buyers and sellers without sharing personal details.</p>
+                </div>
+                <div class="feature-card fade-in fade-in-1">
+                    <div class="feature-icon">📍</div>
+                    <h3>Location-Based</h3>
+                    <p>Find eggs close to home with our location-based search that shows you the nearest options first.</p>
+                </div>
+                <div class="feature-card fade-in fade-in-2">
+                    <div class="feature-icon">🔔</div>
+                    <h3>Instant Notifications</h3>
+                    <p>Premium users receive immediate alerts when new listings appear in their area, so you never miss out.</p>
+                </div>
+                <div class="feature-card fade-in fade-in-3">
+                    <div class="feature-icon">⭐</div>
+                    <h3>Verified Sellers</h3>
+                    <p>Shop with confidence using our verified phone number system and active content moderation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps">
+                <div class="step fade-in fade-in-1">
+                    <div class="step-number">1</div>
+                    <h3>Create Your Account</h3>
+                    <p>Sign up with your phone number and create your profile in just seconds.</p>
+                </div>
+                <div class="step fade-in fade-in-2">
+                    <div class="step-number">2</div>
+                    <h3>Browse Listings</h3>
+                    <p>Find local egg listings with detailed information about types, quantity, and prices.</p>
+                </div>
+                <div class="step fade-in fade-in-3">
+                    <div class="step-number">3</div>
+                    <h3>Connect With Sellers</h3>
+                    <p>Contact sellers directly through the app to arrange pickup or delivery.</p>
+                </div>
+                <div class="step fade-in fade-in-4">
+                    <div class="step-number">4</div>
+                    <h3>Enjoy Farm-Fresh Eggs</h3>
+                    <p>Pick up your eggs and enjoy the superior taste and quality of truly local eggs!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="pricing">
+        <div class="container">
+            <h2 class="section-title">Premium Features</h2>
+            <div class="pricing-cards">
+                <div class="pricing-card fade-in fade-in-1">
+                    <h3>Free</h3>
+                    <div class="price">$0</div>
+                    <ul>
+                        <li>Browse all listings</li>
+                        <li>Contact sellers</li>
+                        <li>Create one active listing</li>
+                        <li>Basic profile</li>
+                        <li>Standard search features</li>
+                    </ul>
+                    <a href="https://apps.apple.com/us/app/eggsplore/id6739508309" class="app-store-btn">Get Started</a>
+                </div>
+                <div class="pricing-card popular fade-in fade-in-2">
+                    <h3>Annual Premium</h3>
+                    <div class="price">$14.99<span style="font-size: 1rem; color: #999;">/year</span></div>
+                    <ul>
+                        <li>Featured listings at the top of search results</li>
+                        <li>Instant notifications for new listings</li>
+                        <li>Premium badge on your profile</li>
+                        <li>Post up to 5 active listings at once</li>
+                        <li>Support local farming tools development</li>
+                        <li>Save 37% compared to monthly</li>
+                    </ul>
+                    <a href="https://apps.apple.com/us/app/eggsplore/id6739508309" class="app-store-btn">Go Premium</a>
+                </div>
+                <div class="pricing-card fade-in fade-in-3">
+                    <h3>Monthly Premium</h3>
+                    <div class="price">$1.99<span style="font-size: 1rem; color: #999;">/month</span></div>
+                    <ul>
+                        <li>Featured listings at the top of search results</li>
+                        <li>Instant notifications for new listings</li>
+                        <li>Premium badge on your profile</li>
+                        <li>Post up to 5 active listings at once</li>
+                        <li>Support local farming tools development</li>
+                        <li>Cancel anytime</li>
+                    </ul>
+                    <a href="https://apps.apple.com/us/app/eggsplore/id6739508309" class="app-store-btn">Try Premium</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Users Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card fade-in fade-in-1">
+                    <div class="testimonial-content">
+                        <p>"As a small family farm, Eggsplore has been amazing for connecting us with local customers. We've built a loyal customer base and sell out of eggs every week now!"</p>
+                    </div>
+                    <div class="testimonial-author">- Emma R., Small Farm Owner</div>
+                </div>
+                <div class="testimonial-card fade-in fade-in-2">
+                    <div class="testimonial-content">
+                        <p>"I love being able to buy eggs directly from local farms. The quality is incredible, and knowing exactly where my food comes from gives me peace of mind for my family."</p>
+                    </div>
+                    <div class="testimonial-author">- David M., Regular Buyer</div>
+                </div>
+                <div class="testimonial-card fade-in fade-in-3">
+                    <div class="testimonial-content">
+                        <p>"The premium features are worth every penny. The app is incredibly easy to use, even for someone like me who isn't tech-savvy. Setting up listings takes seconds, and the featured placement is a game changer."</p>
+                    </div>
+                    <div class="testimonial-author">- Sarah T., Premium Seller</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><span class="icon">📱</span></a>
+                <a href="#"><span class="icon">📧</span></a>
+                <a href="#"><span class="icon">🌐</span></a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Eggsplore. All rights reserved.</p>
+                <p><a href="#" style="color: #888;">Privacy Policy</a> | <a href="#" style="color: #888;">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Simple script to trigger animations when elements are in viewport
+        document.addEventListener("DOMContentLoaded", function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html> 
