@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pathsight - AI-Powered Route Planning</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #147579;
+            --secondary: #19989d;
+            --accent: #1EBCC3;
+            --dark: #1c1c1e;
+            --light: #ffffff;
+            --card-bg: #2c2c2e;
+            --gold: #FFD700;
+            --pink: #FF69B4;
+            --blue: #4A90E2;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            padding: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: #e0e0e0;
+        }
+        
+        .app-store-btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+            margin-top: 20px;
+        }
+        
+        .app-store-btn:hover {
+            background-color: transparent;
+            color: var(--primary);
+        }
+        
+        .badge {
+            background-color: var(--accent);
+            color: var(--light);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-right: 10px;
+            display: inline-block;
+        }
+        
+        .features {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            color: var(--accent);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+        
+        .how-it-works {
+            padding: 80px 0;
+            background-color: rgba(25, 152, 157, 0.05);
+        }
+        
+        .steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .step {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .pricing {
+            padding: 80px 0;
+        }
+        
+        .pricing-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .pricing-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            flex: 1;
+            min-width: 300px;
+            max-width: 350px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing-card.popular::before {
+            content: 'Most Popular';
+            position: absolute;
+            top: 15px;
+            right: -35px;
+            background: var(--gold);
+            color: var(--dark);
+            transform: rotate(45deg);
+            padding: 8px 40px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .pricing-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .pricing-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .pricing-card .price {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+        
+        .pricing-card ul {
+            list-style: none;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        
+        .pricing-card ul li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .pricing-card ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+        
+        .testimonials {
+            padding: 80px 0;
+            background-color: rgba(25, 152, 157, 0.05);
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            font-size: 5rem;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            color: rgba(30, 188, 195, 0.2);
+            font-family: serif;
+        }
+        
+        .testimonial-content {
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--accent);
+        }
+        
+        footer {
+            background-color: var(--card-bg);
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .social-links {
+            margin-bottom: 20px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            color: var(--light);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent);
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            color: #888;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease forwards;
+            opacity: 0;
+        }
+        
+        .fade-in-1 { animation-delay: 0.2s; }
+        .fade-in-2 { animation-delay: 0.4s; }
+        .fade-in-3 { animation-delay: 0.6s; }
+        .fade-in-4 { animation-delay: 0.8s; }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .features-grid, .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        /* Icon font */
+        .icon {
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            stroke-width: 0;
+            stroke: currentColor;
+            fill: currentColor;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div style="display: flex; justify-content: center; align-items: center;">
+                <h2 style="color: var(--accent); font-weight: 700; font-size: 1.8rem;">Pathsight</h2>
+            </div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <div class="badge fade-in fade-in-1">AI-Powered Navigation</div>
+            <h1 class="fade-in fade-in-1">Navigate Like a Local</h1>
+            <p class="fade-in fade-in-2">Pathsight uses AI to create personalized routes with insider tips, local knowledge, and real-time weather updates for travelers who want more than just directions.</p>
+            <div class="fade-in fade-in-3">
+                <a href="https://apps.apple.com" class="app-store-btn">Download on the App Store</a>
+            </div>
+            <div style="margin-top: 50px;">
+                <img src="https://placehold.co/600x400/147579/FFFFFF/png?text=Pathsight+App+Screenshot" alt="Pathsight App Screenshot" style="max-width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.3);" class="fade-in fade-in-4">
+            </div>
+        </div>
+    </section>
+    
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose Pathsight?</h2>
+            <div class="features-grid">
+                <div class="feature-card fade-in fade-in-1">
+                    <div class="feature-icon">🧠</div>
+                    <h3>AI-Powered Routes</h3>
+                    <p>Our app leverages Google's Gemini AI to generate personalized route suggestions tailored to your preferences.</p>
+                </div>
+                <div class="feature-card fade-in fade-in-2">
+                    <div class="feature-icon">🗺️</div>
+                    <h3>Local-Style Directions</h3>
+                    <p>Get insider directions that help you navigate like a local, not just the fastest route from A to B.</p>
+                </div>
+                <div class="feature-card fade-in fade-in-3">
+                    <div class="feature-icon">🌤️</div>
+                    <h3>Real-Time Weather</h3>
+                    <p>Stay prepared with current or forecasted weather conditions for your destination.</p>
+                </div>
+                <div class="feature-card fade-in fade-in-1">
+                    <div class="feature-icon">👪</div>
+                    <h3>Customized Preferences</h3>
+                    <p>Set preferences for family-friendly routes, pet-friendly options, scenic paths, and more.</p>
+                </div>
+                <div class="feature-card fade-in fade-in-2">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Solo Traveler Safety</h3>
+                    <p>Get location-specific safety tips when traveling alone to help you navigate unfamiliar places with confidence.</p>
+                </div>
+                <div class="feature-card fade-in fade-in-3">
+                    <div class="feature-icon">🧳</div>
+                    <h3>Travel Documents</h3>
+                    <p>Tourist mode provides information about necessary travel documents, visa requirements, and local regulations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps">
+                <div class="step fade-in fade-in-1">
+                    <div class="step-number">1</div>
+                    <h3>Enter Your Route</h3>
+                    <p>Input your starting point, destination, and travel time.</p>
+                </div>
+                <div class="step fade-in fade-in-2">
+                    <div class="step-number">2</div>
+                    <h3>Set Preferences</h3>
+                    <p>Choose your transport mode and customize preferences like scenic routes or solo traveler options.</p>
+                </div>
+                <div class="step fade-in fade-in-3">
+                    <div class="step-number">3</div>
+                    <h3>Get Smart Directions</h3>
+                    <p>Receive AI-generated routes with local insights, weather information, and safety tips.</p>
+                </div>
+                <div class="step fade-in fade-in-4">
+                    <div class="step-number">4</div>
+                    <h3>Navigate Confidently</h3>
+                    <p>Follow the recommended route or explore alternatives with insider knowledge.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="pricing">
+        <div class="container">
+            <h2 class="section-title">Choose Your Plan</h2>
+            <div class="pricing-cards">
+                <div class="pricing-card fade-in fade-in-1">
+                    <h3>Free</h3>
+                    <div class="price">$0</div>
+                    <ul>
+                        <li>5 routes total</li>
+                        <li>Gemini-powered directions</li>
+                        <li>Basic route information</li>
+                        <li>Weather information</li>
+                    </ul>
+                    <a href="https://apps.apple.com" class="app-store-btn">Get Started</a>
+                </div>
+                <div class="pricing-card popular fade-in fade-in-2">
+                    <h3>Basic</h3>
+                    <div class="price">$2.99<span style="font-size: 1rem; color: #999;">/month</span></div>
+                    <ul>
+                        <li>200 routes per month</li>
+                        <li>Gemini-powered directions</li>
+                        <li>Route history</li>
+                        <li>Weather information</li>
+                        <li>All preferences & customizations</li>
+                    </ul>
+                    <a href="https://apps.apple.com" class="app-store-btn">Choose Basic</a>
+                </div>
+                <div class="pricing-card fade-in fade-in-3">
+                    <h3>Pro</h3>
+                    <div class="price">$6.99<span style="font-size: 1rem; color: #999;">/month</span></div>
+                    <ul>
+                        <li>500 routes per month</li>
+                        <li>Gemini-powered directions</li>
+                        <li>Route history</li>
+                        <li>Custom map routes</li>
+                        <li>Weather information</li>
+                        <li>All preferences & customizations</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <a href="https://apps.apple.com" class="app-store-btn">Choose Pro</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Users Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card fade-in fade-in-1">
+                    <div class="testimonial-content">
+                        <p>"Pathsight changed how I travel. The local insights helped me discover hidden gems I would have missed with regular maps. The solo traveler safety tips were incredibly valuable for my trip to Bangkok."</p>
+                    </div>
+                    <div class="testimonial-author">- Sarah K., Solo Traveler</div>
+                </div>
+                <div class="testimonial-card fade-in fade-in-2">
+                    <div class="testimonial-content">
+                        <p>"Taking my family to Europe was so much easier with Pathsight. The family-friendly route suggestions helped us avoid crowded tourist traps and find kid-friendly spots."</p>
+                    </div>
+                    <div class="testimonial-author">- Michael T., Family Traveler</div>
+                </div>
+                <div class="testimonial-card fade-in fade-in-3">
+                    <div class="testimonial-content">
+                        <p>"The weather integration saved my trip to Bali. Knowing when rain was coming helped me plan indoor activities. Plus, the local transportation tips were spot on!"</p>
+                    </div>
+                    <div class="testimonial-author">- Jamie L., Adventure Traveler</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><span class="icon">📱</span></a>
+                <a href="#"><span class="icon">📧</span></a>
+                <a href="#"><span class="icon">🌐</span></a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Pathsight. All rights reserved.</p>
+                <p><a href="#" style="color: #888;">Privacy Policy</a> | <a href="#" style="color: #888;">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Simple script to trigger animations when elements are in viewport
+        document.addEventListener("DOMContentLoaded", function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html> 
