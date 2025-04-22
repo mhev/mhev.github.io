@@ -7,58 +7,84 @@
   <style>
     :root {
       --primary: #4CAF50;
+      --primary-light: #e8f5e9;
       --dark-gray: #333333;
       --light-gray: #f5f5f5;
       --black: #000000;
       --white: #ffffff;
     }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
     body {
+      margin: 0;
+      padding: 20px;
       font-family: 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
       line-height: 1.6;
-      padding: 20px;
-      margin: 0;
       background-color: var(--light-gray);
       color: var(--dark-gray);
     }
     .container {
       max-width: 800px;
-      margin: auto;
+      margin: 0 auto;
       background: var(--white);
-      padding: 20px;
+      padding: 30px;
       border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       border: 2px solid var(--primary);
     }
-    h1, h2, h3 {
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5em;
+      color: var(--black);
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
+      color: var(--black);
+    }
+    h3 {
+      font-size: 1.25rem;
+      margin-top: 1em;
+      margin-bottom: 0.5em;
       color: var(--black);
     }
     p, li {
-      font-size: 16px;
+      font-size: 1rem;
+      margin-bottom: 0.75em;
     }
     a {
       color: var(--primary);
+      text-decoration: none;
     }
-    ol, ul {
-      padding-left: 20px;
+    a:hover {
+      text-decoration: underline;
     }
-    .contact, .privacy {
-      background-color: #e8f5e9;
-      padding: 15px;
-      margin: 20px 0;
-      border-left: 4px solid var(--primary);
-    }
-    .footer {
-      text-align: center;
-      margin-top: 40px;
-      color: var(--dark-gray);
+    ul, ol {
+      margin-left: 1.5em;
+      padding-left: 0;
     }
     .app-section {
-      margin-bottom: 40px;
+      margin-bottom: 2em;
       padding: 20px;
       background-color: var(--white);
       border-radius: 8px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       border-top: 5px solid var(--primary);
+    }
+    .contact, .privacy {
+      background-color: var(--primary-light);
+      border-left: 4px solid var(--primary);
+      padding: 15px;
+      border-radius: 4px;
+      margin: 1.5em 0;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 3em;
+      font-size: 0.9rem;
+      color: var(--dark-gray);
     }
   </style>
 </head>
@@ -67,174 +93,150 @@
     <h1>GymLens Support 💪</h1>
     
     <div class="app-section">
-      <h2>GymLens FAQs:</h2>
-      <p>Frequently Asked Questions (FAQs):</p>
+      <h2>GymLens FAQs</h2>
       <ol>
         <li>
-          <h2>What is GymLens?</h2>
-          <p>GymLens is an AI-powered fitness app that analyzes photos of workout equipment to generate personalized workout routines based on the available equipment and your fitness goals.</p>
+          <h3>What is GymLens?</h3>
+          <p>GymLens is an AI-powered fitness app that analyzes photos of workout equipment to generate personalized routines based on available gear and your goals.</p>
         </li>
         <li>
-          <h2>How does the subscription work?</h2>
-          <p>GymLens offers a simple subscription model:
-             • Free trial: 3-day free trial with full access to all features<br>
-             • Monthly subscription: $4.99/month after the trial period<br>
-             • Annual subscription: $24.99/year ($2.08/month) after the trial period</p>
-        </li>
-        <li>
-          <h2>How do I use GymLens?</h2>
-          <p>Simply take a photo of your workout equipment using the app's camera or select an image from your gallery. Then select your target muscle group and any injuries or limitations. GymLens will analyze the equipment and generate a personalized workout routine tailored to your needs.</p>
-        </li>
-        <li>
-          <h2>What equipment can GymLens recognize?</h2>
-          <p>GymLens can identify a wide range of fitness equipment including dumbbells, barbells, kettlebells, resistance bands, cable machines, weight machines, benches, pull-up bars, treadmills, exercise bikes, and more.</p>
-        </li>
-        <li>
-          <h2>How accurate are the workout suggestions?</h2>
-          <p>While our AI strives for accuracy, all suggestions should be used as guidance only. The app analyzes the equipment in your photo and generates workouts based on established fitness principles. However, you should always exercise according to your personal fitness level and consult with a fitness professional if you have specific health concerns.</p>
-        </li>
-        <li>
-          <h2>Can I save my workouts?</h2>
-          <p>Yes, subscribers can save generated workouts for future reference and track their fitness progress over time.</p>
-        </li>
-        <li>
-          <h2>Why might workout suggestions vary?</h2>
-          <p>As an AI-powered service, workout suggestions may vary even for the same equipment. This reflects the AI's ability to consider multiple exercises and generate diverse recommendations. This variety can help prevent workout plateaus and keep your fitness routine fresh.</p>
-        </li>
-        <li>
-          <h2>What if the app doesn't recognize my equipment correctly?</h2>
-          <p>For best results, take clear photos with good lighting and try to include only the equipment you want to use in the frame. If recognition issues persist, you can manually specify equipment in the notes section when generating a workout.</p>
-        </li>
-        <li>
-          <h2>How is my privacy protected when using GymLens?</h2>
-          <p>Your privacy is our priority. Images are processed securely on our servers and are not shared with third parties. Photos are only used to analyze equipment for workout generation and are not stored permanently unless you specifically save a workout. Read our full privacy policy below for more details.</p>
-        </li>
-      </ol>
-      
-      <div class="contact">
-        <h2>Subscription Information</h2>
-        <p>GymLens offers the following subscription options:</p>
-        <ul>
-          <li><strong>Monthly:</strong> $4.99/month with 3-day free trial</li>
-          <li><strong>Annual:</strong> $24.99/year ($2.08/month) with 3-day free trial</li>
-        </ul>
-        <p>Important subscription terms:</p>
-        <ul>
-          <li>Payment will be charged to your Apple ID account at confirmation of purchase after the free trial period</li>
-          <li>Subscription automatically renews unless auto-renewal is turned off at least 24 hours before the end of the current period</li>
-          <li>Your account will be charged for renewal within 24 hours prior to the end of the current period</li>
-          <li>You can manage and cancel your subscriptions by going to your account settings on the App Store after purchase</li>
-          <li>No cancellation of the current subscription is allowed during active subscription period</li>
-        </ul>
-      </div>
-    </div>
-    
-    <div class="contact">
-      <h2>Contact Us ✉️:</h2>
-      <p>If you have any further questions or encounter any issues while using GymLens, please don't hesitate to contact us at <a href="mailto:heverlym@gmail.com">heverlym@gmail.com</a>.</p>
-    </div>
-    
-    <h1>Privacy Policy 🔒</h1>
-    <p>Last updated: April 5, 2025</p>
-    <p>We take your privacy seriously. This Privacy Policy explains how we collect, use, and protect your information when you use GymLens.</p>
-    <h2>Information Collection and Use</h2>
-    <p>GymLens collects the following information:</p>
-    <ul>
-      <li>Images you upload or take within the app</li>
-      <li>Information about fitness goals, target muscle groups, and any injuries/limitations you specify</li>
-      <li>Device information necessary for app functionality</li>
-      <li>Purchase information for premium subscriptions</li>
-    </ul>
-    <h2>Use of Information</h2>
-    <p>We use the collected information for:</p>
-    <ul>
-      <li>Analyzing workout equipment in images to generate personalized routines</li>
-      <li>Storing your workout history if you choose to save it</li>
-      <li>Managing premium subscriptions</li>
-      <li>Processing payments through Apple's payment system</li>
-      <li>Improving app functionality and workout recommendations</li>
-      <li>Analytics and debugging</li>
-    </ul>
-    <h2>Image Processing</h2>
-    <p>When you take or upload a photo in GymLens:</p>
-    <ul>
-      <li>The image is securely transmitted to our servers for analysis</li>
-      <li>Our AI processes the image to identify fitness equipment</li>
-      <li>Images are not permanently stored unless you explicitly save a workout</li>
-      <li>We do not use your images for any purpose other than generating workout recommendations</li>
-    </ul>
-    <h2>Data Storage and Security</h2>
-    <p>We implement industry-standard security measures to protect your information. All data is encrypted in transit and at rest. We use secure cloud services for all our data processing needs.</p>
-    <h2>Third-Party Services</h2>
-    <p>GymLens uses the following third-party services:</p>
-    <ul>
-      <li>Apple StoreKit for subscription management</li>
-      <li>Apple's CloudKit for secure data storage (if applicable)</li>
-    </ul>
-    <div class="privacy">
-      <h2>Changes to This Privacy Policy</h2>
-      <p>We reserve the right to update or change this Privacy Policy at any time. Any changes will be effective immediately upon posting the updated Privacy Policy on the App. Your continued use of GymLens after any changes to this Privacy Policy will constitute your acceptance of such changes.</p>
-    </div>
-    
-    <h1>Terms of Service 📜</h1>
-    <p>By downloading or using GymLens, you agree to these terms. Please read them carefully.</p>
-    <div class="app-section">
-      <h2>1. Acceptance of Terms</h2>
-      <p>By accessing and using GymLens ("the App"), you accept and agree to be bound by these Terms of Service.</p>
-      <h2>2. App-Specific Terms</h2>
-      <h3>GymLens</h3>
-      <ul>
-        <li>Premium Subscription Terms:
+          <h3>How does the subscription work?</h3>
+          <p>We offer:</p>
           <ul>
-            <li>Monthly subscription: 30-day access to premium features ($4.99/month)</li>
-            <li>Annual subscription: 365-day access to premium features ($29.99/year, $2.49/month)</li>
-            <li>Free trial: 3-day free trial with full access to all features</li>
-            <li>Subscription automatically renews unless turned off at least 24 hours before the current period ends</li>
-            <li>Payment will be charged to your Apple ID account</li>
-            <li>Manage subscriptions through your Apple ID account settings</li>
+            <li>3-day free trial with full access</li>
+            <li>$4.99/month after trial</li>
+            <li>$24.99/year (≈$2.08/month) after trial</li>
           </ul>
         </li>
-        <li>AI-Generated Content: Workouts and suggestions are provided as guidance only</li>
-        <li>Camera Access: Required for taking photos of equipment</li>
-        <li>Photo Library Access: Required for selecting saved images of equipment</li>
-      </ul>
-      <h2>3. User Responsibilities</h2>
-      <ul>
-        <li>You must use the App in accordance with all applicable fitness guidelines</li>
-        <li>You are responsible for exercising within your physical capabilities</li>
-        <li>You should consult with healthcare professionals before starting any new exercise program</li>
-        <li>You agree not to misuse or abuse our services</li>
-      </ul>
-      <h2>4. Fitness Disclaimer</h2>
-      <p>GymLens provides workout suggestions based on AI analysis of equipment images. These suggestions are for informational purposes only and are not medical advice. Always consult with healthcare professionals regarding any medical conditions or concerns before starting any fitness program.</p>
-      <h2>4A. AI-Generated Content Disclaimer</h2>
-      <p>GymLens uses artificial intelligence to generate workout suggestions based on images of equipment. While we strive for accuracy and safety:</p>
-      <ul>
-        <li>AI-generated workouts are suggestions only and may not be suitable for all users</li>
-        <li>The AI may occasionally suggest exercises that are inappropriate for your specific physical condition or fitness level</li>
-        <li>You are solely responsible for evaluating whether any suggested exercise is appropriate for you</li>
-        <li>We strongly recommend working with a qualified fitness professional when beginning any new exercise routine</li>
-        <li>The company, its employees, and agents are not responsible for any injuries, damages, or other adverse outcomes resulting from following AI-generated workout suggestions</li>
-      </ul>
-      <h2>5. Intellectual Property</h2>
-      <p>All content and functionality in the App are owned by us and protected by copyright laws.</p>
-      <h2>6. Termination</h2>
-      <p>We reserve the right to terminate or suspend access to our services for violations of these terms.</p>
-      <h2>7. Disclaimer of Warranties</h2>
-      <p>Our services are provided "as is" without any warranties, express or implied.</p>
-      <h2>8. Limitation of Liability</h2>
-      <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL THE COMPANY, ITS AFFILIATES, DIRECTORS, EMPLOYEES, OR AGENTS BE LIABLE FOR ANY INDIRECT, PUNITIVE, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR EXEMPLARY DAMAGES, INCLUDING WITHOUT LIMITATION DAMAGES FOR PERSONAL INJURY, BODILY INJURY, DEATH, PROPERTY DAMAGE, LOSS OF DATA, LOSS OF PROFITS, BUSINESS INTERRUPTION, OR ANY OTHER DAMAGES, ARISING OUT OF OR IN ANY WAY CONNECTED WITH:</p>
-      <ul>
-        <li>Your use of or inability to use the App</li>
-        <li>Any workout, exercise, or fitness routine generated by the App's AI technology</li>
-        <li>Any action taken or not taken based on the App's suggestions</li>
-        <li>Any misinterpretation of equipment or improper exercise recommendations</li>
-      </ul>
-      <p>You expressly understand and agree that your use of the App, its services, and all exercise information and workout routines provided through the App are at YOUR SOLE RISK. Users exercise at their own risk and should always prioritize proper form and safety.</p>
+        <li>
+          <h3>How do I use GymLens?</h3>
+          <p>Take or upload a clear photo of your equipment, select muscle targets or limitations, and let GymLens create your custom workout.</p>
+        </li>
+        <li>
+          <h3>What equipment can GymLens recognize?</h3>
+          <p>We detect dumbbells, barbells, kettlebells, bands, machines, benches, cardio gear, and more.</p>
+        </li>
+        <li>
+          <h3>How accurate are the suggestions?</h3>
+          <p>Our AI follows fitness best practices, but suggestions are guidance only. Always consult a pro for personalized advice.</p>
+        </li>
+        <li>
+          <h3>Can I save my workouts?</h3>
+          <p>Yes—subscribers can save and track workouts over time.</p>
+        </li>
+        <li>
+          <h3>Why might suggestions vary?</h3>
+          <p>Variation helps avoid plateaus by offering diverse exercises for the same equipment.</p>
+        </li>
+        <li>
+          <h3>What if equipment isn't recognized?</h3>
+          <p>Ensure good lighting and a clear frame. If issues persist, add notes manually before generating.</p>
+        </li>
+        <li>
+          <h3>How is my privacy protected?</h3>
+          <p>Images are processed securely, not permanently stored unless you save a workout, and never shared externally.</p>
+        </li>
+      </ol>
+
+      <div class="contact">
+        <h3>Subscription Info</h3>
+        <ul>
+          <li><strong>Monthly:</strong> $4.99/month (3-day free trial)</li>
+          <li><strong>Annual:</strong> $24.99/year (3-day free trial)</li>
+        </ul>
+        <p>Your Apple ID will be charged after trial. Manage or cancel in your App Store settings at least 24 h before renewal.</p>
+      </div>
     </div>
+
+    <div class="contact">
+      <h2>Contact Us ✉️</h2>
+      <p>Questions or issues? Reach out at <a href="mailto:heverlym@gmail.com">heverlym@gmail.com</a>.</p>
+    </div>
+
+    <h2>Privacy Policy 🔒</h2>
+    <p><em>Last updated: April 5, 2025</em></p>
+    <p>We take your privacy seriously. This policy explains how we collect, use, and protect your info when you use GymLens.</p>
+    <h3>Information We Collect</h3>
+    <ul>
+      <li>Uploaded or taken images</li>
+      <li>Fitness goals & health details</li>
+      <li>Device info</li>
+      <li>Subscription purchase data</li>
+    </ul>
+    <h3>How We Use It</h3>
+    <ul>
+      <li>Analyze equipment for workouts</li>
+      <li>Store saved workout history</li>
+      <li>Manage subscriptions</li>
+      <li>Improve app & perform analytics</li>
+    </ul>
+    <h3>Image Processing</h3>
+    <ul>
+      <li>Secure transmission & analysis</li>
+      <li>No permanent storage unless you save</li>
+      <li>No external sharing</li>
+    </ul>
+    <h3>Security</h3>
+    <p>Data encrypted in transit & at rest using industry-standard measures.</p>
+    <h3>Third-Party Services</h3>
+    <ul>
+      <li>Apple StoreKit for purchases</li>
+      <li>CloudKit for optional data storage</li>
+    </ul>
+
+    <div class="privacy">
+      <h3>Policy Updates</h3>
+      <p>We may update this policy; changes take effect immediately upon posting. Continued use means you accept updates.</p>
+    </div>
+
+    <h2>Terms of Service 📜</h2>
+    <p>By using GymLens, you agree to these terms. Please read carefully.</p>
+    <div class="app-section">
+      <h3>1. Acceptance of Terms</h3>
+      <p>Accessing/using GymLens means you accept these Terms of Service.</p>
+      <h3>2. Subscription Terms</h3>
+      <ul>
+        <li>Monthly: $4.99/month (30 days)</li>
+        <li>Annual: $24.99/year</li>
+        <li>Free trial: 3 days</li>
+        <li>Auto-renews unless canceled 24 h prior</li>
+      </ul>
+      <h3>3. User Responsibilities</h3>
+      <ul>
+        <li>Use safely and within fitness limits</li>
+        <li>Consult professionals if needed</li>
+      </ul>
+      <h3>4. Disclaimer</h3>
+      <p>GymLens provides workout suggestions for informational and recreational purposes only. The Content is not intended to be a substitute for professional medical advice, diagnosis, or treatment. The workout routines, exercises, and other Content provided through the App are generated by artificial intelligence based on limited information and may not be suitable for your specific fitness level, health condition, or goals.</p>
+      <p>Never disregard professional medical advice or delay seeking it because of something you have read or seen in the App. If you think you may have a medical emergency, call your doctor or emergency services immediately. The App does not recommend or endorse any specific tests, physicians, products, procedures, opinions, or other information that may be mentioned in the Content.</p>
+      <p>Reliance on any information provided by the App is solely at your own risk.</p>
+      <h3>5. Liability</h3>
+      <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE DEVELOPER, ITS OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, AND LICENSORS SHALL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR EXEMPLARY DAMAGES, INCLUDING BUT NOT LIMITED TO, DAMAGES FOR PERSONAL INJURY, PAIN AND SUFFERING, EMOTIONAL DISTRESS, LOSS OF PROFITS, LOSS OF DATA, OR OTHER INTANGIBLE LOSSES (EVEN IF THE DEVELOPER HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES), RESULTING FROM:</p>
+      <ul>
+        <li>YOUR USE OR INABILITY TO USE THE APP OR ANY CONTENT THEREIN;</li>
+        <li>ANY ACTION YOU TAKE BASED ON THE INFORMATION PROVIDED IN THE APP;</li>
+        <li>ANY INJURIES SUSTAINED WHILE PERFORMING EXERCISES SUGGESTED BY THE APP;</li>
+        <li>ANY ERRORS, INACCURACIES, OR OMISSIONS IN THE APP'S CONTENT;</li>
+        <li>ANY MISINTERPRETATION OF EXERCISE FORM OR EQUIPMENT USAGE;</li>
+        <li>ANY UNAUTHORIZED ACCESS TO OR USE OF OUR SERVERS AND/OR ANY PERSONAL INFORMATION STORED THEREIN.</li>
+      </ul>
+      <p>IN NO EVENT SHALL OUR TOTAL LIABILITY TO YOU FOR ALL DAMAGES, LOSSES, OR CAUSES OF ACTION EXCEED THE AMOUNT YOU HAVE PAID TO USE THE APP IN THE PAST SIX (6) MONTHS, OR FIFTY DOLLARS ($50.00), WHICHEVER IS GREATER.</p>
+      <p>BY USING THE APP, YOU EXPRESSLY ACKNOWLEDGE AND AGREE THAT EXERCISE INVOLVES INHERENT RISKS, INCLUDING THE RISK OF SERIOUS PHYSICAL INJURY OR DEATH, AND YOU VOLUNTARILY ASSUME ALL KNOWN AND UNKNOWN RISKS ASSOCIATED WITH THESE ACTIVITIES, EVEN IF CAUSED BY THE NEGLIGENCE OF THE DEVELOPER OR OTHERS.</p>
+      <p>SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMITATION OF LIABILITY FOR CONSEQUENTIAL OR INCIDENTAL DAMAGES, SO THE ABOVE LIMITATION MAY NOT APPLY TO YOU.</p>
+      <h3>6. User Responsibilities</h3>
+      <p>You agree to:</p>
+      <ul>
+        <li>Consult with a healthcare professional before beginning any exercise program;</li>
+        <li>Properly use exercise equipment according to manufacturer guidelines;</li>
+        <li>Exercise within your physical capabilities and limitations;</li>
+        <li>Discontinue any exercise that causes pain or discomfort;</li>
+        <li>Seek immediate medical attention if you experience any concerning symptoms during exercise.</li>
+      </ul>
+    </div>
+
     <div class="footer">
       <p>Thank you for using GymLens!</p>
     </div>
   </div>
 </body>
-</html> 
+</html>
