@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GymLens - Support & Privacy Policy</title>
+  <title>GymLens - Support, Privacy Policy, Terms of Service</title>
   <style>
     :root {
       --primary: #4CAF50;
@@ -86,6 +86,41 @@
       font-size: 0.9rem;
       color: var(--dark-gray);
     }
+    .faq-list {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .faq-item {
+      margin-bottom: 1.5em;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 1em;
+    }
+    
+    .faq-question {
+      font-size: 1.2rem;
+      margin-bottom: 0.5em;
+      color: var(--primary);
+    }
+    
+    .faq-answer {
+      color: #e0e0e0;
+      padding-left: 1.5em;
+    }
+    
+    .q-marker, .a-marker {
+      display: inline-block;
+      width: 1.5em;
+      font-weight: bold;
+    }
+    
+    .q-marker {
+      color: var(--primary);
+    }
+    
+    .a-marker {
+      color: #e0e0e0;
+    }
   </style>
 </head>
 <body>
@@ -94,47 +129,83 @@
     
     <div class="app-section">
       <h2>GymLens FAQs</h2>
-      <ol>
-        <li>
-          <h3>What is GymLens?</h3>
-          <p>GymLens is an AI-powered fitness app that analyzes photos of workout equipment to generate personalized routines based on available gear and your goals.</p>
+      <ol class="faq-list">
+        <li class="faq-item">
+          <div class="faq-question">
+            <span class="q-marker">Q:</span> <strong>What is GymLens?</strong>
+          </div>
+          <div class="faq-answer">
+            <span class="a-marker">A:</span> GymLens is an AI-powered fitness app that analyzes photos of workout equipment to generate personalized routines based on available gear and your goals.
+          </div>
         </li>
-        <li>
-          <h3>How does the subscription work?</h3>
-          <p>We offer:</p>
-          <ul>
-            <li>3-day free trial with full access</li>
-            <li>$4.99/month after trial</li>
-            <li>$24.99/year (≈$2.08/month) after trial</li>
-          </ul>
+        <li class="faq-item">
+          <div class="faq-question">
+            <span class="q-marker">Q:</span> <strong>How does the subscription work?</strong>
+          </div>
+          <div class="faq-answer">
+            <span class="a-marker">A:</span> We offer:
+            <ul>
+              <li>3-day free trial with full access</li>
+              <li>$4.99/month after trial</li>
+              <li>$24.99/year (≈$2.08/month) after trial</li>
+            </ul>
+          </div>
         </li>
-        <li>
-          <h3>How do I use GymLens?</h3>
-          <p>Take or upload a clear photo of your equipment, select muscle targets or limitations, and let GymLens create your custom workout.</p>
+        <li class="faq-item">
+          <div class="faq-question">
+            <span class="q-marker">Q:</span> <strong>How do I use GymLens?</strong>
+          </div>
+          <div class="faq-answer">
+            <span class="a-marker">A:</span> Take or upload a clear photo of your equipment, select muscle targets or limitations, and let GymLens create your custom workout.
+          </div>
         </li>
-        <li>
-          <h3>What equipment can GymLens recognize?</h3>
-          <p>We detect dumbbells, barbells, kettlebells, bands, machines, benches, cardio gear, and more.</p>
+        <li class="faq-item">
+          <div class="faq-question">
+            <span class="q-marker">Q:</span> <strong>What equipment can GymLens recognize?</strong>
+          </div>
+          <div class="faq-answer">
+            <span class="a-marker">A:</span> We detect dumbbells, barbells, kettlebells, bands, machines, benches, cardio gear, and more.
+          </div>
         </li>
-        <li>
-          <h3>How accurate are the suggestions?</h3>
-          <p>Our AI follows fitness best practices, but suggestions are guidance only. Always consult a pro for personalized advice.</p>
+        <li class="faq-item">
+          <div class="faq-question">
+            <span class="q-marker">Q:</span> <strong>How accurate are the suggestions?</strong>
+          </div>
+          <div class="faq-answer">
+            <span class="a-marker">A:</span> Our AI follows fitness best practices, but suggestions are guidance only. Always consult a pro for personalized advice.
+          </div>
         </li>
-        <li>
-          <h3>Can I save my workouts?</h3>
-          <p>Yes—subscribers can save and track workouts over time.</p>
+        <li class="faq-item">
+          <div class="faq-question">
+            <span class="q-marker">Q:</span> <strong>Can I save my workouts?</strong>
+          </div>
+          <div class="faq-answer">
+            <span class="a-marker">A:</span> Yes—subscribers can save and track workouts over time.
+          </div>
         </li>
-        <li>
-          <h3>Why might suggestions vary?</h3>
-          <p>Variation helps avoid plateaus by offering diverse exercises for the same equipment.</p>
+        <li class="faq-item">
+          <div class="faq-question">
+            <span class="q-marker">Q:</span> <strong>Why might suggestions vary?</strong>
+          </div>
+          <div class="faq-answer">
+            <span class="a-marker">A:</span> Variation helps avoid plateaus by offering diverse exercises for the same equipment.
+          </div>
         </li>
-        <li>
-          <h3>What if equipment isn't recognized?</h3>
-          <p>Ensure good lighting and a clear frame. If issues persist, add notes manually before generating.</p>
+        <li class="faq-item">
+          <div class="faq-question">
+            <span class="q-marker">Q:</span> <strong>What if equipment isn't recognized?</strong>
+          </div>
+          <div class="faq-answer">
+            <span class="a-marker">A:</span> Ensure good lighting and a clear frame. If issues persist, add notes manually before generating.
+          </div>
         </li>
-        <li>
-          <h3>How is my privacy protected?</h3>
-          <p>Images are processed securely, not permanently stored unless you save a workout, and never shared externally.</p>
+        <li class="faq-item">
+          <div class="faq-question">
+            <span class="q-marker">Q:</span> <strong>How is my privacy protected?</strong>
+          </div>
+          <div class="faq-answer">
+            <span class="a-marker">A:</span> Images are processed securely, not permanently stored unless you save a workout, and never shared externally.
+          </div>
         </li>
       </ol>
 
@@ -197,7 +268,7 @@
       <h3>2. Subscription Terms</h3>
       <ul>
         <li>Monthly: $4.99/month (30 days)</li>
-        <li>Annual: $24.99/year</li>
+        <li>Annual: $29.99/year</li>
         <li>Free trial: 3 days</li>
         <li>Auto-renews unless canceled 24 h prior</li>
       </ul>
