@@ -104,7 +104,7 @@
     }
     
     .faq-answer {
-      color: #e0e0e0;
+      color: var(--black);
       padding-left: 1.5em;
     }
     
@@ -119,7 +119,61 @@
     }
     
     .a-marker {
-      color: #e0e0e0;
+      color: var(--dark-gray);
+    }
+    
+    .policy-section {
+      background-color: var(--white);
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-left: 5px solid var(--primary);
+    }
+    
+    .policy-date {
+      color: var(--dark-gray);
+      margin-bottom: 1.5em;
+    }
+    
+    .policy-intro {
+      margin-bottom: 1.5em;
+      font-size: 1.05rem;
+    }
+    
+    .policy-block {
+      margin-bottom: 1.5em;
+      padding-bottom: 1em;
+      border-bottom: 1px solid var(--light-gray);
+    }
+    
+    .policy-block:last-child {
+      border-bottom: none;
+    }
+    
+    .policy-list {
+      list-style-type: none;
+      padding-left: 0.5em;
+    }
+    
+    .policy-list li {
+      padding: 0.5em 0;
+      display: flex;
+      align-items: baseline;
+    }
+    
+    .policy-list li strong {
+      margin-right: 0.5em;
+      color: var(--primary);
+      min-width: 100px;
+      display: inline-block;
+    }
+    
+    .policy-updates {
+      background-color: var(--primary-light);
+      padding: 15px;
+      border-radius: 6px;
+      margin-top: 20px;
     }
   </style>
 </head>
@@ -224,40 +278,62 @@
       <p>Questions or issues? Reach out at <a href="mailto:heverlym@gmail.com">heverlym@gmail.com</a>.</p>
     </div>
 
-    <h2>Privacy Policy 🔒</h2>
-    <p><em>Last updated: April 5, 2025</em></p>
-    <p>We take your privacy seriously. This policy explains how we collect, use, and protect your info when you use GymLens.</p>
-    <h3>Information We Collect</h3>
-    <ul>
-      <li>Uploaded or taken images</li>
-      <li>Fitness goals & health details</li>
-      <li>Device info</li>
-      <li>Subscription purchase data</li>
-    </ul>
-    <h3>How We Use It</h3>
-    <ul>
-      <li>Analyze equipment for workouts</li>
-      <li>Store saved workout history</li>
-      <li>Manage subscriptions</li>
-      <li>Improve app & perform analytics</li>
-    </ul>
-    <h3>Image Processing</h3>
-    <ul>
-      <li>Secure transmission & analysis</li>
-      <li>No permanent storage unless you save</li>
-      <li>No external sharing</li>
-    </ul>
-    <h3>Security</h3>
-    <p>Data encrypted in transit & at rest using industry-standard measures.</p>
-    <h3>Third-Party Services</h3>
-    <ul>
-      <li>Apple StoreKit for purchases</li>
-      <li>CloudKit for optional data storage</li>
-    </ul>
-
-    <div class="privacy">
-      <h3>Policy Updates</h3>
-      <p>We may update this policy; changes take effect immediately upon posting. Continued use means you accept updates.</p>
+    <div class="policy-section">
+      <h2>Privacy Policy 🔒</h2>
+      <p class="policy-date"><em>Last updated: April 5, 2025</em></p>
+      
+      <div class="policy-intro">
+        <p>We take your privacy seriously. This policy explains how we collect, use, and protect your info when you use GymLens.</p>
+      </div>
+      
+      <div class="policy-content">
+        <div class="policy-block">
+          <h3>Information We Collect</h3>
+          <ul class="policy-list">
+            <li><strong>Images:</strong> Uploaded or taken photos of equipment</li>
+            <li><strong>Fitness Data:</strong> Goals & health details you provide</li>
+            <li><strong>Device Info:</strong> Device model and system information</li>
+            <li><strong>Purchase Data:</strong> Subscription information</li>
+          </ul>
+        </div>
+        
+        <div class="policy-block">
+          <h3>How We Use It</h3>
+          <ul class="policy-list">
+            <li><strong>Workout Generation:</strong> Analyze equipment to create routines</li>
+            <li><strong>Progress Tracking:</strong> Store saved workout history</li>
+            <li><strong>Account Management:</strong> Process subscriptions</li>
+            <li><strong>App Improvement:</strong> Enhance features & functionality</li>
+          </ul>
+        </div>
+        
+        <div class="policy-block">
+          <h3>Image Processing</h3>
+          <ul class="policy-list">
+            <li><strong>Security:</strong> Secure transmission & analysis</li>
+            <li><strong>Storage:</strong> No permanent storage unless you save workouts</li>
+            <li><strong>Privacy:</strong> No external sharing with third parties</li>
+          </ul>
+        </div>
+        
+        <div class="policy-block">
+          <h3>Security</h3>
+          <p>All data is encrypted in transit & at rest using industry-standard measures to protect your information.</p>
+        </div>
+        
+        <div class="policy-block">
+          <h3>Third-Party Services</h3>
+          <ul class="policy-list">
+            <li><strong>Apple StoreKit:</strong> For managing purchases</li>
+            <li><strong>CloudKit:</strong> For optional data storage if enabled</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="policy-updates">
+        <h3>Policy Updates</h3>
+        <p>We may update this policy; changes take effect immediately upon posting. Continued use means you accept updates.</p>
+      </div>
     </div>
 
     <h2>Terms of Service 📜</h2>
@@ -268,7 +344,7 @@
       <h3>2. Subscription Terms</h3>
       <ul>
         <li>Monthly: $4.99/month (30 days)</li>
-        <li>Annual: $29.99/year</li>
+        <li>Annual: $24.99/year</li>
         <li>Free trial: 3 days</li>
         <li>Auto-renews unless canceled 24 h prior</li>
       </ul>
