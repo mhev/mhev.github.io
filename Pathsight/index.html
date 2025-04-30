@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pathsight - Support & Privacy Policy</title>
+  <title>Pathsight – Support, Privacy Policy & Terms of Service</title>
+
+  <!-- ==============  STYLES  ============= -->
   <style>
     :root {
       --cyan: #147579;
@@ -12,214 +14,221 @@
       --black: #000000;
       --white: #ffffff;
     }
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       line-height: 1.6;
-      padding: 20px;
       margin: 0;
-      background-color: var(--light-gray);
+      padding: 20px;
+      background: var(--light-gray);
       color: var(--dark-gray);
     }
+
     .container {
       max-width: 800px;
-      margin: auto;
+      margin: 0 auto;
       background: var(--white);
-      padding: 20px;
+      padding: 20px 25px;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 10px rgb(0 0 0 / 10%);
       border: 2px solid var(--cyan);
     }
-    h1, h2, h3 {
-      color: var(--black);
+
+    h1, h2, h3 { color: var(--black); }
+    p, li      { font-size: 16px; }
+    a          { color: var(--cyan); text-decoration: none; }
+    a:hover    { text-decoration: underline; }
+    ol, ul     { padding-left: 20px; }
+
+    .app-section {
+      margin-bottom: 40px;
+      padding: 20px;
+      background: var(--white);
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
+      border-top: 5px solid var(--cyan);
     }
-    p, li {
-      font-size: 16px;
-    }
-    a {
-      color: var(--cyan);
-    }
-    ol, ul {
-      padding-left: 20px;
-    }
+
     .contact, .privacy {
-      background-color: #e0f7fa;
+      background: #e0f7fa;
       padding: 15px;
       margin: 20px 0;
       border-left: 4px solid var(--cyan);
     }
+
     .footer {
       text-align: center;
       margin-top: 40px;
       color: var(--dark-gray);
     }
-    .app-section {
-      margin-bottom: 40px;
-      padding: 20px;
-      background-color: var(--white);
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      border-top: 5px solid var(--cyan);
-    }
   </style>
 </head>
+
 <body>
   <div class="container">
     <h1>Pathsight Support 🧭</h1>
-    
+
+    <!-- ==============  FAQ  ============= -->
     <div class="app-section">
-      <h2>Pathsight FAQs:</h2>
-      <p>Frequently Asked Questions (FAQs):</p>
+      <h2>Pathsight FAQs</h2>
       <ol>
         <li>
-          <h2>What is Pathsight?</h2>
-          <p>Pathsight is an AI-powered route planning and navigation assistance application that provides detailed, conversational directions and travel insights.</p>
+          <h3>What is Pathsight?</h3>
+          <p>Pathsight is an AI-powered route-planning and navigation assistant that provides detailed, conversational directions and travel insights.</p>
         </li>
+
         <li>
-          <h2>How do the subscriptions work?</h2>
-          <p>Pathsight offers a 3-day free trial and two subscription options:
-             • Monthly subscription ($3.99/month) includes unlimited routes, Gemini-powered directions, and route history
-             • Yearly subscription ($19.99/year, equivalent to $1.67/month) includes the same features at a discounted rate</p>
+          <h3>How do subscriptions work?</h3>
+          <p>We offer a 3-day free trial, then: (i) <strong>Monthly</strong> – $3.99, or (ii) <strong>Yearly</strong> – $19.99 (≈ $1.67/mo). Both plans include unlimited routes, Gemini-powered directions, and route history.</p>
         </li>
+
         <li>
-          <h2>How do I use the AI route planning?</h2>
-          <p>Simply enter your start and end points, and Pathsight will use AI to generate detailed route suggestions with natural language directions and travel insights.</p>
+          <h3>How do I use AI route planning?</h3>
+          <p>Enter your start and end points; Pathsight’s AI generates natural-language directions plus helpful context.</p>
         </li>
+
         <li>
-          <h2>Can I save my routes?</h2>
-          <p>Yes, subscribers can save their favorite routes and access them later in their route history.</p>
+          <h3>Can I save my routes?</h3>
+          <p>Yes, subscribers can save favourite routes for later.</p>
         </li>
+
         <li>
-          <h2>Why might route suggestions vary?</h2>
-          <p>As an AI-powered service, route suggestions may vary slightly even for the same start and end points. This is normal and reflects the AI's ability to consider multiple factors and generate diverse recommendations. You can enable "Main route only" mode for more consistent results.</p>
+          <h3>Why might route suggestions vary?</h3>
+          <p>Our AI can consider many factors. For consistency, enable “Main-route-only” mode.</p>
         </li>
+
         <li>
-          <h2>How accurate is the AI-generated content?</h2>
-          <p>While our AI (powered by Google's Gemini API) strives for accuracy, all suggestions should be used as guidance only. Always verify critical information, especially regarding road conditions, business hours, or travel restrictions. The AI provides helpful insights but should not be your sole source of navigation information. All AI-generated content must be clearly attributed as such when shared.</p>
+          <h3>How accurate is AI-generated content?</h3>
+          <p>While we strive for accuracy, AI suggestions are guidance only. Always verify critical details such as road closures, weather, or local regulations before travelling.</p>
         </li>
+
         <li>
-          <h2>What is "Main route only" mode?</h2>
-          <p>This is a faster mode that generates only the primary recommended route instead of multiple alternatives. It's useful when you want quick, straightforward directions without additional options.</p>
-        </li>
-        <li>
-          <h2>How current is the route information?</h2>
-          <p>The AI generates routes based on its training data and integrates with Apple Maps for navigation. While major roads and routes are generally accurate, always verify current conditions, especially for temporary closures or recent changes. Weather information is provided in real-time through OpenWeather API.</p>
-        </li>
-        <li>
-          <h2>What happens if the AI generation fails?</h2>
-          <p>In rare cases where route generation fails (due to network issues or service interruptions), you can simply try again. If problems persist, try enabling "Main route only" mode or contact support.</p>
-        </li>
-        <li>
-          <h2>How is my privacy protected when using the AI features?</h2>
-          <p>While we use Google's Gemini API for route generation, we only share the minimum necessary information (such as start/end points and preferences). Your routes are stored securely, but interactions with Google's Gemini API are subject to their privacy policy and data handling practices. We encourage you to review Google's AI privacy policy at ai.google.dev/terms for more information about how they handle data. We monitor API usage for abuse and may suspend access to users who violate Google's Acceptable Use Policy.</p>
+          <h3>Does Pathsight guarantee my safety?</h3>
+          <p>No. <strong>Pathsight cannot guarantee 100 % safety.</strong> Solo-travel mode provides general tips, but you remain solely responsible for personal safety and decision-making while travelling.</p>
         </li>
       </ol>
-      
+
       <div class="contact">
-        <h2>Subscription Information</h2>
-        <p>Pathsight offers multiple subscription options:</p>
+        <h3>Subscription Information</h3>
         <ul>
-          <li><strong>Monthly:</strong> $3.99/month with unlimited routes</li>
-          <li><strong>Yearly:</strong> $19.99/year (equivalent to $1.67/month) with unlimited routes</li>
-          <li><strong>Free Trial:</strong> 3-day free trial with full access to all features</li>
-        </ul>
-        <p>Important subscription terms:</p>
-        <ul>
-          <li>Your 3-day free trial will automatically convert to a paid subscription unless canceled at least 24 hours before the trial ends</li>
-          <li>Payment will be charged to your Apple ID account at confirmation of purchase</li>
-          <li>Subscription automatically renews unless auto-renewal is turned off at least 24 hours before the end of the current period</li>
-          <li>Your account will be charged for renewal within 24 hours prior to the end of the current period</li>
-          <li>You can manage and cancel your subscriptions by going to your account settings on the App Store after purchase</li>
-          <li>If you reinstall the app, you can restore your purchases using the "Restore" button</li>
+          <li><strong>Monthly:</strong> $3.99 / month</li>
+          <li><strong>Yearly:</strong> $19.99 / year</li>
+          <li><strong>Free Trial:</strong> 3 days – cancel ≥ 24 h before it ends to avoid charges.</li>
         </ul>
       </div>
     </div>
-    
+
+    <!-- ==============  CONTACT  ============= -->
     <div class="contact">
-      <h2>Contact Us ✉️:</h2>
-      <p>If you have any further questions or encounter any issues while using Pathsight, please don't hesitate to contact us at <a href="mailto:support@pathsight.com">support@pathsight.com</a>.</p>
+      <h2>Contact Us ✉️</h2>
+      <p>Questions? Email <a href="mailto:support@pathsight.com">support@pathsight.com</a>.</p>
     </div>
-    
+
+    <!-- ==============  PRIVACY POLICY  ============= -->
     <h1>Privacy Policy 🔒</h1>
-    <p>Last updated: April, 2025</p>
-    <p>We take your privacy seriously. This Privacy Policy explains how we collect, use, and protect your information when you use Pathsight.</p>
-    <h2>Information Collection and Use</h2>
-    <p>For Pathsight, we collect:</p>
+    <p><em>Last updated: April 30 2025</em></p>
+    <p>This Policy explains how we collect, use, and protect your data when you use Pathsight. <strong>Pathsight is not a regulated safety-or emergency-response service.</strong></p>
+
+    <h2>Information We Collect</h2>
     <ul>
-      <li>Location data (for route planning and weather information)</li>
-      <li>Route history for subscribers</li>
-      <li>Device information for service optimization</li>
-      <li>Usage data for service improvement</li>
-      <li>AI model interaction data to improve service quality</li>
+      <li>Location & device-sensor data (for route planning and weather)</li>
+      <li>Route history (subscribers only)</li>
+      <li>Device & diagnostic info</li>
+      <li>Usage analytics</li>
+      <li>AI-model interaction logs (anonymised)</li>
     </ul>
+
     <h2>Use of Information</h2>
-    <p>We use the collected information for:</p>
     <ul>
-      <li>Route planning and navigation assistance</li>
-      <li>Providing location-based services</li>
-      <li>Managing premium subscriptions</li>
-      <li>Processing payments through Apple's payment system</li>
-      <li>Improving app functionality and user experience</li>
-      <li>Analytics and debugging</li>
+      <li>Generate routes & travel insights</li>
+      <li>Provide safety tips (optional solo-travel mode)</li>
+      <li>Process payments via Apple ID</li>
+      <li>Improve functionality & troubleshoot issues</li>
     </ul>
-    <h2>Data Storage and Security</h2>
-    <p>We use Apple's CloudKit for secure data storage. All data is encrypted in transit and at rest. We implement industry-standard security measures to protect your information.</p>
+
+    <h2>Storage & Security</h2>
+    <p>Data is stored in Apple CloudKit & encrypted in transit/at rest. We apply industry-standard safeguards but cannot guarantee absolute security.</p>
+
     <h2>Third-Party Services</h2>
-    <p>Pathsight uses various third-party services:</p>
     <ul>
-      <li>Google Gemini API (for AI-powered route generation)</li>
-      <li>OpenWeather API (for weather information)</li>
-      <li>Apple Maps (for navigation)</li>
+      <li>Google Gemini API – AI route generation</li>
+      <li>OpenWeather API – real-time weather</li>
+      <li>Apple Maps – navigation</li>
     </ul>
+
     <div class="privacy">
-      <h2>Changes to This Privacy Policy</h2>
-      <p>We reserve the right to update or change this Privacy Policy at any time. Any changes will be effective immediately upon posting the updated Privacy Policy. Your continued use of the App after any changes to this Privacy Policy will constitute your acceptance of such changes.</p>
+      <h2>Policy Changes</h2>
+      <p>We may update this Policy at any time. Continued use constitutes acceptance of the revised Policy.</p>
     </div>
-    
+
+    <!-- ==============  TERMS OF SERVICE  ============= -->
     <h1>Terms of Service 📜</h1>
-    <p>By downloading or using Pathsight, you agree to these terms. Please read them carefully.</p>
+    <p><em>PLEASE READ THESE TERMS CAREFULLY – THEY CONTAIN A MANDATORY ARBITRATION AGREEMENT AND CLASS-ACTION WAIVER.</em></p>
+
     <div class="app-section">
       <h2>1. Acceptance of Terms</h2>
-      <p>By accessing or using the Pathsight app ('the App'), you agree to be bound by these Terms of Service. If you are under 18 years old, you must read and accept these terms with your legal guardian. If you do not agree to these terms, please do not use the App.</p>
-      
+      <p>By accessing or using Pathsight (“<strong>App</strong>”) you agree to these Terms of Service (“<strong>Terms</strong>”). If you are under 18, you must review these Terms with a parent or legal guardian.</p>
+
       <h2>2. Service Description</h2>
-      <p>Pathsight is a route planning and navigation assistance application that uses artificial intelligence, specifically the Google Gemini API, to generate route suggestions and travel recommendations. The App integrates with Apple Maps for navigation and may utilize other third-party services for features such as weather information.</p>
-      
+      <p>The App provides AI-assisted route suggestions, travel insights, and optional safety tips. <strong>Pathsight is not a professional navigation, emergency, or security service, and cannot guarantee 100 % accuracy, reliability, or safety.</strong></p>
+
       <h2>3. Subscription Terms</h2>
       <ul>
-        <li>We provide a 3-day free trial with full access to all features</li>
-        <li>Monthly subscription ($3.99/month) includes all premium features including unlimited routes, Gemini-powered directions, and route history</li>
-        <li>Yearly subscription ($19.99/year, equivalent to $1.67/month) includes the same features as the monthly plan at a discounted rate</li>
-        <li>Subscriptions are billed through Apple's App Store</li>
-        <li>Subscription fees are non-refundable except where required by law</li>
-        <li>Subscriptions automatically renew unless cancelled at least 24 hours before the renewal date</li>
-        <li>Subscription management and cancellation must be done through the App Store settings</li>
-        <li>We reserve the right to modify subscription tiers and pricing with appropriate notice</li>
-        <li>Premium features are only available while your subscription is active</li>
+        <li>3-day free trial; then Monthly ($3.99) or Yearly ($19.99).</li>
+        <li>Billed via Apple App Store; renews automatically unless cancelled ≥ 24 h before period end.</li>
+        <li>Subscription fees are non-refundable except where required by law.</li>
+        <li>We may change prices with at least 30 days’ notice.</li>
       </ul>
-      
-      <h2>4. AI-Generated Content Disclaimer</h2>
-      <p>The App utilizes Google's Gemini AI to generate route suggestions and recommendations. You acknowledge and agree that:</p>
+
+      <h2>4. AI-Generated Content & Safety Disclaimer</h2>
       <ul>
-        <li>AI-generated routes and suggestions are provided 'as is' and may not always be accurate or optimal</li>
-        <li>Route suggestions may not account for real-time conditions, temporary closures, or recent changes</li>
-        <li>The App's suggestions should be used as guidance only and not as definitive navigation instructions</li>
-        <li>You should always verify routes and exercise personal judgment when following any suggestions</li>
-        <li>When sharing or publishing routes generated by the App, you must clearly indicate that the content is AI-generated</li>
+        <li>Routes, directions, and tips (“<strong>Content</strong>”) are generated by AI and provided “<strong>as is</strong>”.</li>
+        <li>Content may be incomplete, outdated, or incorrect; always verify with official sources.</li>
+        <li>Solo-travel safety tips are general suggestions only and <strong>do not guarantee safety</strong>.</li>
+        <li>You assume full responsibility for decisions made while travelling.</li>
       </ul>
-      
+
       <h2>5. User Responsibilities</h2>
-      <p>As a user of the App, you agree to:</p>
       <ul>
-        <li>Use the App in compliance with all applicable laws and regulations</li>
-        <li>Take responsibility for your own safety when following route suggestions</li>
-        <li>Verify suggested routes through official sources when necessary</li>
-        <li>Not rely solely on the App for critical travel decisions</li>
-        <li>Not use the App for any illegal, harmful, or dangerous purposes</li>
+        <li>Comply with all applicable laws and traffic regulations.</li>
+        <li>Remain aware of surroundings and exercise independent judgment.</li>
+        <li>Use additional tools or services (e.g., official map apps, local news) to confirm conditions.</li>
+        <li>Not use the App for emergency or life-critical purposes.</li>
       </ul>
-      
-      <h2>6. Limitation of Liability</h2>
-      <p>To the maximum extent permitted by law, the App and its developers are not liable for any direct, indirect, incidental, special, or consequential damages. We make no warranty that the App will meet your requirements or be uninterrupted, timely, secure, or error-free.</p>
+
+      <h2>6. Disclaimer of Warranties</h2>
+      <p>THE APP AND ALL CONTENT ARE PROVIDED “AS IS” AND “AS AVAILABLE”, WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING, WITHOUT LIMITATION, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE APP WILL BE UNINTERRUPTED OR ERROR-FREE, OR THAT CONTENT WILL BE ACCURATE OR RELIABLE.</p>
+
+      <h2>7. Assumption of Risk</h2>
+      <p>Travelling inherently carries risks (e.g., accidents, crime, weather, or infrastructure failures). By using the App, <strong>you knowingly and voluntarily assume all risks</strong>, including risks arising from inaccurate directions or unsafe areas, even if caused by our negligence.</p>
+
+      <h2>8. Limitation of Liability</h2>
+      <p>TO THE FULLEST EXTENT PERMITTED BY LAW, THE DEVELOPER (INCLUDING OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, AND LICENSORS) SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES, INCLUDING PERSONAL INJURY, PROPERTY DAMAGE, LOST PROFITS, LOST DATA, OR OTHER LOSSES, ARISING OUT OF OR RELATING TO:</p>
+      <ul>
+        <li>YOUR USE OF OR INABILITY TO USE THE APP;</li>
+        <li>ANY RELIANCE ON AI-GENERATED CONTENT;</li>
+        <li>INACCURACIES, ERRORS, OR OMISSIONS IN CONTENT;</li>
+        <li>UNAUTHORIZED ACCESS TO OR ALTERATION OF YOUR DATA.</li>
+      </ul>
+      <p>IN NO EVENT SHALL OUR TOTAL LIABILITY EXCEED THE GREATER OF (A) AMOUNTS YOU PAID TO USE THE APP IN THE PRECEDING SIX (6) MONTHS OR (B) FIFTY U.S. DOLLARS (US $50).</p>
+
+      <h2>9. Indemnification</h2>
+      <p>You agree to defend, indemnify, and hold harmless the Developer from any claims, damages, or expenses (including attorneys’ fees) arising out of your use of the App or violation of these Terms.</p>
+
+      <h2>10. Binding Arbitration & Class-Action Waiver</h2>
+      <p>All disputes shall be resolved exclusively by final, binding arbitration administered by the American Arbitration Association (“AAA”) under its Consumer Arbitration Rules. <strong>You waive any right to participate in class or representative actions.</strong></p>
+
+      <h2>11. Governing Law</h2>
+      <p>These Terms and any disputes are governed by the laws of the State of Texas, USA, without regard to conflict-of-law principles.</p>
+
+      <h2>12. Severability</h2>
+      <p>If any provision of these Terms is held unenforceable, the remainder will remain in full force.</p>
+
+      <h2>13. Modifications & Termination</h2>
+      <p>We may modify these Terms at any time by posting an updated version. Continued use after modification constitutes acceptance. We may suspend or terminate access to the App at our discretion.</p>
     </div>
+
+    <!-- ==============  FOOTER  ============= -->
     <div class="footer">
       <p>Thank you for using Pathsight!</p>
       <p>© 2025 Pathsight. All rights reserved.</p>
