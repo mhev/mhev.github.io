@@ -5,85 +5,213 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pathsight – Support, Privacy Policy & Terms of Service</title>
 
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <!-- ==============  STYLES  ============= -->
   <style>
     :root {
       --cyan: #147579;
-      --dark-gray: #424242;
-      --light-gray: #f4f4f4;
-      --black: #000000;
+      --cyan-light: #e0f7fa;
+      --cyan-lighter: #f0fbfd;
+      --dark-gray: #3a4046;
+      --mid-gray: #616971;
+      --light-gray: #f8f9fa;
+      --black: #1a1a1a;
       --white: #ffffff;
+      --shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      --border-radius: 12px;
     }
 
     /* ----------  GLOBAL LAYOUT ---------- */
     *, *::before, *::after { box-sizing: border-box; }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       margin: 0;
-      padding: 20px;
+      padding: 0;
       background: var(--light-gray);
-      color: var(--dark-gray);
-      line-height: 1.75;               /* more vertical breathing room */
+      color: var(--mid-gray);
+      line-height: 1.6;
+      font-size: 16px;
+      font-weight: 400;
     }
 
     .container {
-      max-width: 800px;
-      margin: 0 auto;
+      max-width: 860px;
+      margin: 40px auto;
       background: var(--white);
-      padding: 40px 48px;              /* wider padding */
-      border-radius: 10px;
-      box-shadow: 0 0 12px rgb(0 0 0 / 10%);
-      border: 2px solid var(--cyan);
+      padding: 50px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
     }
 
     /* ----------  TYPOGRAPHY ---------- */
-    h1        { font-size: 2rem;   margin: 0 0 1.5em;  color: var(--black); }
-    h2        { font-size: 1.5rem; margin: 2.25em 0 1em; color: var(--black); }
-    h3        { font-size: 1.25rem;margin: 1.75em 0 0.75em; color: var(--black); }
+    h1 {
+      font-size: 2.25rem;
+      margin: 0 0 1.25em;
+      color: var(--black);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
 
-    p         { margin: 0 0 1.25em; }
-    li        { margin: 0 0 0.9em 0; }
-    li:last-child { margin-bottom: 0; }
+    h2 {
+      font-size: 1.6rem;
+      margin: 2em 0 0.75em;
+      color: var(--black);
+      font-weight: 600;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
 
-    a         { color: var(--cyan); text-decoration: none; }
-    a:hover   { text-decoration: underline; }
+    h3 {
+      font-size: 1.25rem;
+      margin: 1.5em 0 0.5em;
+      color: var(--black);
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    p {
+      margin: 0 0 1.25em;
+      line-height: 1.7;
+    }
+
+    li {
+      margin: 0 0 1em 0;
+      line-height: 1.6;
+    }
+
+    li:last-child {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: var(--cyan);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: #0d5457;
+      text-decoration: underline;
+    }
+
+    strong {
+      font-weight: 600;
+      color: var(--dark-gray);
+    }
 
     ol, ul {
-      padding-left: 24px;
+      padding-left: 1.75rem;
       margin: 0 0 1.6em 0;
     }
 
     /* ----------  SECTIONS ---------- */
     .app-section {
-      margin-bottom: 60px;             /* extra space after each major block */
-      padding: 30px;
+      margin-bottom: 3.5rem;
+      padding: 2rem 2.25rem;
       background: var(--white);
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgb(0 0 0 / 10%);
-      border-top: 5px solid var(--cyan);
+      border-radius: var(--border-radius);
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.04);
+      border-left: 4px solid var(--cyan);
     }
 
     .contact, .privacy {
-      background: #e0f7fa;
-      padding: 24px;
-      margin: 40px 0;
-      border-left: 5px solid var(--cyan);
-      border-radius: 6px;
+      background: var(--cyan-lighter);
+      padding: 1.75rem 2rem;
+      margin: 2.5rem 0;
+      border-left: 4px solid var(--cyan);
+      border-radius: 8px;
+    }
+
+    .contact h2, .privacy h2 {
+      margin-top: 0;
     }
 
     .footer {
       text-align: center;
-      margin-top: 60px;
-      color: var(--dark-gray);
+      margin-top: 4rem;
+      padding-top: 2rem;
+      color: var(--mid-gray);
       font-size: 0.95rem;
+      border-top: 1px solid #eee;
+    }
+
+    /* Emoji styling */
+    h1 em, h2 em {
+      font-style: normal;
+      margin-left: 0.25rem;
+    }
+
+    /* Accent elements */
+    .contact, .privacy, .app-section {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact::before, .privacy::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle at top right, rgba(20, 117, 121, 0.08), transparent 70%);
+      border-radius: 0 0 0 100px;
+      z-index: 0;
+    }
+
+    /* Last updated styling */
+    p em {
+      color: var(--mid-gray);
+      font-size: 0.95rem;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      .container {
+        padding: 30px;
+        margin: 20px auto;
+      }
+      
+      h1 {
+        font-size: 1.8rem;
+      }
+      
+      h2 {
+        font-size: 1.4rem;
+      }
+      
+      .app-section {
+        padding: 1.5rem;
+      }
+      
+      .contact, .privacy {
+        padding: 1.5rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .container {
+        padding: 25px 20px;
+        margin: 10px;
+      }
+      
+      h1 {
+        font-size: 1.6rem;
+      }
     }
   </style>
 </head>
 
 <body>
   <div class="container">
-    <h1>Pathsight Support 🧭</h1>
+    <h1>Pathsight Support <span>🧭</span></h1>
 
     <!-- ==================  FAQ  ================== -->
     <div class="app-section">
@@ -106,7 +234,7 @@
 
         <li>
           <h3>How do I use AI route planning?</h3>
-          <p>Enter your start and end points; Pathsight’s AI generates natural-language directions plus helpful context.</p>
+          <p>Enter your start and end points; Pathsight's AI generates natural-language directions plus helpful context.</p>
         </li>
 
         <li>
@@ -116,7 +244,7 @@
 
         <li>
           <h3>Why might route suggestions vary?</h3>
-          <p>Our AI can consider many factors. For consistency, enable “Main-route-only” mode.</p>
+          <p>Our AI can consider many factors. For consistency, enable "Main-route-only" mode.</p>
         </li>
 
         <li>
@@ -126,7 +254,7 @@
 
         <li>
           <h3>Does Pathsight guarantee my safety?</h3>
-          <p>No. <strong>Pathsight cannot guarantee 100 % safety.</strong> Solo-travel mode provides general tips, but you remain solely responsible for personal safety and decision-making while travelling.</p>
+          <p>No. <strong>Pathsight cannot guarantee 100% safety.</strong> Solo-travel mode provides general tips, but you remain solely responsible for personal safety and decision-making while travelling.</p>
         </li>
       </ol>
 
@@ -142,13 +270,13 @@
 
     <!-- ==================  CONTACT  ================== -->
     <div class="contact">
-      <h2>Contact Us ✉️</h2>
+      <h2>Contact Us <span>✉️</span></h2>
       <p>Email <a href="mailto:support@pathsight.com">support@pathsight.com</a> for help or feedback.</p>
     </div>
 
     <!-- ==================  PRIVACY POLICY  ================== -->
-    <h1>Privacy Policy 🔒</h1>
-    <p><em>Last updated: April 30 2025</em></p>
+    <h1>Privacy Policy <span>🔒</span></h1>
+    <p><em>Last updated: April 30, 2025</em></p>
     <p>This Policy explains how we collect, use, and protect your data when you use Pathsight. <strong>Pathsight is not a regulated safety- or emergency-response service.</strong></p>
 
     <h2>Information We Collect</h2>
@@ -184,27 +312,27 @@
     </div>
 
     <!-- ==================  TERMS OF SERVICE  ================== -->
-    <h1>Terms of Service 📜</h1>
+    <h1>Terms of Service <span>📜</span></h1>
     <p><em>PLEASE READ — contains a binding arbitration agreement & class-action waiver.</em></p>
 
     <div class="app-section">
       <h2>1. Acceptance of Terms</h2>
-      <p>By accessing or using Pathsight (“<strong>App</strong>”) you agree to these Terms of Service (“<strong>Terms</strong>”). If you are under 18, you must review these Terms with a parent or legal guardian.</p>
+      <p>By accessing or using Pathsight ("<strong>App</strong>") you agree to these Terms of Service ("<strong>Terms</strong>"). If you are under 18, you must review these Terms with a parent or legal guardian.</p>
 
       <h2>2. Service Description</h2>
-      <p>The App provides AI-assisted route suggestions, travel insights, and optional safety tips. <strong>Pathsight is not a professional navigation, emergency, or security service, and cannot guarantee 100 % accuracy, reliability, or safety.</strong></p>
+      <p>The App provides AI-assisted route suggestions, travel insights, and optional safety tips. <strong>Pathsight is not a professional navigation, emergency, or security service, and cannot guarantee 100% accuracy, reliability, or safety.</strong></p>
 
       <h2>3. Subscription Terms</h2>
       <ul>
         <li>3-day free trial; then Monthly ($3.99) or Yearly ($19.99).</li>
         <li>Billed via Apple App Store; renews automatically unless cancelled ≥ 24 h before period end.</li>
         <li>Fees are non-refundable except where required by law.</li>
-        <li>We may change prices with at least 30 days’ notice.</li>
+        <li>We may change prices with at least 30 days' notice.</li>
       </ul>
 
       <h2>4. AI-Generated Content & Safety Disclaimer</h2>
       <ul>
-        <li>Routes, directions, and tips are AI-generated and provided “as is”.</li>
+        <li>Routes, directions, and tips are AI-generated and provided "as is".</li>
         <li>Content may be incomplete, outdated, or incorrect; verify with official sources.</li>
         <li>Solo-travel tips are general and <strong>do not guarantee safety</strong>.</li>
         <li>You assume full responsibility for decisions made while travelling.</li>
@@ -219,7 +347,7 @@
       </ul>
 
       <h2>6. Disclaimer of Warranties</h2>
-      <p>THE APP AND ALL CONTENT ARE PROVIDED “AS IS” AND “AS AVAILABLE”, WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING, WITHOUT LIMITATION, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT.</p>
+      <p>THE APP AND ALL CONTENT ARE PROVIDED "AS IS" AND "AS AVAILABLE", WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING, WITHOUT LIMITATION, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT.</p>
 
       <h2>7. Assumption of Risk</h2>
       <p>Travelling carries inherent risks (e.g., accidents, crime, weather). By using the App, <strong>you knowingly and voluntarily assume all risks</strong>, even if caused by our negligence.</p>
