@@ -8,101 +8,145 @@
   <!-- =====================  STYLES  ===================== -->
   <style>
     :root {
+      /* Primary accent */
       --primary: #4CAF50;
-      --primary-light: #e8f5e9;
-      --dark-gray: #333333;
-      --light-gray: #f5f5f5;
-      --black: #000000;
-      --white: #ffffff;
+      --primary-light: rgba(76, 175, 80, 0.1);
+      --primary-dark: #388E3C;
+
+      /* Dark theme */
+      --bg: #121212;
+      --surface: #1E1E1E;
+      --surface-alt: #2A2A2A;
+      --border: #333333;
+      --text: #E0E0E0;
+      --text-light: #B0B0B0;
+      --heading: #FFFFFF;
     }
 
-    *, *::before, *::after { box-sizing: border-box; }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
-      padding: 20px;
+      padding: 0;
       font-family: 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
-      line-height: 1.6;
-      background: var(--light-gray);
-      color: var(--dark-gray);
+      line-height: 1.8;
+      background-color: var(--bg);
+      color: var(--text);
     }
 
     .container {
-      max-width: 800px;
-      margin: 0 auto;
-      background: var(--white);
-      padding: 30px;
+      max-width: 820px;
+      margin: 40px auto;
+      background-color: var(--surface);
+      padding: 40px;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
-      border: 2px solid var(--primary);
+      border: 1px solid var(--border);
     }
 
-    h1   { font-size: 2rem;    margin-bottom: .5em;  color: var(--black); }
-    h2   { font-size: 1.5rem;  margin: 1.5em 0 .5em; color: var(--black); }
-    h3   { font-size: 1.25rem; margin: 1em   0 .5em; color: var(--black); }
+    h1, h2, h3 {
+      color: var(--heading);
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
+      line-height: 1.2;
+    }
+    h1 { font-size: 2.25rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.25rem; }
 
-    p, li       { font-size: 1rem;  margin-bottom: .75em; }
-    a           { color: var(--primary); text-decoration: none; }
-    a:hover     { text-decoration: underline; }
-    ul, ol      { margin-left: 1.5em; padding-left: 0; }
+    p, li {
+      font-size: 1rem;
+      margin-bottom: 1em;
+      color: var(--text);
+    }
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
 
-    .app-section {
-      margin-bottom: 2em;
-      padding: 20px;
-      background: var(--white);
+    ul, ol {
+      margin-left: 1.5em;
+    }
+
+    /* Sections */
+    .app-section,
+    .policy-section {
+      background: var(--surface-alt);
+      padding: 30px;
       border-radius: 8px;
-      box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
-      border-top: 5px solid var(--primary);
-    }
-
-    .contact, .privacy {
-      background: var(--primary-light);
+      margin-top: 1.5em;
       border-left: 4px solid var(--primary);
-      padding: 15px;
-      border-radius: 4px;
-      margin: 1.5em 0;
     }
 
+    .contact {
+      background: var(--primary-light);
+      padding: 20px;
+      border-radius: 6px;
+      margin: 2em 0;
+      color: var(--text-light);
+    }
+    .contact h2, .contact h3 {
+      color: var(--heading);
+      margin-bottom: 0.75em;
+    }
+
+    /* FAQ */
+    .faq-list {
+      list-style: none;
+      padding: 0;
+    }
+    .faq-item {
+      margin-bottom: 1.5em;
+      padding-bottom: 1em;
+      border-bottom: 1px solid var(--border);
+    }
+    .faq-question {
+      font-size: 1.1rem;
+      margin-bottom: 0.5em;
+      color: var(--primary);
+    }
+    .faq-answer {
+      padding-left: 1.5em;
+    }
+    .q-marker, .a-marker {
+      display: inline-block;
+      width: 1.2em;
+      font-weight: bold;
+    }
+    .q-marker { color: var(--primary); }
+    .a-marker { color: var(--text-light); }
+
+    /* Privacy Policy specifics */
+    .policy-date {
+      font-style: italic;
+      color: var(--text-light);
+      margin-bottom: 1em;
+    }
+    .policy-list {
+      list-style: none;
+      padding-left: 0.5em;
+    }
+    .policy-list li {
+      margin-bottom: 0.75em;
+      display: flex;
+      align-items: baseline;
+    }
+    .policy-list li strong {
+      color: var(--primary);
+      min-width: 120px;
+      display: inline-block;
+    }
+
+    /* Footer */
     .footer {
       text-align: center;
       margin-top: 3em;
-      font-size: .9rem;
-      color: var(--dark-gray);
-    }
-
-    /* ==========  FAQ  ========== */
-    .faq-list     { list-style: none; padding: 0; }
-    .faq-item     { margin-bottom: 1.5em; border-bottom: 1px solid rgb(0 0 0 / .1); padding-bottom: 1em; }
-    .faq-question { font-size: 1.2rem; margin-bottom: .5em; color: var(--primary); }
-    .faq-answer   { color: var(--black); padding-left: 1.5em; }
-    .q-marker, .a-marker { display: inline-block; width: 1.5em; font-weight: bold; }
-    .q-marker     { color: var(--primary); }
-    .a-marker     { color: var(--dark-gray); }
-
-    /* ==========  POLICY  ========== */
-    .policy-section {
-      background: var(--white);
-      padding: 20px;
-      border-radius: 8px;
-      margin-top: 20px;
-      box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
-      border-left: 5px solid var(--primary);
-    }
-
-    .policy-date   { color: var(--dark-gray); margin-bottom: 1.5em; }
-    .policy-intro  { margin-bottom: 1.5em; font-size: 1.05rem; }
-    .policy-block  { margin-bottom: 1.5em; padding-bottom: 1em; border-bottom: 1px solid var(--light-gray); }
-    .policy-block:last-child { border-bottom: none; }
-
-    .policy-list       { list-style: none; padding-left: .5em; }
-    .policy-list li    { padding: .5em 0; display: flex; align-items: baseline; }
-    .policy-list li strong { margin-right: .5em; color: var(--primary); min-width: 100px; display: inline-block; }
-
-    .policy-updates {
-      background: var(--primary-light);
-      padding: 15px;
-      border-radius: 6px;
-      margin-top: 20px;
+      color: var(--text-light);
+      font-size: 0.9rem;
     }
   </style>
 </head>
@@ -126,37 +170,37 @@
             <ul>
               <li>3-day free trial with full access</li>
               <li>$4.99 per month after trial</li>
-              <li>$24.99 per year (≈$2.08 per month) after trial</li>
+              <li>$24.99 per year (~$2.08/mo) after trial</li>
             </ul>
           </div>
         </li>
         <li class="faq-item">
           <div class="faq-question"><span class="q-marker">Q:</span> <strong>How do I use GymLens?</strong></div>
-          <div class="faq-answer"><span class="a-marker">A:</span> Take or upload a clear photo of your equipment, select muscle targets or limitations, and let GymLens create your custom workout.</div>
+          <div class="faq-answer"><span class="a-marker">A:</span> Take/upload a clear photo of your equipment, select targets or limitations, and let GymLens craft your workout.</div>
         </li>
         <li class="faq-item">
-          <div class="faq-question"><span class="q-marker">Q:</span> <strong>What equipment can GymLens recognize?</strong></div>
-          <div class="faq-answer"><span class="a-marker">A:</span> We detect dumbbells, barbells, kettlebells, bands, machines, benches, cardio gear, and more.</div>
+          <div class="faq-question"><span class="q-marker">Q:</span> <strong>What gear is recognized?</strong></div>
+          <div class="faq-answer"><span class="a-marker">A:</span> Dumbbells, barbells, kettlebells, bands, machines, benches, cardio gear, and more.</div>
         </li>
         <li class="faq-item">
           <div class="faq-question"><span class="q-marker">Q:</span> <strong>How accurate are the suggestions?</strong></div>
-          <div class="faq-answer"><span class="a-marker">A:</span> Our AI follows fitness best practices, but suggestions are guidance only. Always consult a qualified professional for personalized advice.</div>
+          <div class="faq-answer"><span class="a-marker">A:</span> AI follows fitness best practices but is guidance only. Always consult a professional for personalized advice.</div>
         </li>
         <li class="faq-item">
-          <div class="faq-question"><span class="q-marker">Q:</span> <strong>Can I save my workouts?</strong></div>
-          <div class="faq-answer"><span class="a-marker">A:</span> Yes — subscribers can save and track workouts over time.</div>
+          <div class="faq-question"><span class="q-marker">Q:</span> <strong>Can I save workouts?</strong></div>
+          <div class="faq-answer"><span class="a-marker">A:</span> Yes—subscribers can save and track workouts over time.</div>
         </li>
         <li class="faq-item">
-          <div class="faq-question"><span class="q-marker">Q:</span> <strong>Why might suggestions vary?</strong></div>
-          <div class="faq-answer"><span class="a-marker">A:</span> Variation helps avoid plateaus by offering diverse exercises for the same equipment.</div>
+          <div class="faq-question"><span class="q-marker">Q:</span> <strong>Why do suggestions vary?</strong></div>
+          <div class="faq-answer"><span class="a-marker">A:</span> Variation avoids plateaus by rotating exercises for the same equipment.</div>
         </li>
         <li class="faq-item">
           <div class="faq-question"><span class="q-marker">Q:</span> <strong>What if equipment isn't recognized?</strong></div>
-          <div class="faq-answer"><span class="a-marker">A:</span> Ensure good lighting and a clear frame. If issues persist, add notes manually before generating.</div>
+          <div class="faq-answer"><span class="a-marker">A:</span> Ensure good lighting and a clear frame. You can also add notes manually before generating.</div>
         </li>
         <li class="faq-item">
           <div class="faq-question"><span class="q-marker">Q:</span> <strong>How is my privacy protected?</strong></div>
-          <div class="faq-answer"><span class="a-marker">A:</span> Images are processed securely, not permanently stored unless you save a workout, and never shared externally.</div>
+          <div class="faq-answer"><span class="a-marker">A:</span> Images are processed securely, not stored long-term unless you save a workout, and never shared externally.</div>
         </li>
       </ol>
 
@@ -166,14 +210,14 @@
           <li><strong>Monthly:</strong> $4.99 / month (3-day free trial)</li>
           <li><strong>Annual:</strong> $24.99 / year (3-day free trial)</li>
         </ul>
-        <p>Your Apple ID will be charged after the trial. Manage or cancel in your App Store settings at least 24 h before renewal.</p>
+        <p>Your Apple ID will be charged after trial. Manage or cancel in App Store settings at least 24h before renewal.</p>
       </div>
     </div>
 
     <!-- =====================  CONTACT  ===================== -->
     <div class="contact">
       <h2>Contact Us ✉️</h2>
-      <p>Questions or issues? Reach out at <a href="mailto:heverlym@gmail.com">heverlym@gmail.com</a>.</p>
+      <p>Questions or issues? Reach out at <a href="mailto:heverlym@gmail.com">heverlym@gmail.com</a></p>
     </div>
 
     <!-- =====================  PRIVACY POLICY  ===================== -->
@@ -181,119 +225,133 @@
       <h2>Privacy Policy 🔒</h2>
       <p class="policy-date"><em>Last updated: April 30, 2025</em></p>
 
-      <div class="policy-intro">
+      <div>
         <p>We take your privacy seriously. This policy explains how we collect, use, and protect your information when you use GymLens. <strong>GymLens is not a regulated medical device and does not store or process protected health information (“PHI”) as defined by HIPAA.</strong></p>
       </div>
 
-      <div class="policy-content">
-        <div class="policy-block">
-          <h3>Information We Collect</h3>
-          <ul class="policy-list">
-            <li><strong>Images:</strong> Uploaded or captured photos of equipment</li>
-            <li><strong>Fitness Data:</strong> Goals & details you voluntarily provide</li>
-            <li><strong>Device Info:</strong> Device model, OS version, and diagnostics</li>
-            <li><strong>Purchase Data:</strong> Subscription and transaction info</li>
-          </ul>
-        </div>
-
-        <div class="policy-block">
-          <h3>How We Use It</h3>
-          <ul class="policy-list">
-            <li><strong>Workout Generation:</strong> Analyze equipment to create routines</li>
-            <li><strong>Progress Tracking:</strong> Store saved workout history (opt-in)</li>
-            <li><strong>Account Management:</strong> Process subscriptions & payments</li>
-            <li><strong>App Improvement:</strong> Diagnose bugs & enhance features</li>
-          </ul>
-        </div>
-
-        <div class="policy-block">
-          <h3>Image Processing</h3>
-          <ul class="policy-list">
-            <li><strong>Security:</strong> Secure transmission & analysis</li>
-            <li><strong>Storage:</strong> No permanent storage unless you explicitly save workouts</li>
-            <li><strong>Privacy:</strong> No external sharing with third parties</li>
-          </ul>
-        </div>
-
-        <div class="policy-block">
-          <h3>Security</h3>
-          <p>All data is encrypted in transit and at rest using industry-standard measures.</p>
-        </div>
-
-        <div class="policy-block">
-          <h3>Third-Party Services</h3>
-          <ul class="policy-list">
-            <li><strong>Apple StoreKit:</strong> Manage purchases</li>
-            <li><strong>CloudKit:</strong> Optional data sync across devices</li>
-          </ul>
-        </div>
+      <div>
+        <h3>Information We Collect</h3>
+        <ul class="policy-list">
+          <li><strong>Images:</strong> Photos of equipment you upload or capture</li>
+          <li><strong>Fitness Data:</strong> Goals & details you voluntarily provide</li>
+          <li><strong>Device Info:</strong> Model, OS version, logs, and diagnostics</li>
+          <li><strong>Purchase Data:</strong> Subscription and transaction info</li>
+        </ul>
       </div>
 
-      <div class="policy-updates">
+      <div>
+        <h3>How We Use It</h3>
+        <ul class="policy-list">
+          <li><strong>Workout Generation:</strong> AI analysis to create routines</li>
+          <li><strong>Progress Tracking:</strong> Store workout history (opt-in)</li>
+          <li><strong>Account Management:</strong> Process subscriptions & payments</li>
+          <li><strong>App Improvement:</strong> Diagnose bugs & enhance features</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Data Retention</h3>
+        <p>We retain your data only as long as necessary to provide services, comply with legal obligations, or resolve disputes. You can request deletion at any time.</p>
+      </div>
+
+      <div>
+        <h3>Children’s Privacy</h3>
+        <p>We do not knowingly collect data from users under 13. If you believe we have, please contact us and we will promptly delete it.</p>
+      </div>
+
+      <div>
+        <h3>Your Rights</h3>
+        <ul class="policy-list">
+          <li><strong>Access & Portability:</strong> Request a copy of your data</li>
+          <li><strong>Correction:</strong> Request updates to inaccurate data</li>
+          <li><strong>Deletion:</strong> Request removal of your data</li>
+          <li><strong>Opt-Out:</strong> Revoke consent for non-essential processing</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Security</h3>
+        <p>All data is encrypted in transit and at rest using industry-standard measures. We regularly review and improve our security practices.</p>
+      </div>
+
+      <div>
+        <h3>Third-Party Services</h3>
+        <ul class="policy-list">
+          <li><strong>Apple StoreKit:</strong> Purchase management</li>
+          <li><strong>CloudKit:</strong> Optional sync across your devices</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Liability</h3>
+        <p>GymLens and its developers are not liable for any direct or indirect damages arising from use of the app or its content. See Terms of Service for full limitation of liability.</p>
+      </div>
+
+      <div>
         <h3>Policy Updates</h3>
-        <p>We may update this policy. Changes take effect immediately upon posting. Continued use constitutes acceptance of the revised policy.</p>
+        <p>We may update this policy. Changes take effect upon posting. Continued use signifies acceptance of the revised policy.</p>
       </div>
     </div>
 
     <!-- =====================  TERMS OF SERVICE  ===================== -->
     <h2>Terms of Service 📜</h2>
-    <p>By using GymLens, you agree to these Terms. Please read them carefully—they contain important legal information, including a mandatory arbitration provision and a class-action waiver.</p>
+    <p>By using GymLens, you agree to these Terms. Please read carefully—they contain important legal provisions.</p>
 
     <div class="app-section">
       <h3>1. Acceptance of Terms</h3>
-      <p>Accessing or using GymLens constitutes your acceptance of, and agreement to, these Terms of Service (“Terms”). If you do not agree, do not use the App.</p>
+      <p>Accessing or using GymLens constitutes your acceptance of these Terms (“Terms”). If you do not agree, do not use the App.</p>
 
       <h3>2. Subscription Terms</h3>
       <ul>
         <li>Monthly: $4.99 / month (30 days)</li>
         <li>Annual: $24.99 / year</li>
         <li>Free Trial: 3 days</li>
-        <li>Subscriptions auto-renew unless canceled at least 24 h before the end of the current period.</li>
+        <li>Auto-renew unless canceled at least 24h before period end.</li>
       </ul>
 
       <h3>3. User Responsibilities</h3>
       <ul>
-        <li>Use the App safely and within your fitness limits.</li>
-        <li>Consult qualified health or fitness professionals before beginning any new workout program.</li>
-        <li>Ensure proper form and correct use of equipment.</li>
-        <li>Immediately stop any exercise that causes pain, dizziness, or discomfort and seek professional assistance.</li>
+        <li>Use the App safely and within your limits.</li>
+        <li>Consult health professionals before new workouts.</li>
+        <li>Ensure proper form and equipment use.</li>
+        <li>Stop any exercise causing pain or discomfort.</li>
       </ul>
 
-      <h3>4. Medical Disclaimer & No Professional Advice</h3>
-      <p>The workout routines, exercises, and any other content (collectively, “Content”) provided by GymLens are <strong>for informational and recreational purposes only</strong> and are generated by artificial intelligence based on limited information. The Content is <strong>not</strong> a substitute for professional medical advice, diagnosis, or treatment, and GymLens is <strong>not</strong> a medical or healthcare provider. Always consult a physician or other qualified healthcare provider before starting any exercise program. <strong>Reliance on any Content is solely at your own risk.</strong></p>
+      <h3>4. Medical Disclaimer</h3>
+      <p>Content is for informational purposes only and not medical advice. Always consult a qualified professional. Reliance on Content is at your own risk.</p>
 
       <h3>5. Disclaimer of Warranties</h3>
-      <p>THE APP AND ALL CONTENT ARE PROVIDED “AS IS” AND “AS AVAILABLE” WITHOUT WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT. THE DEVELOPER DOES NOT WARRANT THAT THE APP WILL BE UNINTERRUPTED, SECURE, OR ERROR-FREE, OR THAT THE CONTENT WILL BE ACCURATE OR RELIABLE.</p>
+      <p>THE APP AND CONTENT ARE PROVIDED “AS IS” WITHOUT WARRANTIES. THE DEVELOPER DOES NOT GUARANTEE UNINTERRUPTED OR ERROR-FREE OPERATION.</p>
 
       <h3>6. Assumption of Risk</h3>
-      <p>You acknowledge that exercise involves inherent risks, including the risk of serious physical injury or death. By using the App, <strong>you voluntarily assume all known and unknown risks</strong> associated with physical activity, even if caused in whole or in part by the negligence of the Developer.</p>
+      <p>Exercise carries inherent risks. You voluntarily assume all risks, even if due to Developer’s negligence.</p>
 
       <h3>7. Limitation of Liability</h3>
-      <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE DEVELOPER (INCLUDING ITS OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, AND LICENSORS) SHALL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO PERSONAL INJURY, PAIN AND SUFFERING, EMOTIONAL DISTRESS, LOSS OF PROFITS, LOSS OF DATA, OR OTHER LOSSES, ARISING OUT OF OR IN CONNECTION WITH:</p>
-      <ul>
-        <li>YOUR USE OF OR INABILITY TO USE THE APP;</li>
-        <li>ANY CONTENT, INFORMATION, OR ADVICE PROVIDED THROUGH THE APP;</li>
-        <li>ANY ACTION YOU TAKE OR FAIL TO TAKE BASED ON THE CONTENT;</li>
-        <li>ANY ERRORS OR OMISSIONS IN THE APP OR CONTENT;</li>
-        <li>UNAUTHORIZED ACCESS TO OR ALTERATION OF YOUR DATA.</li>
-      </ul>
-      <p>IN NO EVENT SHALL THE TOTAL LIABILITY OF THE DEVELOPER TO YOU EXCEED THE GREATER OF (A) THE AMOUNT YOU PAID FOR THE APP IN THE SIX (6) MONTHS PRECEDING THE EVENT GIVING RISE TO THE CLAIM OR (B) FIFTY U.S. DOLLARS ($50).</p>
-      <p>CERTAIN JURISDICTIONS DO NOT ALLOW LIMITATIONS ON IMPLIED WARRANTIES OR THE EXCLUSION OR LIMITATION OF CERTAIN DAMAGES; IF THESE LAWS APPLY TO YOU, SOME OR ALL OF THE ABOVE DISCLAIMERS AND LIMITATIONS MAY NOT APPLY.</p>
+      <p>TO THE MAXIMUM EXTENT PERMITTED, DEVELOPER IS NOT LIABLE FOR ANY DAMAGES ARISING FROM USE OF THE APP. TOTAL LIABILITY ≤ GREATER OF (A) AMOUNT PAID IN PRIOR SIX MONTHS OR (B) $50.</p>
 
       <h3>8. Indemnification</h3>
-      <p>You agree to defend, indemnify, and hold harmless the Developer and its affiliates from and against any and all claims, damages, obligations, losses, liabilities, costs, and expenses (including reasonable attorneys’ fees) arising from or in connection with (i) your use of the App; (ii) your violation of these Terms; or (iii) your violation of any rights of another.</p>
+      <p>You agree to defend and indemnify Developer against any claims arising from your use of the App or violation of these Terms.</p>
 
-      <h3>9. Binding Arbitration & Class-Action Waiver</h3>
-      <p><strong>PLEASE READ THIS SECTION CAREFULLY—it affects your legal rights.</strong> All disputes arising out of or related to these Terms or the App shall be resolved exclusively through final and binding arbitration administered by the American Arbitration Association (<abbr>AAA</abbr>) under its Consumer Arbitration Rules. <em>You and the Developer agree to waive any right to a jury trial or to participate in a class action, class arbitration, or representative action.</em></p>
+      <h3>9. Binding Arbitration & Waiver</h3>
+      <p>Disputes go to binding arbitration under AAA rules. YOU AND DEVELOPER WAIVE JURY TRIAL AND CLASS ACTION RIGHTS.</p>
 
       <h3>10. Governing Law</h3>
-      <p>These Terms and any dispute arising out of or related to them are governed by the laws of the State of Texas, USA, without regard to its conflict-of-law principles.</p>
+      <p>These Terms are governed by Texas law, without conflict-of-law rules.</p>
 
       <h3>11. Severability</h3>
-      <p>If any provision of these Terms is held to be unlawful, void, or unenforceable, that provision will be deemed severable and will not affect the validity or enforceability of the remaining provisions.</p>
+      <p>If any provision is invalid, the rest remain in full force.</p>
 
       <h3>12. Modifications & Termination</h3>
-      <p>The Developer may revise these Terms at any time by posting an updated version in the App or on the GymLens website. Continued use after any such change constitutes acceptance of the revised Terms. The Developer may suspend or terminate access to the App at any time without notice or liability.</p>
+      <p>Developer may revise Terms at any time by posting an updated version. Continued use = acceptance. Access may be suspended or terminated at any time.</p>
+
+      <h3>13. Entire Agreement</h3>
+      <p>These Terms, together with any policies or guidelines we post, constitute the entire agreement between you and Developer.</p>
+
+      <h3>14. No Waiver</h3>
+      <p>Failure to enforce any right is not a waiver of that right.</p>
+
+      <h3>15. Contact</h3>
+      <p>For questions, please contact <a href="mailto:heverlym@gmail.com">heverlym@gmail.com</a>.</p>
     </div>
 
     <!-- =====================  FOOTER  ===================== -->
