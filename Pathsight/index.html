@@ -10,251 +10,215 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- ==============  STYLES  ============= -->
+  <!-- ==============  STYLES (Dark Theme + Smooth Scroll + Sticky Nav)  ============= -->
   <style>
     :root {
-      --cyan: #147579;
-      --cyan-light: #e0f7fa;
-      --cyan-lighter: #f0fbfd;
-      --dark-gray: #3a4046;
-      --mid-gray: #616971;
-      --light-gray: #f8f9fa;
-      --black: #1a1a1a;
-      --white: #ffffff;
-      --shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      /* Accent color */
+      --primary: #147579;
+      --primary-light: rgba(20,117,121,0.1);
+
+      /* Dark theme palette */
+      --bg: #121212;
+      --surface: #1E1E1E;
+      --surface-alt: #2A2A2A;
+      --border: #333333;
+      --text: #E0E0E0;
+      --text-light: #B0B0B0;
+      --heading: #FFFFFF;
+
+      /* Layout tokens */
       --border-radius: 12px;
+      --shadow: 0 8px 30px rgba(0,0,0,0.5);
     }
 
-    /* ----------  GLOBAL LAYOUT ---------- */
-    *, *::before, *::after { box-sizing: border-box; }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
-      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       margin: 0;
       padding: 0;
-      background: var(--light-gray);
-      color: var(--mid-gray);
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       line-height: 1.6;
       font-size: 16px;
-      font-weight: 400;
+    }
+
+    /* Sticky top navigation */
+    .top-nav {
+      position: sticky;
+      top: 0;
+      background: var(--surface);
+      padding: 10px 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+    }
+    .top-nav a {
+      color: var(--text);
+      background: var(--surface-alt);
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.2s, color 0.2s;
+    }
+    .top-nav a:hover {
+      background: var(--primary);
+      color: var(--heading);
     }
 
     .container {
       max-width: 860px;
-      margin: 40px auto;
-      background: var(--white);
+      margin: 0 auto 40px;
+      background: var(--surface);
       padding: 50px;
       border-radius: var(--border-radius);
+      border: 1px solid var(--border);
       box-shadow: var(--shadow);
     }
 
-    /* ----------  TYPOGRAPHY ---------- */
     h1 {
-      font-size: 2.25rem;
       margin: 0 0 1.25em;
-      color: var(--black);
-      font-weight: 700;
+      color: var(--heading);
+      font-size: 2.25rem;
       line-height: 1.2;
-      letter-spacing: -0.02em;
     }
-
     h2 {
-      font-size: 1.6rem;
       margin: 2em 0 0.75em;
-      color: var(--black);
-      font-weight: 600;
+      color: var(--heading);
+      font-size: 1.6rem;
       line-height: 1.3;
-      letter-spacing: -0.01em;
     }
-
     h3 {
-      font-size: 1.25rem;
       margin: 1.5em 0 0.5em;
-      color: var(--black);
-      font-weight: 600;
+      color: var(--heading);
+      font-size: 1.25rem;
       line-height: 1.4;
     }
 
     p {
       margin: 0 0 1.25em;
-      line-height: 1.7;
     }
-
     li {
       margin: 0 0 1em 0;
-      line-height: 1.6;
     }
-
-    li:last-child {
-      margin-bottom: 0;
-    }
-
     a {
-      color: var(--cyan);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s;
+      color: var(--primary);
     }
-
     a:hover {
-      color: #0d5457;
       text-decoration: underline;
     }
-
-    strong {
-      font-weight: 600;
-      color: var(--dark-gray);
-    }
-
     ol, ul {
       padding-left: 1.75rem;
       margin: 0 0 1.6em 0;
     }
 
-    /* ----------  SECTIONS ---------- */
-    .app-section {
+    /* Section wrappers */
+    .app-section,
+    .policy-section {
       margin-bottom: 3.5rem;
       padding: 2rem 2.25rem;
-      background: var(--white);
+      background: var(--surface-alt);
       border-radius: var(--border-radius);
-      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.04);
-      border-left: 4px solid var(--cyan);
+      border-left: 4px solid var(--primary);
     }
 
-    .contact, .privacy {
-      background: var(--cyan-lighter);
+    /* Contact/info boxes */
+    .contact {
+      background: var(--primary-light);
       padding: 1.75rem 2rem;
       margin: 2.5rem 0;
-      border-left: 4px solid var(--cyan);
+      border-left: 4px solid var(--primary);
       border-radius: 8px;
+      color: var(--text-light);
+    }
+    .contact h2, .contact h3 {
+      margin: 0 0 0.75em;
+      color: var(--heading);
     }
 
-    .contact h2, .privacy h2 {
-      margin-top: 0;
-    }
-
+    /* Footer */
     .footer {
       text-align: center;
       margin-top: 4rem;
       padding-top: 2rem;
-      color: var(--mid-gray);
-      font-size: 0.95rem;
-      border-top: 1px solid #eee;
+      color: var(--text-light);
+      border-top: 1px solid var(--border);
     }
 
-    /* Emoji styling */
-    h1 em, h2 em {
-      font-style: normal;
-      margin-left: 0.25rem;
-    }
-
-    /* Accent elements */
-    .contact, .privacy, .app-section {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .contact::before, .privacy::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 100px;
-      height: 100px;
-      background: radial-gradient(circle at top right, rgba(20, 117, 121, 0.08), transparent 70%);
-      border-radius: 0 0 0 100px;
-      z-index: 0;
-    }
-
-    /* Last updated styling */
-    p em {
-      color: var(--mid-gray);
-      font-size: 0.95rem;
-    }
-
-    /* Mobile responsiveness */
     @media (max-width: 768px) {
       .container {
         padding: 30px;
         margin: 20px auto;
       }
-      
-      h1 {
-        font-size: 1.8rem;
-      }
-      
-      h2 {
-        font-size: 1.4rem;
-      }
-      
-      .app-section {
-        padding: 1.5rem;
-      }
-      
-      .contact, .privacy {
-        padding: 1.5rem;
-      }
+      h1 { font-size: 1.8rem; }
+      h2 { font-size: 1.4rem; }
+      .app-section, .policy-section { padding: 1.5rem; }
+      .contact { padding: 1.5rem; }
     }
-    
     @media (max-width: 480px) {
       .container {
         padding: 25px 20px;
         margin: 10px;
       }
-      
-      h1 {
-        font-size: 1.6rem;
-      }
+      h1 { font-size: 1.6rem; }
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <h1>Pathsight Support <span>🧭</span></h1>
+  <!-- Top navigation -->
+  <nav class="top-nav">
+    <a href="#support">Support</a>
+    <a href="#privacy">Privacy Policy</a>
+    <a href="#tos">Terms of Service</a>
+  </nav>
 
-    <!-- ==================  FAQ  ================== -->
+  <div class="container">
+    <!-- SUPPORT -->
+    <h1 id="support">Pathsight Support 🧭</h1>
     <div class="app-section">
       <h2>Pathsight FAQs</h2>
       <ol>
         <li>
           <h3>What is Pathsight?</h3>
-          <p>Pathsight is an AI-powered route-planning and navigation assistant that provides detailed, conversational directions and travel insights.</p>
+          <p>Pathsight is an AI-powered route-planning and navigation assistant delivering conversational directions and travel insights via Google Gemini, OpenWeather, and Apple Maps.</p>
         </li>
-
         <li>
           <h3>How do subscriptions work?</h3>
-          <p>We offer a 3-day free trial, then:</p>
+          <p>Enjoy a 3-day free trial, then choose:</p>
           <ul>
             <li><strong>Monthly</strong> — $3.99</li>
-            <li><strong>Yearly</strong> — $19.99 (≈ $1.67 / mo)</li>
+            <li><strong>Yearly</strong> — $19.99 (~$1.67/mo)</li>
           </ul>
-          <p>Both plans include unlimited routes, Gemini-powered directions, and route history.</p>
         </li>
-
         <li>
-          <h3>How do I use AI route planning?</h3>
-          <p>Enter your start and end points; Pathsight's AI generates natural-language directions plus helpful context.</p>
+          <h3>How does AI route planning work?</h3>
+          <p>Enter start and end points; our AI crafts natural-language directions and context-aware insights.</p>
         </li>
-
         <li>
-          <h3>Can I save my routes?</h3>
-          <p>Yes — subscribers can save favourite routes for later.</p>
+          <h3>Can I save routes?</h3>
+          <p>Yes—subscribers can bookmark and revisit favorite routes.</p>
         </li>
-
         <li>
-          <h3>Why might route suggestions vary?</h3>
-          <p>Our AI can consider many factors. For consistency, enable "Main-route-only" mode.</p>
+          <h3>Why do suggestions vary?</h3>
+          <p>Routes adapt to factors like traffic, weather, and user preferences. Enable "Main-route-only" mode for consistency.</p>
         </li>
-
         <li>
-          <h3>How accurate is AI-generated content?</h3>
-          <p>While we strive for accuracy, AI suggestions are guidance only. Always verify critical details such as road closures, weather, or local regulations before travelling.</p>
+          <h3>How accurate is the AI?</h3>
+          <p>We strive for precision, but AI may err. Always confirm critical details (closures, regulations) before traveling.</p>
         </li>
-
         <li>
-          <h3>Does Pathsight guarantee my safety?</h3>
-          <p>No. <strong>Pathsight cannot guarantee 100% safety.</strong> Solo-travel mode provides general tips, but you remain solely responsible for personal safety and decision-making while travelling.</p>
+          <h3>Does Pathsight guarantee safety?</h3>
+          <p>No. <strong>Pathsight cannot guarantee 100% safety.</strong> You remain fully responsible for decisions and personal safety.</p>
         </li>
       </ol>
 
@@ -263,115 +227,125 @@
         <ul>
           <li><strong>Monthly:</strong> $3.99 / month</li>
           <li><strong>Yearly:</strong> $19.99 / year</li>
-          <li><strong>Free Trial:</strong> 3 days — cancel ≥ 24 h before it ends to avoid charges.</li>
+          <li><strong>Free Trial:</strong> 3 days — cancel ≥24 h before it ends to avoid charges.</li>
         </ul>
       </div>
     </div>
 
-    <!-- ==================  CONTACT  ================== -->
+    <!-- CONTACT -->
     <div class="contact">
-      <h2>Contact Us <span>✉️</span></h2>
-      <p>Email <a href="mailto:support@pathsight.com">support@pathsight.com</a> for help or feedback.</p>
+      <h2>Contact Us ✉️</h2>
+      <p>Need help or have feedback? Email <a href="mailto:support@pathsight.com">support@pathsight.com</a>.</p>
     </div>
 
-    <!-- ==================  PRIVACY POLICY  ================== -->
-    <h1>Privacy Policy <span>🔒</span></h1>
-    <p><em>Last updated: April 30, 2025</em></p>
-    <p>This Policy explains how we collect, use, and protect your data when you use Pathsight. <strong>Pathsight is not a regulated safety- or emergency-response service.</strong></p>
+    <!-- PRIVACY POLICY -->
+    <div class="policy-section" id="privacy">
+      <h2>Privacy Policy 🔒</h2>
+      <p><em>Last updated: April 30, 2025</em></p>
+      <p>This Policy explains how we collect, use, and protect your data when you use Pathsight. <strong>Pathsight is not a regulated safety or emergency-response service.</strong></p>
 
-    <h2>Information We Collect</h2>
-    <ul>
-      <li>Location & device-sensor data (for routes & weather)</li>
-      <li>Route history (subscribers only)</li>
-      <li>Device & diagnostic info</li>
-      <li>Usage analytics</li>
-      <li>AI-interaction logs (anonymised)</li>
-    </ul>
+      <h3>Information We Collect</h3>
+      <ul>
+        <li>Location & sensor data (for routing & weather)</li>
+        <li>Route history (subscribers only)</li>
+        <li>Device & diagnostic info</li>
+        <li>Usage analytics & AI-interaction logs (anonymized)</li>
+      </ul>
 
-    <h2>Use of Information</h2>
-    <ul>
-      <li>Generate routes & travel insights</li>
-      <li>Provide safety tips (optional solo-travel mode)</li>
-      <li>Process payments via Apple ID</li>
-      <li>Improve functionality & troubleshoot issues</li>
-    </ul>
+      <h3>Use of Information</h3>
+      <ul>
+        <li>Generate routes & insights</li>
+        <li>Provide optional safety tips</li>
+        <li>Process payments via Apple App Store</li>
+        <li>Improve features & troubleshoot issues</li>
+      </ul>
 
-    <h2>Storage & Security</h2>
-    <p>Data is stored in Apple CloudKit and encrypted in transit and at rest. We apply industry-standard safeguards but cannot guarantee absolute security.</p>
+      <h3>Storage & Security</h3>
+      <p>Data is stored in Apple CloudKit and encrypted in transit and at rest. We follow industry-standard safeguards but cannot guarantee absolute security.</p>
 
-    <h2>Third-Party Services</h2>
-    <ul>
-      <li>Google Gemini API — AI route generation</li>
-      <li>OpenWeather API — real-time weather</li>
-      <li>Apple Maps — navigation</li>
-    </ul>
+      <h3>Third-Party Services</h3>
+      <ul>
+        <li>Google Gemini API — AI route generation</li>
+        <li>OpenWeather API — real-time weather data</li>
+        <li>Apple Maps — underlying navigation</li>
+      </ul>
 
-    <div class="privacy">
-      <h2>Policy Changes</h2>
-      <p>We may update this Policy at any time. Continued use constitutes acceptance of the revised Policy.</p>
+      <h3>Data Retention</h3>
+      <p>We retain your data only as needed to provide services, comply with legal obligations, or resolve disputes. You may request deletion at any time.</p>
+
+      <h3>Children’s Privacy</h3>
+      <p>We do not knowingly collect data from users under 13. If discovered, such data will be deleted promptly upon request.</p>
+
+      <h3>Liability</h3>
+      <p>Pathsight and its developers disclaim any liability for inaccuracies, omissions, or errors in route suggestions. Following any guidance is entirely at your own risk. See Terms of Service for full limitation of liability.</p>
+
+      <div class="privacy">
+        <h3>Policy Changes</h3>
+        <p>We may update this Policy at any time. Continued use constitutes acceptance of the revised Policy.</p>
+      </div>
     </div>
 
-    <!-- ==================  TERMS OF SERVICE  ================== -->
-    <h1>Terms of Service <span>📜</span></h1>
-    <p><em>PLEASE READ — contains a binding arbitration agreement & class-action waiver.</em></p>
+    <!-- TERMS OF SERVICE -->
+    <div class="policy-section" id="tos">
+      <h2>Terms of Service 📜</h2>
+      <p><em>PLEASE READ — contains binding arbitration & class-action waiver.</em></p>
 
-    <div class="app-section">
-      <h2>1. Acceptance of Terms</h2>
-      <p>By accessing or using Pathsight ("<strong>App</strong>") you agree to these Terms of Service ("<strong>Terms</strong>"). If you are under 18, you must review these Terms with a parent or legal guardian.</p>
+      <h3>1. Acceptance of Terms</h3>
+      <p>By accessing or using Pathsight (“App”) you agree to these Terms of Service (“Terms”). If you are under 18, you must review these Terms with a parent or guardian.</p>
 
-      <h2>2. Service Description</h2>
-      <p>The App provides AI-assisted route suggestions, travel insights, and optional safety tips. <strong>Pathsight is not a professional navigation, emergency, or security service, and cannot guarantee 100% accuracy, reliability, or safety.</strong></p>
+      <h3>2. Service Description</h3>
+      <p>The App provides AI-assisted route suggestions via Google Gemini API, optional weather integration with OpenWeather, and general travel insights. <strong>Pathsight is not a professional navigation, safety, or emergency service and cannot guarantee accuracy, completeness, or timeliness of any routes or directions.</strong></p>
 
-      <h2>3. Subscription Terms</h2>
+      <h3>3. Subscription Terms</h3>
       <ul>
         <li>3-day free trial; then Monthly ($3.99) or Yearly ($19.99).</li>
-        <li>Billed via Apple App Store; renews automatically unless cancelled ≥ 24 h before period end.</li>
-        <li>Fees are non-refundable except where required by law.</li>
-        <li>We may change prices with at least 30 days' notice.</li>
+        <li>Billed via Apple App Store; auto-renews unless cancelled ≥24 h before period end.</li>
+        <li>Non-refundable except where required by law.</li>
+        <li>Prices may change with 30 days’ notice.</li>
       </ul>
 
-      <h2>4. AI-Generated Content & Safety Disclaimer</h2>
+      <h3>4. AI-Generated Content & Safety Disclaimer</h3>
       <ul>
-        <li>Routes, directions, and tips are AI-generated and provided "as is".</li>
-        <li>Content may be incomplete, outdated, or incorrect; verify with official sources.</li>
-        <li>Solo-travel tips are general and <strong>do not guarantee safety</strong>.</li>
-        <li>You assume full responsibility for decisions made while travelling.</li>
+        <li>Routes and tips are AI-generated and provided “as is.”</li>
+        <li>Content may be outdated, incomplete, or inaccurate; verify with official sources.</li>
+        <li>You assume full responsibility for travel decisions and safety.</li>
+        <li>Do not use the App for emergency or life-critical purposes.</li>
       </ul>
 
-      <h2>5. User Responsibilities</h2>
+      <h3>5. User Responsibilities</h3>
       <ul>
-        <li>Comply with all applicable laws and traffic regulations.</li>
+        <li>Comply with local laws, regulations, and traffic rules.</li>
         <li>Remain aware of surroundings and exercise independent judgment.</li>
-        <li>Use additional tools (e.g., official map apps, local news) to confirm conditions.</li>
-        <li>Not use the App for emergency or life-critical purposes.</li>
+        <li>Use official map apps or advisories to confirm conditions.</li>
+        <li>Not rely solely on the App for critical navigation or emergency planning.</li>
       </ul>
 
-      <h2>6. Disclaimer of Warranties</h2>
-      <p>THE APP AND ALL CONTENT ARE PROVIDED "AS IS" AND "AS AVAILABLE", WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING, WITHOUT LIMITATION, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT.</p>
+      <h3>6. Disclaimer of Warranties</h3>
+      <p>THE APP AND CONTENT ARE PROVIDED “AS IS” AND “AS AVAILABLE” WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT.</p>
 
-      <h2>7. Assumption of Risk</h2>
-      <p>Travelling carries inherent risks (e.g., accidents, crime, weather). By using the App, <strong>you knowingly and voluntarily assume all risks</strong>, even if caused by our negligence.</p>
+      <h3>7. Assumption of Risk</h3>
+      <p>Travelling involves inherent risks (e.g., accidents, crime, weather). YOU VOLUNTARILY ASSUME ALL RISKS, EVEN IF CAUSED BY DEVELOPER’S NEGLIGENCE.</p>
 
-      <h2>8. Limitation of Liability</h2>
-      <p>TO THE FULLEST EXTENT PERMITTED BY LAW, DEVELOPER LIABILITY SHALL NOT EXCEED THE GREATER OF (A) AMOUNTS YOU PAID IN THE PREVIOUS 6 MONTHS OR (B) US $50.</p>
+      <h3>8. Limitation of Liability</h3>
+      <p>TO THE FULLEST EXTENT PERMITTED BY LAW, DEVELOPER’S LIABILITY SHALL NOT EXCEED THE GREATER OF (A) AMOUNTS YOU PAID IN THE PAST SIX MONTHS OR (B) US $50. DEVELOPER IS NOT LIABLE FOR ANY DAMAGES ARISING FROM USE OR INABILITY TO USE THE APP, INCLUDING INACCURATE DIRECTIONS.</p>
 
-      <h2>9. Indemnification</h2>
-      <p>You agree to defend, indemnify, and hold harmless the Developer from any claims arising out of your use of the App or violation of these Terms.</p>
+      <h3>9. Indemnification</h3>
+      <p>You agree to defend, indemnify, and hold harmless Developer from any claims, damages, or liabilities arising from your use of the App or violation of these Terms.</p>
 
-      <h2>10. Binding Arbitration & Class-Action Waiver</h2>
-      <p>All disputes shall be resolved exclusively by final, binding arbitration administered by the American Arbitration Association under its Consumer Arbitration Rules. <strong>You waive any right to participate in class or representative actions.</strong></p>
+      <h3>10. Binding Arbitration & Class-Action Waiver</h3>
+      <p>All disputes shall be resolved by final, binding arbitration under AAA Consumer Arbitration Rules. YOU WAIVE RIGHTS TO A JURY TRIAL AND TO PARTICIPATE IN CLASS-ACTION.</p>
 
-      <h2>11. Governing Law</h2>
+      <h3>11. Governing Law</h3>
       <p>These Terms are governed by the laws of the State of Texas, USA.</p>
 
-      <h2>12. Severability</h2>
-      <p>If any provision is held unenforceable, the remainder will remain in full force.</p>
+      <h3>12. Severability</h3>
+      <p>If any provision is held invalid, the remainder remain in full force.</p>
 
-      <h2>13. Modifications & Termination</h2>
-      <p>We may modify these Terms at any time. Continued use after modification constitutes acceptance.</p>
+      <h3>13. Modifications & Termination</h3>
+      <p>Developer may modify these Terms at any time. Continued use signifies acceptance. Access may be suspended or terminated at any time.</p>
     </div>
 
-    <!-- ==================  FOOTER  ================== -->
+    <!-- FOOTER -->
     <div class="footer">
       <p>Thank you for using Pathsight!</p>
       <p>© 2025 Pathsight. All rights reserved.</p>
