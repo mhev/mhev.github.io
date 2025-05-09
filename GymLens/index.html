@@ -23,6 +23,10 @@
       --heading: #FFFFFF;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     *, *::before, *::after {
       box-sizing: border-box;
     }
@@ -43,6 +47,27 @@
       padding: 40px;
       border-radius: 12px;
       border: 1px solid var(--border);
+    }
+
+    /* Top navigation */
+    .top-nav {
+      position: sticky;
+      top: 0;
+      background-color: var(--surface);
+      padding: 10px 0;
+      margin-bottom: 30px;
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+      z-index: 10;
+    }
+    .top-nav a {
+      margin: 0 15px;
+      font-weight: 500;
+      color: var(--primary);
+      text-decoration: none;
+    }
+    .top-nav a:hover {
+      text-decoration: underline;
     }
 
     h1, h2, h3 {
@@ -82,18 +107,6 @@
       border-left: 4px solid var(--primary);
     }
 
-    .contact {
-      background: var(--primary-light);
-      padding: 20px;
-      border-radius: 6px;
-      margin: 2em 0;
-      color: var(--text-light);
-    }
-    .contact h2, .contact h3 {
-      color: var(--heading);
-      margin-bottom: 0.75em;
-    }
-
     /* FAQ */
     .faq-list {
       list-style: none;
@@ -120,7 +133,7 @@
     .q-marker { color: var(--primary); }
     .a-marker { color: var(--text-light); }
 
-    /* Privacy Policy specifics */
+    /* Privacy & TOS specifics */
     .policy-date {
       font-style: italic;
       color: var(--text-light);
@@ -153,10 +166,17 @@
 
 <body>
   <div class="container">
+    <!-- Top navigation -->
+    <nav class="top-nav">
+      <a href="#support">Support</a>
+      <a href="#privacy">Privacy Policy</a>
+      <a href="#tos">Terms of Service</a>
+    </nav>
+
     <h1>GymLens Support 💪</h1>
 
     <!-- =====================  FAQ  ===================== -->
-    <div class="app-section">
+    <div id="support" class="app-section">
       <h2>GymLens FAQs</h2>
       <ol class="faq-list">
         <li class="faq-item">
@@ -214,14 +234,8 @@
       </div>
     </div>
 
-    <!-- =====================  CONTACT  ===================== -->
-    <div class="contact">
-      <h2>Contact Us ✉️</h2>
-      <p>Questions or issues? Reach out at <a href="mailto:heverlym@gmail.com">heverlym@gmail.com</a></p>
-    </div>
-
     <!-- =====================  PRIVACY POLICY  ===================== -->
-    <div class="policy-section">
+    <div id="privacy" class="policy-section">
       <h2>Privacy Policy 🔒</h2>
       <p class="policy-date"><em>Last updated: April 30, 2025</em></p>
 
@@ -294,64 +308,94 @@
     </div>
 
     <!-- =====================  TERMS OF SERVICE  ===================== -->
-    <h2>Terms of Service 📜</h2>
-    <p>By using GymLens, you agree to these Terms. Please read carefully—they contain important legal provisions.</p>
+    <div id="tos" class="policy-section">
+      <h2>Terms of Service 📜</h2>
+      <p>By using GymLens, you agree to these Terms. Please read carefully—they contain important legal provisions.</p>
 
-    <div class="app-section">
-      <h3>1. Acceptance of Terms</h3>
-      <p>Accessing or using GymLens constitutes your acceptance of these Terms (“Terms”). If you do not agree, do not use the App.</p>
+      <div>
+        <h3>1. Acceptance of Terms</h3>
+        <p>Accessing or using GymLens constitutes your acceptance of these Terms (“Terms”). If you do not agree, do not use the App.</p>
+      </div>
 
-      <h3>2. Subscription Terms</h3>
-      <ul>
-        <li>Monthly: $4.99 / month (30 days)</li>
-        <li>Annual: $24.99 / year</li>
-        <li>Free Trial: 3 days</li>
-        <li>Auto-renew unless canceled at least 24h before period end.</li>
-      </ul>
+      <div>
+        <h3>2. Subscription Terms</h3>
+        <ul>
+          <li>Monthly: $4.99 / month (30 days)</li>
+          <li>Annual: $24.99 / year</li>
+          <li>Free Trial: 3 days</li>
+          <li>Auto-renew unless canceled at least 24h before period end.</li>
+        </ul>
+      </div>
 
-      <h3>3. User Responsibilities</h3>
-      <ul>
-        <li>Use the App safely and within your limits.</li>
-        <li>Consult health professionals before new workouts.</li>
-        <li>Ensure proper form and equipment use.</li>
-        <li>Stop any exercise causing pain or discomfort.</li>
-      </ul>
+      <div>
+        <h3>3. User Responsibilities</h3>
+        <ul>
+          <li>Use the App safely and within your limits.</li>
+          <li>Consult health professionals before new workouts.</li>
+          <li>Ensure proper form and equipment use.</li>
+          <li>Stop any exercise causing pain or discomfort.</li>
+        </ul>
+      </div>
 
-      <h3>4. Medical Disclaimer</h3>
-      <p>Content is for informational purposes only and not medical advice. Always consult a qualified professional. Reliance on Content is at your own risk.</p>
+      <div>
+        <h3>4. Medical Disclaimer</h3>
+        <p>Content is for informational purposes only and not medical advice. Always consult a qualified professional. Reliance on Content is at your own risk.</p>
+      </div>
 
-      <h3>5. Disclaimer of Warranties</h3>
-      <p>THE APP AND CONTENT ARE PROVIDED “AS IS” WITHOUT WARRANTIES. THE DEVELOPER DOES NOT GUARANTEE UNINTERRUPTED OR ERROR-FREE OPERATION.</p>
+      <div>
+        <h3>5. Disclaimer of Warranties</h3>
+        <p>THE APP AND CONTENT ARE PROVIDED “AS IS” WITHOUT WARRANTIES. THE DEVELOPER DOES NOT GUARANTEE UNINTERRUPTED OR ERROR-FREE OPERATION.</p>
+      </div>
 
-      <h3>6. Assumption of Risk</h3>
-      <p>Exercise carries inherent risks. You voluntarily assume all risks, even if due to Developer’s negligence.</p>
+      <div>
+        <h3>6. Assumption of Risk</h3>
+        <p>Exercise carries inherent risks. You voluntarily assume all risks, even if due to Developer’s negligence.</p>
+      </div>
 
-      <h3>7. Limitation of Liability</h3>
-      <p>TO THE MAXIMUM EXTENT PERMITTED, DEVELOPER IS NOT LIABLE FOR ANY DAMAGES ARISING FROM USE OF THE APP. TOTAL LIABILITY ≤ GREATER OF (A) AMOUNT PAID IN PRIOR SIX MONTHS OR (B) $50.</p>
+      <div>
+        <h3>7. Limitation of Liability</h3>
+        <p>TO THE MAXIMUM EXTENT PERMITTED, DEVELOPER IS NOT LIABLE FOR ANY DAMAGES ARISING FROM USE OF THE APP. TOTAL LIABILITY ≤ GREATER OF (A) AMOUNT PAID IN PRIOR SIX MONTHS OR (B) $50.</p>
+      </div>
 
-      <h3>8. Indemnification</h3>
-      <p>You agree to defend and indemnify Developer against any claims arising from your use of the App or violation of these Terms.</p>
+      <div>
+        <h3>8. Indemnification</h3>
+        <p>You agree to defend and indemnify Developer against any claims arising from your use of the App or violation of these Terms.</p>
+      </div>
 
-      <h3>9. Binding Arbitration & Waiver</h3>
-      <p>Disputes go to binding arbitration under AAA rules. YOU AND DEVELOPER WAIVE JURY TRIAL AND CLASS ACTION RIGHTS.</p>
+      <div>
+        <h3>9. Binding Arbitration & Waiver</h3>
+        <p>Disputes go to binding arbitration under AAA rules. YOU AND DEVELOPER WAIVE JURY TRIAL AND CLASS ACTION RIGHTS.</p>
+      </div>
 
-      <h3>10. Governing Law</h3>
-      <p>These Terms are governed by Texas law, without conflict-of-law rules.</p>
+      <div>
+        <h3>10. Governing Law</h3>
+        <p>These Terms are governed by Texas law, without conflict-of-law rules.</p>
+      </div>
 
-      <h3>11. Severability</h3>
-      <p>If any provision is invalid, the rest remain in full force.</p>
+      <div>
+        <h3>11. Severability</h3>
+        <p>If any provision is invalid, the rest remain in full force.</p>
+      </div>
 
-      <h3>12. Modifications & Termination</h3>
-      <p>Developer may revise Terms at any time by posting an updated version. Continued use = acceptance. Access may be suspended or terminated at any time.</p>
+      <div>
+        <h3>12. Modifications & Termination</h3>
+        <p>Developer may revise Terms at any time by posting an updated version. Continued use = acceptance. Access may be suspended or terminated at any time.</p>
+      </div>
 
-      <h3>13. Entire Agreement</h3>
-      <p>These Terms, together with any policies or guidelines we post, constitute the entire agreement between you and Developer.</p>
+      <div>
+        <h3>13. Entire Agreement</h3>
+        <p>These Terms, together with any policies or guidelines we post, constitute the entire agreement between you and Developer.</p>
+      </div>
 
-      <h3>14. No Waiver</h3>
-      <p>Failure to enforce any right is not a waiver of that right.</p>
+      <div>
+        <h3>14. No Waiver</h3>
+        <p>Failure to enforce any right is not a waiver of that right.</p>
+      </div>
 
-      <h3>15. Contact</h3>
-      <p>For questions, please contact <a href="mailto:heverlym@gmail.com">heverlym@gmail.com</a>.</p>
+      <div>
+        <h3>15. Contact</h3>
+        <p>For questions, please contact <a href="mailto:heverlym@gmail.com">heverlym@gmail.com</a>.</p>
+      </div>
     </div>
 
     <!-- =====================  FOOTER  ===================== -->
