@@ -3,374 +3,449 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support & Privacy Policy - Pathsight, Dot Crush & Eggsplore</title>
+    <title>Hev LLC - Innovative Navigation Solutions</title>
+    <meta name="description" content="Hev LLC is a technology company specializing in innovative navigation solutions, including Pathsight - a revolutionary navigation app.">
     <style>
         :root {
-            --cyan: #00bcd4;
-            --dark-gray: #424242;
-            --light-gray: #f4f4f4;
-            --black: #000000;
-            --white: #ffffff;
+            --primary: #1a73e8;
+            --primary-dark: #0d47a1;
+            --secondary: #34a853;
+            --dark: #202124;
+            --light: #f8f9fa;
+            --gray: #5f6368;
+            --light-gray: #dadce0;
         }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            padding: 20px;
-            margin: 0;
-            background-color: var(--light-gray);
-            color: var(--dark-gray);
+            color: var(--dark);
+            background-color: var(--light);
         }
+        
         .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 8rem 1rem;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
             max-width: 800px;
-            margin: auto;
-            background: var(--white);
-            padding: 20px;
+            margin: 0 auto 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            color: var(--primary-dark);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background-color: white;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border: 2px solid var(--cyan);
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
         }
-        h1, h2, h3 {
-            color: var(--black);
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
         }
-        p, li {
-            font-size: 16px;
+        
+        .feature-content {
+            padding: 1.5rem;
         }
-        a {
-            color: var(--cyan);
+        
+        .feature-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
         }
-        ol, ul {
-            padding-left: 20px;
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
         }
-        .contact, .privacy {
-            background-color: #e0f7fa;
-            padding: 15px;
-            margin: 20px 0;
-            border-left: 4px solid var(--cyan);
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-dark);
         }
-        .footer {
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .contact-form {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid var(--light-gray);
+            border-radius: 5px;
+            font-family: inherit;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-column h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-column ul li a {
+            color: var(--light-gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+        }
+        
+        .copyright {
             text-align: center;
-            margin-top: 40px;
-            color: var(--dark-gray);
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--light-gray);
         }
-        .app-section {
-            margin-bottom: 40px;
-            padding: 20px;
-            background-color: var(--white);
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            border-top: 5px solid var(--cyan);
-        }
-        .app-divider {
-            text-align: center;
-            margin: 40px 0;
-            font-size: 20px;
-            color: var(--cyan);
-            border-top: 2px dashed var(--cyan);
-            border-bottom: 2px dashed var(--cyan);
-            padding: 10px 0;
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
         }
     </style>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Support 😊</h1>
-        
-        <div class="app-section">
-            <h2>🧭 Pathsight FAQs:</h2>
-            <p>Frequently Asked Questions (FAQs):</p>
-            <ol>
-                <li>
-                    <h2>What is Pathsight?</h2>
-                    <p>Pathsight is an AI-powered route planning and navigation assistance application that provides detailed, conversational directions and travel insights.</p>
-                </li>
-                <li>
-                    <h2>How do the subscriptions work?</h2>
-                    <p>Pathsight offers different subscription tiers:
-                       • Free tier includes 5 routes total
-                       • Basic subscription ($3.99/month) includes 200 routes per month
-                       • Pro subscription ($7.99/month) includes 500 routes per month</p>
-                </li>
-                <li>
-                    <h2>How do I use the AI route planning?</h2>
-                    <p>Simply enter your start and end points, and Pathsight will use AI to generate detailed route suggestions with natural language directions and travel insights.</p>
-                </li>
-                <li>
-                    <h2>Can I save my routes?</h2>
-                    <p>Yes, premium subscribers can save their favorite routes and access them later in their route history.</p>
-                </li>
-                <li>
-                    <h2>Why might route suggestions vary?</h2>
-                    <p>As an AI-powered service, route suggestions may vary slightly even for the same start and end points. This is normal and reflects the AI's ability to consider multiple factors and generate diverse recommendations. You can enable "Main route only" mode for more consistent results.</p>
-                </li>
-                <li>
-                    <h2>How accurate is the AI-generated content?</h2>
-                    <p>While our AI (powered by Google's Gemini API) strives for accuracy, all suggestions should be used as guidance only. Always verify critical information, especially regarding road conditions, business hours, or travel restrictions. The AI provides helpful insights but should not be your sole source of navigation information. All AI-generated content must be clearly attributed as such when shared.</p>
-                </li>
-                <li>
-                    <h2>What is "Main route only" mode?</h2>
-                    <p>This is a faster mode that generates only the primary recommended route instead of multiple alternatives. It's useful when you want quick, straightforward directions without additional options.</p>
-                </li>
-                <li>
-                    <h2>How current is the route information?</h2>
-                    <p>The AI generates routes based on its training data and integrates with Apple Maps for navigation. While major roads and routes are generally accurate, always verify current conditions, especially for temporary closures or recent changes. Weather information is provided in real-time through OpenWeather API.</p>
-                </li>
-                <li>
-                    <h2>What happens if the AI generation fails?</h2>
-                    <p>In rare cases where route generation fails (due to network issues or service interruptions), the attempt won't count against your monthly route limit. You can simply try again. If problems persist, try enabling "Main route only" mode or contact support.</p>
-                </li>
-                <li>
-                    <h2>How is my privacy protected when using the AI features?</h2>
-                    <p>While we use Google's Gemini API for route generation, we only share the minimum necessary information (such as start/end points and preferences). Your routes are stored securely in our system, but interactions with Google's Gemini API are subject to their privacy policy and data handling practices. We encourage you to review Google's AI privacy policy at ai.google.dev/terms for more information about how they handle data. We monitor API usage for abuse and may suspend access to users who violate Google's Acceptable Use Policy.</p>
-                </li>
-            </ol>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">Hev LLC</a>
+                <div class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#products">Products</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
 
-            <div class="contact">
-                <h2>Subscription Information</h2>
-                <p>Pathsight offers multiple subscription options:</p>
-                <ul>
-                    <li><strong>Basic Monthly:</strong> $3.99/month for 200 routes</li>
-                    <li><strong>Pro Monthly:</strong> $7.99/month for 500 routes</li>
-                </ul>
-                <p>Important subscription terms:</p>
-                <ul>
-                    <li>Payment will be charged to your Apple ID account at confirmation of purchase</li>
-                    <li>Subscription automatically renews unless auto-renewal is turned off at least 24 hours before the end of the current period</li>
-                    <li>Your account will be charged for renewal within 24 hours prior to the end of the current period</li>
-                    <li>You can manage and cancel your subscriptions by going to your account settings on the App Store after purchase</li>
-                </ul>
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Innovative Navigation Solutions</h1>
+            <p>Hev LLC is committed to revolutionizing how people navigate their world. Our flagship product, Pathsight, represents the future of intelligent navigation.</p>
+            <a href="#products" class="btn">Explore Our Products</a>
+        </div>
+    </section>
+
+    <section id="products">
+        <div class="container">
+            <h2 class="section-title">Our Products</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-content">
+                        <h3 class="feature-title">Pathsight</h3>
+                        <p>An innovative navigation app that goes beyond traditional GPS. Pathsight offers intelligent route planning, real-time updates, and seamless integration with ride-sharing services.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-content">
+                        <h3 class="feature-title">AI-Powered Navigation</h3>
+                        <p>Leveraging cutting-edge AI technology to provide smarter routing options, traffic prediction, and personalized travel recommendations based on your preferences.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-content">
+                        <h3 class="feature-title">Premium Subscription</h3>
+                        <p>Unlock advanced features with our premium subscription, including exclusive access to priority routing, enhanced AI capabilities, and ad-free experience.</p>
+                    </div>
+                </div>
             </div>
         </div>
-        
-        <div class="app-divider">🧭 | 🎮 | 🥚</div>
-        
-        <div class="app-section">
-            <h2>🎮 Dot Crush FAQs:</h2>
-            <p>Frequently Asked Questions (FAQs):</p>
-            <ol>
-                <li>
-                    <h2>What is Dot Crush?</h2>
-                    <p>Dot Crush is a fast-paced arcade game where players tap glowing dots to score points. Test your reflexes and compete on global and state-specific leaderboards!</p>
-                </li>
-                <li>
-                    <h2>How do I play?</h2>
-                    <p>Simply tap the glowing dots as they appear on screen. Each game lasts 30 seconds - try to score as many points as possible!</p>
-                </li>
-                <li>
-                    <h2>How does the leaderboard work?</h2>
-                    <p>We maintain both global and state-specific leaderboards. Your location is only used to place your score on the state leaderboard. You can view both leaderboards by tapping the trophy icon.</p>
-                </li>
-                <li>
-                    <h2>How do I remove ads?</h2>
-                    <p>You can remove ads with a one-time purchase. Once purchased, you'll never see ads again. If you've previously purchased ad removal, use the "Restore Purchases" button to restore your purchase on a new device.</p>
-                </li>
-                <li>
-                    <h2>Why was my name rejected?</h2>
-                    <p>To maintain a family-friendly environment, we filter display names for inappropriate content. If your name was rejected, please choose a different name that doesn't contain any inappropriate words.</p>
-                </li>
-                <li>
-                    <h2>How is my privacy protected?</h2>
-                    <p>We only collect your display name and, if you allow it, your state location for the leaderboard. No personal information is required to play the game.</p>
-                </li>
-            </ol>
+    </section>
 
-            <div class="contact">
-                <h2>In-App Purchase Information</h2>
-                <p>Dot Crush offers a single in-app purchase:</p>
-                <ul>
-                    <li><strong>Remove Ads:</strong> One-time purchase of $0.99 to permanently remove all advertisements</li>
-                </ul>
-                <p>Important purchase terms:</p>
-                <ul>
-                    <li>Payment will be charged to your Apple ID account at confirmation of purchase</li>
-                    <li>This is a one-time purchase, not a subscription</li>
-                    <li>Purchase can be restored on other devices using the "Restore Purchases" button</li>
-                </ul>
+    <section id="about" style="background-color: #f0f4f8;">
+        <div class="container">
+            <h2 class="section-title">About Hev LLC</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Our Mission</h3>
+                    <p>At Hev LLC, we're dedicated to creating innovative solutions that make navigation more intuitive, efficient, and personalized. Founded by a team of passionate technologists and navigation experts, we identified a gap in the market for truly intelligent navigation tools.</p>
+                    <p>Our mission is to revolutionize how people navigate their world through cutting-edge technology and thoughtful design. We believe that navigation should be more than just getting from point A to point B—it should be about discovering the best way for you, based on your unique preferences and needs.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Hev LLC Team">
+                </div>
             </div>
         </div>
-        
-        <div class="app-divider">🧭 | 🎮 | 🥚</div>
-        
-        <div class="app-section">
-            <h2>🥚 Eggsplore FAQs:</h2>
-            <p>Frequently Asked Questions (FAQs):</p>
-            <ol>
-                <li>
-                    <h2>How do I create an account?</h2>
-                    <p>To create an account, simply open Eggsplore and enter your phone number. You'll receive a verification code via SMS. Once verified, you can complete your profile by adding your name and location.</p>
-                </li>
-                <li>
-                    <h2>How do I post a listing?</h2>
-                    <p>To post a listing, tap the "+" tab at the bottom of the screen. Fill in your listing details including title, price, quantity, egg type, and description. You can also add photos and set your location. Your phone number must be verified before posting.</p>
-                </li>
-                <li>
-                    <h2>How do I contact a seller?</h2>
-                    <p>When viewing a listing, tap the "Contact Seller" button. You'll be able to message the seller directly through the app to discuss the purchase.</p>
-                </li>
-                <li>
-                    <h2>How do I rate a seller?</h2>
-                    <p>After interacting with a seller, you can rate them by visiting their listing and tapping the "Rate Seller" button. You can provide a rating out of 5 stars and leave a comment about your experience.</p>
-                </li>
-                <li>
-                    <h2>How do I edit or delete my listing?</h2>
-                    <p>To edit or delete your listing, navigate to the listing detail page. If you're the owner, you'll see "Edit" and "Delete" buttons at the bottom of the screen.</p>
-                </li>
-                <li>
-                    <h2>How do I filter listings?</h2>
-                    <p>Use the filters at the top of the home screen to sort by distance, price, or newest. You can also filter by egg type and other characteristics like organic feed and free-range.</p>
-                </li>
-                <li>
-                    <h2>What are Premium features?</h2>
-                    <p>Premium users get the ability to feature their listings, receive push notifications for new listings to get early access, and display a premium badge on their Profile.</p>
-                </li>
-                <li>
-                    <h2>How do I get Premium?</h2>
-                    <p>Premium features can be purchased through the App Store.</p>
-                </li>
-            </ol>
+    </section>
 
-            <div class="contact">
-                <h2>Subscription Information</h2>
-                <p>Eggsplore offers two subscription options:</p>
-                <ul>
-                    <li><strong>Monthly Premium:</strong> Billed monthly, cancel anytime</li>
-                    <li><strong>Annual Premium:</strong> Save 37% with annual billing, cancel anytime</li>
-                </ul>
-                <p>Important subscription terms:</p>
-                <ul>
-                    <li>Payment will be charged to your Apple ID account at confirmation of purchase</li>
-                    <li>Subscription automatically renews unless auto-renewal is turned off at least 24 hours before the end of the current period</li>
-                    <li>Your account will be charged for renewal within 24 hours prior to the end of the current period</li>
-                    <li>You can manage and cancel your subscriptions by going to your account settings on the App Store after purchase</li>
-                </ul>
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-form">
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="border: none; cursor: pointer;">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>123 Innovation Drive, San Francisco, CA 94103, United States</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>contact@hevllc.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Business Hours</h4>
+                            <p>Monday - Friday: 9:00 AM - 5:00 PM PST</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="contact">
-            <h2>Contact Us ✉️:</h2>
-            <p>If you have any further questions or encounter any issues while using any of our apps, please don't hesitate to contact us. You can reach us via email at heverlym@gmail.com. We're here to help and will do our best to assist you as quickly as possible.</p>
-        </div>
-
-        <h1>Privacy Policy 🔒</h1>
-        <p>Last updated: February 11, 2025</p>
-        
-        <p>We take your privacy seriously. This Privacy Policy explains how we collect, use, and protect your information when you use our apps.</p>
-
-        <h2>Information Collection and Use</h2>
-        <p>For Dot Crush, we collect minimal non-personal information. For Pathsight and Eggsplore, we collect:</p>
-        <ul>
-            <li>Phone number (for Eggsplore account verification)</li>
-            <li>Name (for Eggsplore user profile)</li>
-            <li>Location data (for route planning, weather information in Pathsight and listing proximity in Eggsplore)</li>
-            <li>User-provided content (routes, listings, ratings, and messages)</li>
-            <li>Device information for app functionality</li>
-            <li>Purchase information for premium subscriptions</li>
-        </ul>
-
-        <h2>Use of Information</h2>
-        <p>We use the collected information for:</p>
-        <ul>
-            <li>User authentication and account management</li>
-            <li>Route planning and navigation assistance</li>
-            <li>Enabling communication between buyers and sellers (Eggsplore)</li>
-            <li>Providing location-based services</li>
-            <li>Managing premium subscriptions</li>
-            <li>Processing payments through Apple's payment system</li>
-            <li>Improving app functionality and user experience</li>
-            <li>Analytics and debugging</li>
-        </ul>
-
-        <h2>Data Storage and Security</h2>
-        <p>We use Firebase for secure data storage and authentication. All data is encrypted in transit and at rest. We implement industry-standard security measures to protect your information.</p>
-
-        <h2>Third-Party Services</h2>
-        <p>Our apps utilize various third-party services:</p>
-        <ul>
-            <li>Pathsight: Google Gemini API (for AI-powered route generation), OpenWeather API (for weather information), Apple Maps (for navigation). Use of Gemini API features is subject to Google's AI Terms of Service and Acceptable Use Policy.</li>
-            <li>Eggsplore: Firebase (authentication, storage, database), Apple's StoreKit (for in-app purchases)</li>
-            <li>Dot Crush: Firebase (database)</li>
-        </ul>
-
-        <div class="privacy">
-            <h2>Changes to This Privacy Policy</h2>
-            <p>We reserve the right to update or change this Privacy Policy at any time. Any changes will be effective immediately upon posting the updated Privacy Policy on the Apps. Your continued use of the Apps after any changes to this Privacy Policy will constitute your acceptance of such changes.</p>
-        </div>
-
-        <h1>Terms of Service 📜</h1>
-        <p>By downloading or using our apps, you agree to these terms. Please read them carefully.</p>
-
-        <div class="app-section">
-            <h2>1. Acceptance of Terms</h2>
-            <p>By accessing and using Pathsight, Dot Crush, or Eggsplore ("our apps"), you accept and agree to be bound by these Terms of Service.</p>
-
-            <h2>2. App-Specific Terms</h2>
-            
-            <h3>Pathsight</h3>
-            <ul>
-                <li>Premium Subscription Terms:
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Hev LLC</h4>
+                    <p>Innovative navigation solutions for a connected world.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
                     <ul>
-                        <li>Basic subscription: Monthly access to premium features ($2.99/month)</li>
-                        <li>Pro subscription: Monthly access to premium features ($6.99/month)</li>
-                        <li>Subscription automatically renews unless turned off at least 24 hours before the current period ends</li>
-                        <li>Payment will be charged to your Apple ID account</li>
-                        <li>Manage subscriptions through your Apple ID account settings</li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
-                </li>
-                <li>AI-Generated Content: Routes and suggestions are provided as guidance only</li>
-                <li>Location Services: Required for core functionality including route planning and weather information</li>
-                <li>Weather Data: Weather information is provided by OpenWeather API and should be used as reference only</li>
-            </ul>
-
-            <h3>Dot Crush</h3>
-            <ul>
-                <li>In-App Purchase Terms:
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
                     <ul>
-                        <li>Remove Ads: One-time purchase of $0.99 to permanently remove all advertisements</li>
-                        <li>Payment will be charged to your Apple ID account at confirmation of purchase</li>
-                        <li>This is a one-time purchase, not a subscription</li>
-                        <li>Purchase can be restored on other devices using the "Restore Purchases" button</li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="cookie-policy.html">Cookie Policy</a></li>
                     </ul>
-                </li>
-                <li>Leaderboard: We maintain both global and state-specific leaderboards. Your location is only used to place your score on the state leaderboard.</li>
-            </ul>
-
-            <h3>Eggsplore</h3>
-            <ul>
-                <li>Premium Subscription Terms:
-                    <ul>
-                        <li>Monthly subscription: 30-day access to premium features ($1.99/month)</li>
-                        <li>Annual subscription: 365-day access to premium features ($14.99/year, Save 37%)</li>
-                        <li>Subscription automatically renews unless turned off at least 24 hours before the current period ends</li>
-                        <li>Payment will be charged to your Apple ID account</li>
-                        <li>Manage subscriptions through your Apple ID account settings</li>
-                    </ul>
-                </li>
-                <li>User Content: You are responsible for any content you post through the app</li>
-                <li>Location Services: Required for core functionality</li>
-            </ul>
-
-            <h2>3. User Responsibilities</h2>
-            <ul>
-                <li>You must provide accurate information when required</li>
-                <li>You are responsible for maintaining the security of your account</li>
-                <li>You agree not to misuse or abuse our services</li>
-            </ul>
-
-            <h2>4. Intellectual Property</h2>
-            <p>All content and functionality in our apps are owned by us and protected by copyright laws.</p>
-
-            <h2>5. Termination</h2>
-            <p>We reserve the right to terminate or suspend access to our services for violations of these terms.</p>
-
-            <h2>6. Disclaimer of Warranties</h2>
-            <p>Our services are provided "as is" without any warranties, express or implied.</p>
-
-            <h2>7. Limitation of Liability</h2>
-            <p>We shall not be liable for any indirect, incidental, special, consequential, or punitive damages.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Follow Us</h4>
+                    <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                        <a href="#" style="color: white; font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="color: white; font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
+                        <a href="#" style="color: white; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="color: white; font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Hev LLC. All rights reserved.</p>
+            </div>
         </div>
-
-        <div class="footer">
-            <p>Thank you for using our apps!</p>
-        </div>
-    </div>
+    </footer>
 </body>
-</html>
+</html> 
