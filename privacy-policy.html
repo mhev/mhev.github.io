@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hev LLC - App Policies & Support</title>
-    <meta name="description" content="Privacy policies, terms of service, and support information for Hev LLC apps including Pathsight, GymLens, and Eggsplore.">
+    <title>Hev LLC - Privacy Policy</title>
+    <meta name="description" content="Privacy policy for Hev LLC apps including Pathsight, GymLens, and Eggsplore.">
     <style>
         :root {
             --primary: #1a73e8;
@@ -208,15 +208,6 @@
             border-bottom-color: var(--light-gray);
         }
         
-        /* Tab content */
-        .tab-content {
-            display: none;
-        }
-        
-        .tab-content.active {
-            display: block;
-        }
-        
         /* Utility classes */
         .mb-1 {
             margin-bottom: 1rem;
@@ -230,32 +221,12 @@
             margin-top: 2rem;
         }
         
-        .p-2 {
-            padding: 2rem;
-        }
-        
         .highlight {
             background-color: #f0f7ff;
             padding: 1.25rem;
             border-radius: 8px;
             margin-bottom: 1.5rem;
             border-left: 4px solid var(--primary);
-        }
-        
-        .faq-item {
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--light-gray);
-        }
-        
-        .faq-item:last-child {
-            border-bottom: none;
-        }
-        
-        .faq-question {
-            font-weight: 600;
-            color: var(--dark);
-            margin-bottom: 0.5rem;
         }
         
         /* Page navigation */
@@ -292,6 +263,22 @@
             text-decoration: none;
         }
         
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            font-weight: 500;
+            margin: 1rem 0;
+            transition: background-color 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--primary-dark);
+            text-decoration: none;
+        }
+        
         /* Responsive styling */
         @media (max-width: 768px) {
             h1 {
@@ -314,12 +301,12 @@
                 padding: 1.5rem;
             }
             
-            .tabs {
-                flex-wrap: wrap;
+            .page-nav-inner {
+                justify-content: space-between;
             }
             
-            .tab {
-                padding: 0.75rem 1rem;
+            .page-nav a {
+                padding: 0.5rem 1rem;
             }
         }
     </style>
@@ -341,222 +328,21 @@
 
     <div class="container">
         <div class="content">
-            <h1>App Policies & Support</h1>
+            <h1>Privacy Policy</h1>
             
             <div class="page-nav">
                 <div class="page-nav-inner">
+                    <a href="#overview">Overview</a>
                     <a href="#pathsight">Pathsight</a>
                     <a href="#gymlens">GymLens</a>
                     <a href="#eggsplore">Eggsplore</a>
-                    <a href="#privacy">Privacy Policy</a>
-                    <a href="#terms">Terms of Service</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
                 </div>
             </div>
             
-            <!-- Pathsight Section -->
-            <section id="pathsight" class="app-section app-pathsight">
-                <div class="app-header">
-                    <div class="app-icon">🧭</div>
-                    <h2 class="app-title">Pathsight</h2>
-                </div>
-                
-                <div class="tabs">
-                    <div class="tab active" onclick="showTab('pathsight-faq')">FAQ</div>
-                    <div class="tab" onclick="showTab('pathsight-support')">Support</div>
-                </div>
-                
-                <div id="pathsight-faq" class="tab-content active">
-                    <div class="faq-item">
-                        <div class="faq-question">What is Pathsight?</div>
-                        <p>Pathsight is an AI-powered route-planning and navigation assistant that provides detailed, conversational directions and travel insights.</p>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">How do subscriptions work?</div>
-                        <p>We offer a 3-day free trial, then:</p>
-                        <ul>
-                            <li><strong>Monthly</strong> — $3.99</li>
-                            <li><strong>Yearly</strong> — $19.99 (≈ $1.67 / mo)</li>
-                        </ul>
-                        <p>Both plans include unlimited routes, Gemini-powered directions, and route history.</p>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">How do I use AI route planning?</div>
-                        <p>Enter your start and end points; Pathsight's AI generates natural-language directions plus helpful context.</p>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">Can I save my routes?</div>
-                        <p>Yes — subscribers can save favourite routes for later.</p>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">Why might route suggestions vary?</div>
-                        <p>Our AI can consider many factors. For consistency, enable "Main-route-only" mode.</p>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">How accurate is AI-generated content?</div>
-                        <p>While we strive for accuracy, AI suggestions are guidance only. Always verify critical details such as road closures, weather, or local regulations before travelling.</p>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">Does Pathsight guarantee my safety?</div>
-                        <p>No. <strong>Pathsight cannot guarantee 100% safety.</strong> Solo-travel mode provides general tips, but you remain solely responsible for personal safety and decision-making while travelling.</p>
-                    </div>
-                </div>
-                
-                <div id="pathsight-support" class="tab-content">
-                    <div class="highlight">
-                        <h3>Subscription Information</h3>
-                        <ul>
-                            <li><strong>Monthly:</strong> $3.99 / month</li>
-                            <li><strong>Yearly:</strong> $19.99 / year</li>
-                            <li><strong>Free Trial:</strong> 3 days — cancel ≥ 24 h before it ends to avoid charges.</li>
-                        </ul>
-                    </div>
-                    
-                    <p>For support inquiries related to Pathsight, please contact us at <a href="mailto:support@pathsight.com">support@pathsight.com</a>.</p>
-                </div>
-            </section>
-            
-            <!-- GymLens Section -->
-            <section id="gymlens" class="app-section app-gymlens">
-                <div class="app-header">
-                    <div class="app-icon">💪</div>
-                    <h2 class="app-title">GymLens</h2>
-                </div>
-                
-                <div class="tabs">
-                    <div class="tab active" onclick="showTab('gymlens-faq')">FAQ</div>
-                    <div class="tab" onclick="showTab('gymlens-support')">Support</div>
-                </div>
-                
-                <div id="gymlens-faq" class="tab-content active">
-                    <div class="faq-item">
-                        <div class="faq-question">What is GymLens?</div>
-                        <p>GymLens is an AI-powered fitness app that analyzes photos of workout equipment to generate personalized routines based on available gear and your goals.</p>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">How does the subscription work?</div>
-                        <p>We offer:</p>
-                        <ul>
-                            <li>3-day free trial with full access</li>
-                            <li>$4.99 per month after trial</li>
-                            <li>$24.99 per year (~$2.08/mo) after trial</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">How do I use GymLens?</div>
-                        <p>Take/upload a clear photo of your equipment, select targets or limitations, and let GymLens craft your workout.</p>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">What gear is recognized?</div>
-                        <p>Dumbbells, barbells, kettlebells, bands, machines, benches, cardio gear, and more.</p>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">How accurate are the suggestions?</div>
-                        <p>AI follows fitness best practices but is guidance only. Always consult a professional for personalized advice.</p>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">Can I save workouts?</div>
-                        <p>Yes—subscribers can save and track workouts over time.</p>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">What if equipment isn't recognized?</div>
-                        <p>Ensure good lighting and a clear frame. You can also add notes manually before generating.</p>
-                    </div>
-                </div>
-                
-                <div id="gymlens-support" class="tab-content">
-                    <div class="highlight">
-                        <h3>Subscription Information</h3>
-                        <ul>
-                            <li><strong>Monthly:</strong> $4.99 / month (3-day free trial)</li>
-                            <li><strong>Annual:</strong> $24.99 / year (3-day free trial)</li>
-                        </ul>
-                        <p>Your Apple ID will be charged after trial. Manage or cancel in App Store settings at least 24h before renewal.</p>
-                    </div>
-                    
-                    <p>For support inquiries related to GymLens, please contact us at <a href="mailto:heverlym@gmail.com">heverlym@gmail.com</a>.</p>
-                </div>
-            </section>
-            
-            <!-- Eggsplore Section -->
-            <section id="eggsplore" class="app-section app-eggsplore">
-                <div class="app-header">
-                    <div class="app-icon">🥚</div>
-                    <h2 class="app-title">Eggsplore</h2>
-                </div>
-                
-                <div class="tabs">
-                    <div class="tab active" onclick="showTab('eggsplore-faq')">FAQ</div>
-                    <div class="tab" onclick="showTab('eggsplore-support')">Support</div>
-                </div>
-                
-                <div id="eggsplore-faq" class="tab-content active">
-                    <div class="faq-item">
-                        <div class="faq-question">How do I create an account?</div>
-                        <p>To create an account, simply open Eggsplore and enter your phone number. You'll receive a verification code via SMS. Once verified, you can complete your profile by adding your name and location.</p>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">How do I post a listing?</div>
-                        <p>To post a listing, tap the "+" tab at the bottom of the screen. Fill in your listing details including title, price, quantity, egg type, and description. You can also add photos and set your location. Your phone number must be verified before posting.</p>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">How do I contact a seller?</div>
-                        <p>When viewing a listing, tap the "Contact Seller" button. You'll be able to message the seller directly through the app to discuss the purchase.</p>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">How do I filter listings?</div>
-                        <p>Use the filters at the top of the home screen to sort by distance, price, or newest. You can also filter by egg type and other characteristics like organic feed and free-range.</p>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">What are Premium features?</div>
-                        <p>Premium users get the ability to feature their listings, receive push notifications for new listings to get early access, and display a premium badge on their Profile.</p>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">How do I get Premium?</div>
-                        <p>Premium features can be purchased through the App Store.</p>
-                    </div>
-                </div>
-                
-                <div id="eggsplore-support" class="tab-content">
-                    <div class="highlight">
-                        <h3>Subscription Information</h3>
-                        <p>Eggsplore offers two subscription options:</p>
-                        <ul>
-                            <li><strong>Monthly Premium:</strong> Billed monthly, cancel anytime</li>
-                            <li><strong>Annual Premium:</strong> Save 37% with annual billing, cancel anytime</li>
-                        </ul>
-                        <p>Important subscription terms:</p>
-                        <ul>
-                            <li>Payment will be charged to your Apple ID account at confirmation of purchase</li>
-                            <li>Subscription automatically renews unless auto-renewal is turned off at least 24 hours before the end of the current period</li>
-                            <li>Your account will be charged for renewal within 24 hours prior to the end of the current period</li>
-                            <li>You can manage and cancel your subscriptions by going to your account settings on the App Store after purchase</li>
-                        </ul>
-                    </div>
-                    
-                    <p>For support inquiries related to Eggsplore, please contact us at <a href="mailto:heverlym@gmail.com">heverlym@gmail.com</a>.</p>
-                </div>
-            </section>
-            
-            <!-- Privacy Policy Section -->
-            <section id="privacy" class="app-section">
-                <h2>Privacy Policy 🔒</h2>
+            <!-- Main Privacy Policy -->
+            <section id="overview" class="app-section">
+                <h2>Privacy Policy Overview 🔒</h2>
                 <p class="date">Last Updated: July 15, 2023</p>
                 
                 <p>Hev LLC ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our applications: Pathsight, GymLens, and Eggsplore (collectively, the "Services").</p>
@@ -651,6 +437,10 @@
                 <h3>8. Changes to this Privacy Policy</h3>
                 <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date at the top. You are advised to review this Privacy Policy periodically for any changes.</p>
                 
+                <div class="highlight mb-2">
+                    <p>For complete details about our terms of service, please visit our <a href="terms-of-service.html">Terms of Service</a> page.</p>
+                </div>
+                
                 <h3>9. Contact Us</h3>
                 <p>If you have any questions about this Privacy Policy, please contact us at:</p>
                 <p>
@@ -663,122 +453,135 @@
                 </p>
             </section>
             
-            <!-- Terms of Service Section -->
-            <section id="terms" class="app-section">
-                <h2>Terms of Service 📜</h2>
-                <p class="date">Last Updated: July 15, 2023</p>
+            <!-- App-specific privacy sections -->
+            <section id="pathsight" class="app-section app-pathsight">
+                <div class="app-header">
+                    <div class="app-icon">🧭</div>
+                    <h2 class="app-title">Pathsight Privacy Details</h2>
+                </div>
                 
-                <p>Please read these Terms of Service ("Terms") carefully before using Pathsight, GymLens, or Eggsplore mobile applications (collectively, the "Services") operated by Hev LLC ("us", "we", or "our").</p>
+                <p>This section provides specific privacy details for Pathsight, our AI-powered navigation app.</p>
                 
-                <p>Your access to and use of the Services is conditioned on your acceptance of and compliance with these Terms. These Terms apply to all visitors, users, and others who access or use the Services.</p>
-                
-                <p>By accessing or using the Services, you agree to be bound by these Terms. If you disagree with any part of the terms, then you may not access the Services.</p>
-                
-                <h3>1. Use of the Services</h3>
-                
-                <h4>1.1 Eligibility</h4>
-                <p>You must be at least 13 years old to use the Services. By using the Services, you represent and warrant that you are at least 13 years of age and that your use of the Services does not violate any applicable laws or regulations.</p>
-                
-                <h4>1.2 Account Registration</h4>
-                <p>When you create an account with us, you must provide accurate, complete, and current information at all times. Failure to do so constitutes a breach of the Terms, which may result in immediate termination of your account.</p>
-                
-                <h4>1.3 Account Security</h4>
-                <p>You are responsible for safeguarding the password or credentials that you use to access the Services and for any activities or actions under your account. You agree not to disclose your password to any third party. You must notify us immediately upon becoming aware of any breach of security or unauthorized use of your account.</p>
-                
-                <h4>1.4 Acceptable Use</h4>
-                <p>You agree not to use the Services:</p>
+                <h3>Data Collection Specific to Pathsight</h3>
                 <ul>
-                    <li>In any way that violates any applicable national or international law or regulation.</li>
-                    <li>To transmit, or procure the sending of, any advertising or promotional material, including any "junk mail", "chain letter," "spam," or any other similar solicitation.</li>
-                    <li>To impersonate or attempt to impersonate Hev LLC, a Hev LLC employee, another user, or any other person or entity.</li>
-                    <li>To engage in any other conduct that restricts or inhibits anyone's use or enjoyment of the Services, or which, as determined by us, may harm Hev LLC or users of the Services or expose them to liability.</li>
+                    <li><strong>Location Data:</strong> With your permission, we collect precise location data to provide navigation services, route planning, and nearby points of interest information.</li>
+                    <li><strong>Route History:</strong> We store your route history to enable you to access your saved routes.</li>
+                    <li><strong>Search Queries:</strong> Your destination searches and route preferences.</li>
+                    <li><strong>AI Interaction:</strong> We process your inputs with Google Gemini to generate route suggestions and navigation instructions.</li>
+                    <li><strong>Weather Data:</strong> We access weather information via third-party services based on your location to provide weather-informed routing.</li>
                 </ul>
                 
-                <h3>2. Subscription and Payments</h3>
-                
-                <h4>2.1 Subscription Options</h4>
-                <p>We offer both free and paid subscription options for our Services. The features available to you will depend on the subscription tier you select. Each app has its own subscription options:</p>
+                <h3>How We Use Pathsight Data</h3>
                 <ul>
-                    <li><strong>Pathsight:</strong> Monthly ($3.99) and Annual ($19.99) with a 3-day free trial</li>
-                    <li><strong>GymLens:</strong> Monthly ($4.99) and Annual ($24.99) with a 3-day free trial</li>
-                    <li><strong>Eggsplore:</strong> Monthly and Annual Premium subscriptions</li>
+                    <li>Generate personalized navigation routes</li>
+                    <li>Provide real-time travel insights and directions</li>
+                    <li>Offer weather-informed routing suggestions</li>
+                    <li>Save your route history for convenient access</li>
+                    <li>Improve route algorithms and AI suggestions</li>
                 </ul>
                 
-                <h4>2.2 Payment Terms</h4>
-                <p>If you choose a paid subscription, you agree to pay all fees applicable to your subscription plan. We may change the fees for any subscription service at any time, but any price changes will apply to your subscription only after prior notice to you.</p>
-                
-                <h4>2.3 Automatic Renewal</h4>
-                <p>Unless you cancel your subscription before the end of the applicable subscription period, your subscription will automatically renew, and you authorize us to charge your payment method for another subscription period at the then-current rate.</p>
-                
-                <h4>2.4 Cancellation</h4>
-                <p>You may cancel your subscription at any time through your account settings or by contacting us. If you cancel your subscription, you will not receive a refund for the current subscription period, but your subscription will remain active until the end of the current billing cycle.</p>
-                
-                <h4>2.5 Refunds</h4>
-                <p>Refunds will be issued in accordance with applicable laws and at our discretion. Generally, no refunds will be provided for partial subscription periods or for unused portions of a subscription.</p>
-                
-                <h3>3. App-Specific Terms</h3>
-                
-                <h4>3.1 Pathsight</h4>
+                <h3>Third-Party Services for Pathsight</h3>
                 <ul>
-                    <li><strong>AI-Generated Content:</strong> Routes, directions, and suggestions are AI-generated and provided "as is".</li>
-                    <li><strong>Safety Warning:</strong> The use of our Service while operating a vehicle may be distracting and may increase the risk of an accident. You should always follow traffic rules, road signs, and local regulations, which take precedence over any navigation instructions provided by the Service.</li>
-                    <li><strong>No Guarantee of Accuracy:</strong> We make no guarantee regarding the accuracy, reliability, or completeness of the data. Navigation suggestions, estimated travel times, and route information should be used as general guidance only.</li>
+                    <li><strong>Google Gemini API:</strong> Used for AI-powered route generation and direction creation</li>
+                    <li><strong>OpenWeather API:</strong> Provides weather information along routes</li>
+                    <li><strong>Apple Maps:</strong> Used for map visualization and navigation</li>
+                    <li><strong>Apple StoreKit:</strong> Manages subscription purchases</li>
                 </ul>
                 
-                <h4>3.2 GymLens</h4>
-                <ul>
-                    <li><strong>Medical Disclaimer:</strong> Content is for informational purposes only and not medical advice. Always consult a qualified professional. Reliance on Content is at your own risk.</li>
-                    <li><strong>Exercise Safety:</strong> Use the App safely and within your limits. Consult health professionals before new workouts. Ensure proper form and equipment use. Stop any exercise causing pain or discomfort.</li>
-                    <li><strong>Image Processing:</strong> Images are processed securely, not stored long-term unless you save a workout, and never shared externally.</li>
-                </ul>
-                
-                <h4>3.3 Eggsplore</h4>
-                <ul>
-                    <li><strong>User Content:</strong> You are responsible for any content you post through the app.</li>
-                    <li><strong>Transactions:</strong> We are not responsible for transactions between users. Use caution when arranging meetups or transactions.</li>
-                    <li><strong>Phone Number:</strong> Your phone number is used for account verification and is not publicly displayed unless you choose to share it in listings.</li>
-                </ul>
-                
-                <h3>4. Disclaimers</h3>
-                
-                <h4>4.1 "As Is" and "As Available"</h4>
-                <p>Your use of the Services is at your sole risk. The Services are provided on an "AS IS" and "AS AVAILABLE" basis. The Services are provided without warranties of any kind, whether express or implied, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose, non-infringement, or course of performance.</p>
-                
-                <h4>4.2 No Guarantee of Accuracy</h4>
-                <p>Hev LLC and its subsidiaries, affiliates, and its licensors do not warrant that a) the Services will function uninterrupted, secure or available at any particular time or location; b) any errors or defects will be corrected; c) the Services are free of viruses or other harmful components; or d) the results of using the Services will meet your requirements.</p>
-                
-                <h3>5. Limitation of Liability</h3>
-                <p>In no event shall Hev LLC, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from:</p>
-                <ul>
-                    <li>Your access to or use of or inability to access or use the Services.</li>
-                    <li>Any conduct or content of any third party on the Services.</li>
-                    <li>Any content obtained from the Services.</li>
-                    <li>Unauthorized access, use, or alteration of your transmissions or content.</li>
-                </ul>
-                <p>To the maximum extent permitted by applicable law, our total liability to you for any damages shall not exceed the greater of (a) the amounts you paid to us in the six (6) months preceding the event giving rise to the liability or (b) $50.00 USD.</p>
-                
-                <h3>6. Indemnification</h3>
-                <p>You agree to defend, indemnify, and hold harmless Hev LLC and its licensees and licensors, and their employees, contractors, agents, officers, and directors, from and against any and all claims, damages, obligations, losses, liabilities, costs or debt, and expenses (including but not limited to attorney's fees) arising from your use of and access to the Services.</p>
-                
-                <h3>7. Governing Law</h3>
-                <p>These Terms shall be governed and construed in accordance with the laws of the United States of America and the State of California, without regard to its conflict of law provisions.</p>
-                <p>Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect.</p>
-                
-                <h3>8. Changes to Terms</h3>
-                <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.</p>
-                <p>By continuing to access or use our Services after any revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, you are no longer authorized to use the Services.</p>
-                
-                <h3>9. Contact Us</h3>
-                <p>If you have any questions about these Terms, please contact us at:</p>
-                <p>
-                    Hev LLC<br>
-                    123 Innovation Drive<br>
-                    San Francisco, CA 94103<br>
-                    United States<br>
-                    Email: legal@hevllc.com<br>
-                    Phone: +1 (555) 123-4567
-                </p>
+                <div class="highlight">
+                    <p><strong>Safety Note:</strong> Pathsight cannot guarantee 100% safety or accuracy of route suggestions. Always prioritize official traffic regulations and exercise caution when traveling.</p>
+                </div>
             </section>
+            
+            <section id="gymlens" class="app-section app-gymlens">
+                <div class="app-header">
+                    <div class="app-icon">💪</div>
+                    <h2 class="app-title">GymLens Privacy Details</h2>
+                </div>
+                
+                <p>This section provides specific privacy details for GymLens, our AI-powered fitness app.</p>
+                
+                <h3>Data Collection Specific to GymLens</h3>
+                <ul>
+                    <li><strong>Equipment Photos:</strong> Images you take or upload of workout equipment for analysis. These are processed to generate workout recommendations.</li>
+                    <li><strong>Fitness Preferences:</strong> Your fitness goals, limitations, and equipment preferences.</li>
+                    <li><strong>Workout History:</strong> For subscribers, we store your workout history to track progress.</li>
+                    <li><strong>Device Information:</strong> Information about your device to optimize app performance.</li>
+                </ul>
+                
+                <h3>How We Use GymLens Data</h3>
+                <ul>
+                    <li>Analyze equipment photos to identify available gear</li>
+                    <li>Generate personalized workout routines</li>
+                    <li>Track workout history for progress monitoring</li>
+                    <li>Improve exercise recognition algorithms</li>
+                    <li>Enhance workout recommendations based on user feedback</li>
+                </ul>
+                
+                <h3>Image Processing and Storage</h3>
+                <p>Images are processed securely for the purpose of equipment recognition. By default, uploaded images are not stored long-term unless you explicitly save a workout. Images are never shared with third parties or used for purposes other than workout generation and app improvement.</p>
+                
+                <h3>Third-Party Services for GymLens</h3>
+                <ul>
+                    <li><strong>Apple StoreKit:</strong> Manages subscription purchases</li>
+                    <li><strong>CloudKit:</strong> Optional synchronization of workouts across your devices</li>
+                </ul>
+                
+                <div class="highlight">
+                    <p><strong>Health Disclaimer:</strong> GymLens is not a medical device and does not store or process protected health information ("PHI") as defined by HIPAA. Always consult with healthcare professionals before starting any new exercise program.</p>
+                </div>
+            </section>
+            
+            <section id="eggsplore" class="app-section app-eggsplore">
+                <div class="app-header">
+                    <div class="app-icon">🥚</div>
+                    <h2 class="app-title">Eggsplore Privacy Details</h2>
+                </div>
+                
+                <p>This section provides specific privacy details for Eggsplore, our local egg marketplace app.</p>
+                
+                <h3>Data Collection Specific to Eggsplore</h3>
+                <ul>
+                    <li><strong>Phone Number:</strong> Used for account verification via SMS code.</li>
+                    <li><strong>Profile Information:</strong> Your name, location, and any profile details you choose to share.</li>
+                    <li><strong>Listing Data:</strong> Information about eggs you list for sale (descriptions, photos, prices, etc.).</li>
+                    <li><strong>Location Data:</strong> Used to show nearby listings and facilitate local transactions.</li>
+                    <li><strong>Messages:</strong> Communication between buyers and sellers.</li>
+                    <li><strong>Ratings and Reviews:</strong> Feedback about sellers and buyers.</li>
+                </ul>
+                
+                <h3>How We Use Eggsplore Data</h3>
+                <ul>
+                    <li>Verify your identity through phone number verification</li>
+                    <li>Display your listings to potential buyers</li>
+                    <li>Show you listings from sellers in your area</li>
+                    <li>Facilitate communication between buyers and sellers</li>
+                    <li>Process premium subscription payments</li>
+                </ul>
+                
+                <h3>Phone Number Privacy</h3>
+                <p>Your phone number is used for account verification and is not publicly displayed to other users unless you choose to include it in your listings or share it directly with other users. We use industry-standard security measures to protect your phone number.</p>
+                
+                <h3>Third-Party Services for Eggsplore</h3>
+                <ul>
+                    <li><strong>Firebase:</strong> Used for authentication, storage, and database services</li>
+                    <li><strong>Apple StoreKit:</strong> Manages subscription purchases</li>
+                </ul>
+                
+                <div class="highlight">
+                    <p><strong>Transaction Safety:</strong> While we provide the platform for users to connect, we are not responsible for the quality of eggs or transactions between users. We recommend following food safety guidelines and exercising caution when meeting other users for transactions.</p>
+                </div>
+            </section>
+            
+            <div class="app-section">
+                <h2>Additional Resources</h2>
+                <p>For more information about our apps, please visit the following resources:</p>
+                <ul>
+                    <li><a href="terms-of-service.html" class="cta-button">Terms of Service</a></li>
+                    <li><a href="index3.html">Return to Hev LLC Homepage</a></li>
+                    <li><a href="index3.html#contact">Contact Us</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 
@@ -791,38 +594,19 @@
     </footer>
     
     <script>
-        function showTab(tabId) {
-            // Find the parent section
-            const tabContent = document.getElementById(tabId);
-            const section = tabContent.closest('.app-section');
-            
-            // Hide all tab contents in this section
-            const allTabContents = section.querySelectorAll('.tab-content');
-            allTabContents.forEach(tab => tab.classList.remove('active'));
-            
-            // Show the selected tab content
-            tabContent.classList.add('active');
-            
-            // Update tab styling
-            const tabs = section.querySelectorAll('.tab');
-            tabs.forEach(tab => tab.classList.remove('active'));
-            
-            // Find the tab that was clicked and activate it
-            const clickedTabIndex = Array.from(allTabContents).indexOf(tabContent);
-            tabs[clickedTabIndex].classList.add('active');
-        }
-        
         // Smooth scrolling for page navigation
         document.querySelectorAll('.page-nav a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                window.scrollTo({
-                    top: targetElement.offsetTop - 100,
-                    behavior: 'smooth'
-                });
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
     </script>
