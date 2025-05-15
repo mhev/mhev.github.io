@@ -217,6 +217,14 @@
             border-left: 4px solid #ffc107;
         }
         
+        .severe-warning {
+            background-color: #ffebee;
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #f44336;
+        }
+        
         /* Page navigation */
         .page-nav {
             position: sticky;
@@ -267,6 +275,61 @@
             text-decoration: none;
         }
         
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .product-card a {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .product-card-content {
+            padding: 1.25rem;
+        }
+        
+        .product-card h3 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .product-card p {
+            color: var(--gray);
+            margin-bottom: 0.75rem;
+        }
+        
+        .app-store-badge {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+        
+        .app-store-badge:hover {
+            background-color: var(--primary-dark);
+        }
+        
         /* Responsive styling */
         @media (max-width: 768px) {
             h1 {
@@ -303,12 +366,12 @@
     <header>
         <div class="container">
             <nav>
-                <a href="index3.html" class="logo">Hev LLC</a>
+                <a href="index.html" class="logo">Hev LLC</a>
                 <div class="nav-links">
-                    <a href="index3.html">Home</a>
-                    <a href="index3.html#about">About</a>
-                    <a href="index3.html#products">Products</a>
-                    <a href="index3.html#contact">Contact</a>
+                    <a href="index.html">Home</a>
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#products">Products</a>
+                    <a href="index.html#contact">Contact</a>
                 </div>
             </nav>
         </div>
@@ -493,6 +556,20 @@
                 
                 <h3>App-Specific Terms for GymLens</h3>
                 
+                <div class="severe-warning mb-2">
+                    <h4>COMPREHENSIVE LIABILITY WAIVER AND ASSUMPTION OF RISK</h4>
+                    <p><strong>PLEASE READ CAREFULLY:</strong> By using GymLens, you expressly acknowledge and agree that:</p>
+                    <ol>
+                        <li>Exercise and fitness activities involve inherent risks that may result in personal injury, illness, permanent disability, or death.</li>
+                        <li>You voluntarily assume ALL risks associated with using GymLens and performing any exercises or fitness activities suggested by the app, whether known or unknown.</li>
+                        <li>Hev LLC, its owners, officers, employees, agents, and affiliates are NOT responsible for any injuries, accidents, illnesses, damages, or losses that may occur from using GymLens or following any exercise routines, suggestions, or guidance provided through the app.</li>
+                        <li>You hereby RELEASE, WAIVE, DISCHARGE, and COVENANT NOT TO SUE Hev LLC from any and all liability, claims, demands, actions, and causes of action whatsoever arising out of or related to any loss, damage, injury, or death that may be sustained by you while using the app or performing exercises suggested by the app.</li>
+                        <li>This waiver extends to any misrepresentations, negligence, or failures related to equipment identification, exercise recommendations, or fitness guidance provided by the app's AI technology.</li>
+                        <li>You acknowledge that Hev LLC is not providing medical advice and the app is not a substitute for professional medical or fitness advice, diagnosis, or treatment.</li>
+                    </ol>
+                    <p>If you do not agree to these terms, you should not use GymLens.</p>
+                </div>
+                
                 <h4>1. Medical Disclaimer</h4>
                 <p>GymLens content is for informational purposes only and not medical or professional fitness advice. Always consult a qualified healthcare or fitness professional before starting any new exercise program, especially if you have health concerns or medical conditions. Reliance on any Content provided by GymLens is solely at your own risk.</p>
                 
@@ -521,6 +598,7 @@
                     <li>Using proper form and technique during workouts</li>
                     <li>Ensuring equipment is properly set up and safe to use</li>
                     <li>Modifying or skipping exercises that are beyond your capability or comfort level</li>
+                    <li>Any injuries or adverse effects that may result from using the app or performing suggested exercises</li>
                 </ul>
                 
                 <h4>5. Subscription Terms</h4>
@@ -597,13 +675,50 @@
             </section>
             
             <div class="app-section">
-                <h2>Additional Resources</h2>
-                <p>For more information about our apps, please visit the following resources:</p>
-                <ul>
-                    <li><a href="privacy-policy.html" class="cta-button">Privacy Policy</a></li>
-                    <li><a href="index3.html">Return to Hev LLC Homepage</a></li>
-                    <li><a href="index3.html#contact">Contact Us</a></li>
-                </ul>
+                <h2>Our Products</h2>
+                <p>Hev LLC develops innovative apps to help you navigate your world, stay fit, and connect with your community.</p>
+                
+                <div class="products-grid">
+                    <div class="product-card">
+                        <a href="https://apps.apple.com/us/app/pathsight-ai-travel-agent/id6740884888" target="_blank">
+                            <div class="product-card-content">
+                                <h3>Pathsight 🧭</h3>
+                                <p>AI-powered travel agent for personalized route guidance and travel insights.</p>
+                                <span class="app-store-badge">View on App Store</span>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="product-card">
+                        <a href="https://apps.apple.com/us/app/gymlens/id6744256958" target="_blank">
+                            <div class="product-card-content">
+                                <h3>GymLens 💪</h3>
+                                <p>Photo to workout AI generator. Snap gym equipment and get personalized routines.</p>
+                                <span class="app-store-badge">View on App Store</span>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="product-card">
+                        <a href="https://apps.apple.com/us/app/eggsplore/id6739508309" target="_blank">
+                            <div class="product-card-content">
+                                <h3>Eggsplore 🥚</h3>
+                                <p>Local egg marketplace connecting buyers with fresh, farm-to-table eggs.</p>
+                                <span class="app-store-badge">View on App Store</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="highlight">
+                    <h3>Additional Resources</h3>
+                    <p>For more information about our apps, please visit the following resources:</p>
+                    <ul>
+                        <li><a href="privacy-policy.html" class="cta-button">Privacy Policy</a></li>
+                        <li><a href="index.html">Return to Hev LLC Homepage</a></li>
+                        <li><a href="index.html#contact">Contact Us</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -611,7 +726,7 @@
     <footer>
         <div class="container">
             <div class="copyright">
-                <p>&copy; 2023 Hev LLC. All rights reserved.</p>
+                <p>&copy; 2025 Hev LLC. All rights reserved.</p>
             </div>
         </div>
     </footer>
