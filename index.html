@@ -19,8 +19,9 @@
             --light-gray: #cbd5e1;
             --text-light: #e2e8f0;
             --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --gradient-pathsight: linear-gradient(135deg, #14b8a6 0%, #0891b2 100%);
+            --gradient-gymlens: linear-gradient(135deg, #10b981 0%, #6b7280 100%);
+            --gradient-eggsplore: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
         }
         
         * {
@@ -204,20 +205,28 @@
             box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
         }
         
-        .btn-secondary {
-            background: var(--gradient-2);
+        .btn-pathsight {
+            background: var(--gradient-pathsight);
         }
         
-        .btn-secondary:hover {
-            box-shadow: 0 10px 25px rgba(245, 87, 108, 0.4);
+        .btn-pathsight:hover {
+            box-shadow: 0 10px 25px rgba(20, 184, 166, 0.4);
         }
         
-        .btn-accent {
-            background: var(--gradient-3);
+        .btn-gymlens {
+            background: var(--gradient-gymlens);
         }
         
-        .btn-accent:hover {
-            box-shadow: 0 10px 25px rgba(79, 172, 254, 0.4);
+        .btn-gymlens:hover {
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+        }
+        
+        .btn-eggsplore {
+            background: var(--gradient-eggsplore);
+        }
+        
+        .btn-eggsplore:hover {
+            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.4);
         }
         
         section {
@@ -317,13 +326,7 @@
             transform: scale(1.1);
         }
         
-        .placeholder-text {
-            color: var(--light-gray);
-            font-size: 0.9rem;
-            text-align: center;
-            z-index: 2;
-            position: relative;
-        }
+
         
         .feature-content {
             padding: 2rem;
@@ -623,37 +626,34 @@
             <div class="features">
                 <div class="feature-card">
                     <div class="feature-image">
-                        <!-- Screenshot will go here -->
-                        <div class="placeholder-text">📱 Pathsight Screenshot Coming Soon</div>
+                        <img src="path1.png" alt="Pathsight App Screenshot">
                     </div>
                     <div class="feature-content">
                         <h3 class="feature-title">Pathsight 🧭</h3>
                         <p class="feature-description">AI-powered travel agent for personalized route guidance and travel insights. Get intelligent recommendations for your journeys.</p>
-                        <a href="https://apps.apple.com/us/app/pathsight-ai-travel-agent/id6740884888" target="_blank" class="btn">View on App Store</a>
+                        <a href="https://apps.apple.com/us/app/pathsight-ai-travel-agent/id6740884888" target="_blank" class="btn btn-pathsight">View on App Store</a>
                     </div>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-image">
-                        <!-- Screenshot will go here -->
-                        <div class="placeholder-text">📱 GymLens Screenshot Coming Soon</div>
+                        <img src="gym1.png" alt="GymLens App Screenshot">
                     </div>
                     <div class="feature-content">
                         <h3 class="feature-title">GymLens 💪</h3>
                         <p class="feature-description">Photo to workout AI generator. Snap gym equipment and get personalized routines tailored to your fitness goals.</p>
-                        <a href="https://apps.apple.com/us/app/gymlens/id6744256958" target="_blank" class="btn btn-secondary">View on App Store</a>
+                        <a href="https://apps.apple.com/us/app/gymlens/id6744256958" target="_blank" class="btn btn-gymlens">View on App Store</a>
                     </div>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-image">
-                        <!-- Screenshot will go here -->
-                        <div class="placeholder-text">📱 Eggsplore Screenshot Coming Soon</div>
+                        <img src="egg1.png" alt="Eggsplore App Screenshot">
                     </div>
                     <div class="feature-content">
                         <h3 class="feature-title">Eggsplore 🥚</h3>
                         <p class="feature-description">Local egg marketplace connecting buyers with fresh, farm-to-table eggs from trusted local producers.</p>
-                        <a href="https://apps.apple.com/us/app/eggsplore/id6739508309" target="_blank" class="btn btn-accent">View on App Store</a>
+                        <a href="https://apps.apple.com/us/app/eggsplore/id6739508309" target="_blank" class="btn btn-eggsplore">View on App Store</a>
                     </div>
                 </div>
             </div>
@@ -666,8 +666,8 @@
             <div class="about-content">
                 <div class="about-text">
                     <h3>Our Mission</h3>
-                    <p>At Hev LLC, we're dedicated to creating innovative solutions that make navigation more intuitive, efficient, and personalized. Founded by a team of passionate technologists and navigation experts, we identified a gap in the market for truly intelligent navigation tools.</p>
-                    <p>Our mission is to revolutionize how people navigate their world through cutting-edge technology and thoughtful design. We believe that navigation should be more than just getting from point A to point B—it should be about discovering the best way for you, based on your unique preferences and needs.</p>
+                    <p>At Hev LLC, we're dedicated to adapting to the rapidly evolving digital landscape by harnessing the power of artificial intelligence to solve real-world problems. Founded by a team of passionate technologists and AI enthusiasts, we develop innovative mobile solutions that make everyday tasks more intelligent and intuitive.</p>
+                    <p>Our mission is to bridge the gap between cutting-edge AI technology and practical applications that enhance people's daily lives. From AI-powered navigation and fitness guidance to smart marketplace solutions, we believe in creating technology that truly understands and adapts to the modern world and its challenges.</p>
                 </div>
                 <div class="about-image">
                     <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Hev LLC Team">
@@ -706,28 +706,14 @@
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <h4>Address</h4>
-                            <p>123 Innovation Drive, San Francisco, CA 94103, United States</p>
+                            <p>Austin, TX</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h4>Email</h4>
-                            <p>contact@hevllc.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone-alt"></i>
-                        <div>
-                            <h4>Phone</h4>
-                            <p>+1 (555) 123-4567</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-clock"></i>
-                        <div>
-                            <h4>Business Hours</h4>
-                            <p>Monday - Friday: 9:00 AM - 5:00 PM PST</p>
+                            <p>michael@hevllc.com</p>
                         </div>
                     </div>
                 </div>
