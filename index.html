@@ -295,7 +295,7 @@
         
         .feature-image {
             width: 100%;
-            height: 250px;
+            height: 320px;
             background: var(--dark-tertiary);
             display: flex;
             align-items: center;
@@ -315,13 +315,7 @@
             opacity: 0.1;
         }
         
-        .feature-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-        
+        .feature-image img,
         .feature-image video {
             width: 100%;
             height: 100%;
@@ -338,12 +332,12 @@
         }
         
         .feature-card:hover .feature-image img {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
         
         .feature-card:hover .feature-image video {
             opacity: 1;
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
         
 
