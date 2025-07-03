@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hev LLC - Innovative Navigation Solutions</title>
-    <meta name="description" content="Hev LLC is a technology company specializing in innovative navigation solutions, including Pathsight - a revolutionary navigation app.">
+    <title>Hev - AI Apps</title>
+    <meta name="description" content="Hev develops AI-powered mobile apps including Pathsight (AI travel agent), GymLens (photo to workout AI), and Eggsplore (local egg marketplace).">
     <style>
         :root {
             --primary: #6366f1;
@@ -315,14 +315,28 @@
             opacity: 0.1;
         }
         
-        .feature-image img {
+        .feature-image img,
+        .feature-image video {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.3s ease;
         }
         
+        .feature-image video {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+        }
+        
         .feature-card:hover .feature-image img {
+            transform: scale(1.1);
+        }
+        
+        .feature-card:hover .feature-image video {
+            opacity: 1;
             transform: scale(1.1);
         }
         
@@ -630,9 +644,13 @@
             <p class="section-subtitle">Hev LLC develops innovative apps to help you navigate your world, stay fit, and connect with your community.</p>
             
             <div class="features">
-                <div class="feature-card">
+                <div class="feature-card" data-app="pathsight">
                     <div class="feature-image">
                         <img src="path1.png" alt="Pathsight App Screenshot">
+                        <video muted loop preload="metadata">
+                            <source src="pathsight-demo.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                     <div class="feature-content">
                         <h3 class="feature-title">Pathsight 🧭</h3>
@@ -641,9 +659,13 @@
                     </div>
                 </div>
                 
-                <div class="feature-card">
+                <div class="feature-card" data-app="gymlens">
                     <div class="feature-image">
                         <img src="gym1.png" alt="GymLens App Screenshot">
+                        <video muted loop preload="metadata">
+                            <source src="gymlens-demo.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                     <div class="feature-content">
                         <h3 class="feature-title">GymLens 💪</h3>
@@ -652,9 +674,13 @@
                     </div>
                 </div>
                 
-                <div class="feature-card">
+                <div class="feature-card" data-app="eggsplore">
                     <div class="feature-image">
                         <img src="egg1.png" alt="Eggsplore App Screenshot">
+                        <video muted loop preload="metadata">
+                            <source src="eggsplore-demo.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                     <div class="feature-content">
                         <h3 class="feature-title">Eggsplore 🥚</h3>
@@ -768,5 +794,30 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Video hover functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const featureCards = document.querySelectorAll('.feature-card');
+            
+            featureCards.forEach(card => {
+                const video = card.querySelector('video');
+                
+                if (video) {
+                    card.addEventListener('mouseenter', function() {
+                        video.currentTime = 0; // Start from beginning
+                        video.play().catch(e => {
+                            console.log('Video play failed:', e);
+                        });
+                    });
+                    
+                    card.addEventListener('mouseleave', function() {
+                        video.pause();
+                        video.currentTime = 0; // Reset to beginning
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html> 
