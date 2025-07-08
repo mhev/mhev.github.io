@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hev - AI Apps</title>
-    <meta name="description" content="Hev develops AI-powered mobile apps including Pathsight (AI travel agent), GymLens (photo to workout AI), and Eggsplore (local egg marketplace).">
+    <meta name="description" content="Hev develops AI-powered mobile apps including Pathsight (AI travel agent), GymLens (photo to workout AI), Eggsplore (local egg marketplace), and Martina (AI route optimizer for pet visits).">
     <style>
         :root {
             --primary: #6366f1;
@@ -22,6 +22,7 @@
             --gradient-pathsight: linear-gradient(135deg, #14b8a6 0%, #0891b2 100%);
             --gradient-gymlens: linear-gradient(135deg, #10b981 0%, #6b7280 100%);
             --gradient-eggsplore: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+            --gradient-martina: linear-gradient(135deg, #bed3c4 0%, #a3c4b1 100%);
         }
         
         * {
@@ -227,6 +228,14 @@
         
         .btn-eggsplore:hover {
             box-shadow: 0 10px 25px rgba(245, 158, 11, 0.4);
+        }
+        
+        .btn-martina {
+            background: var(--gradient-martina);
+        }
+        
+        .btn-martina:hover {
+            box-shadow: 0 10px 25px rgba(190, 211, 196, 0.4);
         }
         
         section {
@@ -641,7 +650,7 @@
     <section id="products">
         <div class="container">
             <h2 class="section-title">Our Products</h2>
-            <p class="section-subtitle">Hev LLC develops innovative apps to help you navigate your world, stay fit, and connect with your community.</p>
+            <p class="section-subtitle">Hev LLC develops innovative apps to help you navigate your world, stay fit, connect with your community, and optimize your routes.</p>
             
             <div class="features">
                 <div class="feature-card" data-app="pathsight">
@@ -686,6 +695,21 @@
                         <h3 class="feature-title">Eggsplore 🥚</h3>
                         <p class="feature-description">Local egg marketplace connecting buyers with fresh, farm-to-table eggs from trusted local producers.</p>
                         <a href="https://apps.apple.com/us/app/eggsplore/id6739508309" target="_blank" class="btn btn-eggsplore">View on App Store</a>
+                    </div>
+                </div>
+                
+                <div class="feature-card" data-app="martina">
+                    <div class="feature-image">
+                        <img src="martina1.png" alt="Martina App Screenshot">
+                        <video muted loop preload="metadata">
+                            <source src="martina-demo.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Martina 🐕</h3>
+                        <p class="feature-description">AI optimizer app for routes between pet visits, helping pet sitters get to their visits in the best possible time across multiple locations.</p>
+                        <a href="#" target="_blank" class="btn btn-martina">View on App Store</a>
                     </div>
                 </div>
             </div>
