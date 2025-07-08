@@ -1,0 +1,21 @@
+{
+    "name": "Hev AI - Smarter Apps for Everyday Life",
+    "short_name": "Hev AI",
+    "description": "Intelligent mobile apps that simplify your day",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#191D2E",
+    "theme_color": "#7F57FF",
+    "icons": [
+        {
+            "src": "/favicon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/favicon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+} 
