@@ -36,6 +36,7 @@
             --gradient-pathsight: linear-gradient(135deg, #14b8a6 0%, #0891b2 100%);
             --gradient-gymlens: linear-gradient(135deg, #10b981 0%, #6b7280 100%);
             --gradient-eggsplore: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+            --gradient-polly: linear-gradient(135deg, #FF6B6B 0%, #FF8E8E 100%);
             --gradient-martina: linear-gradient(135deg, #bed3c4 0%, #a3c4b1 100%);
         }
         
@@ -349,17 +350,35 @@
             box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
         }
         
-        .btn-pathsight,
-        .btn-gymlens,
-        .btn-eggsplore,
+        .btn-pathsight {
+            background: var(--gradient-pathsight);
+            border-color: #14b8a6;
+        }
+        
+        .btn-gymlens {
+            background: var(--gradient-gymlens);
+            border-color: #10b981;
+        }
+        
+        .btn-eggsplore {
+            background: var(--gradient-eggsplore);
+            border-color: #f59e0b;
+        }
+        
+        .btn-polly {
+            background: var(--gradient-polly);
+            border-color: #FF6B6B;
+        }
+        
         .btn-martina {
-            background: var(--gradient-1);
-            border-color: var(--cta-color);
+            background: var(--gradient-martina);
+            border-color: #bed3c4;
         }
         
         .btn-pathsight:hover,
         .btn-gymlens:hover,
         .btn-eggsplore:hover,
+        .btn-polly:hover,
         .btn-martina:hover {
             transform: translateY(-4px);
             box-shadow: 0 10px 30px rgba(127, 87, 255, 0.4);
@@ -1055,6 +1074,31 @@
                             <li>Community-driven ratings</li>
                         </ul>
                         <a href="https://apps.apple.com/us/app/eggsplore/id6739508309" target="_blank" class="btn btn-eggsplore">View on App Store</a>
+                    </div>
+                </div>
+                
+                <div class="feature-card" data-app="polly">
+                    <div class="feature-image">
+                        <img src="polly1.png" alt="Polly Chrome Extension Screenshot">
+                        <video muted loop preload="metadata">
+                            <source src="polly-demo.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="feature-content">
+                        <div class="feature-tags">
+                            <span class="feature-tag">Chrome</span>
+                            <span class="feature-tag">AI</span>
+                            <span class="feature-tag">Filter</span>
+                        </div>
+                        <h3 class="feature-title">Polly 🐱</h3>
+                        <p class="feature-subtitle">Replace political content with kitten facts</p>
+                        <ul class="feature-bullets">
+                            <li>Filter political content across all websites</li>
+                            <li>Replace with adorable kitten facts and images</li>
+                            <li>Maintain political neutrality and balance</li>
+                        </ul>
+                        <a href="https://chrome.google.com/webstore/detail/polly/your-extension-id" target="_blank" class="btn btn-polly">Add to Chrome</a>
                     </div>
                 </div>
                 
