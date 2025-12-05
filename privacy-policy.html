@@ -349,12 +349,12 @@
             <div class="page-nav">
                 <div class="page-nav-inner">
                     <a href="#overview">Overview</a>
-                    <a href="#pathsight">Pathsight</a>
+                    <a href="#boozly">Boozly</a>
                     <a href="#gymlens">GymLens</a>
+                    <a href="#pathsight">Pathsight</a>
+                    <a href="#martina">Martina</a>
                     <a href="#eggsplore">Eggsplore</a>
                     <a href="#poligone">Poli-gone</a>
-                    <a href="#martina">Martina</a>
-                    <a href="#boozly">Boozly</a>
                     <a href="/terms-of-service">Terms of Service</a>
                     <a href="/cookie-policy">Cookie Policy</a>
                 </div>
@@ -481,42 +481,71 @@
             </section>
             
             <!-- App-specific privacy sections -->
-            <section id="pathsight" class="app-section app-pathsight">
+            <section id="boozly" class="app-section app-boozly">
                 <div class="app-header">
-                    <div class="app-icon">🧭</div>
-                    <h2 class="app-title">Pathsight Privacy Details</h2>
+                    <div class="app-icon">🥃</div>
+                    <h2 class="app-title">Boozly Privacy Details</h2>
                 </div>
                 
-                <p>This section provides specific privacy details for Pathsight, our AI-powered navigation app.</p>
+                <p>This section provides specific privacy details for Boozly, our AI-powered cocktail recipe suggestion app.</p>
                 
-                <h3>Data Collection Specific to Pathsight</h3>
+                <h3>Data Collection Specific to Boozly</h3>
                 <ul>
-                    <li><strong>Location Data:</strong> With your permission, we collect precise location data to provide navigation services, route planning, and nearby points of interest information.</li>
-                    <li><strong>Route History:</strong> We store your route history to enable you to access your saved routes.</li>
-                    <li><strong>Search Queries:</strong> Your destination searches and route preferences.</li>
-                    <li><strong>AI Interaction:</strong> We process your inputs with Google Gemini to generate route suggestions and navigation instructions.</li>
-                    <li><strong>Weather Data:</strong> We access weather information via third-party services based on your location to provide weather-informed routing.</li>
+                    <li><strong>Bar/Shelf Photos:</strong> Images you take or upload of your home bar, liquor shelf, or bottles for analysis. These are processed to identify ingredients and generate cocktail suggestions.</li>
+                    <li><strong>Saved Recipes:</strong> Cocktail recipes you choose to save are stored locally on your device.</li>
+                    <li><strong>Usage Data:</strong> Anonymous usage metrics to track free scan limits and improve the app experience.</li>
+                    <li><strong>Subscription Information:</strong> For subscribers, we process subscription status through Apple's StoreKit.</li>
+                    <li><strong>Device Information:</strong> Basic device information for app optimization and crash reporting.</li>
                 </ul>
                 
-                <h3>How We Use Pathsight Data</h3>
+                <h3>How We Use Boozly Data</h3>
                 <ul>
-                    <li>Generate personalized navigation routes</li>
-                    <li>Provide real-time travel insights and directions</li>
-                    <li>Offer weather-informed routing suggestions</li>
-                    <li>Save your route history for convenient access</li>
-                    <li>Improve route algorithms and AI suggestions</li>
+                    <li>Analyze photos of your bar to identify bottles, spirits, mixers, and ingredients</li>
+                    <li>Generate personalized cocktail recipe suggestions based on identified ingredients</li>
+                    <li>Store your saved recipes locally for convenient access</li>
+                    <li>Track usage limits for free users to prevent API abuse</li>
+                    <li>Process and manage subscription purchases</li>
+                    <li>Improve our ingredient recognition and recipe recommendation algorithms</li>
                 </ul>
                 
-                <h3>Third-Party Services for Pathsight</h3>
+                <h3>Image Processing and Storage</h3>
+                <p>Photos you take or upload are sent securely to OpenAI's API for analysis to identify bottles and ingredients. Images are processed in real-time and are not stored permanently on our servers. OpenAI processes images according to their privacy policy and data usage terms. We do not use your images for training purposes or share them with any other third parties.</p>
+                
+                <h3>Local Data Storage</h3>
+                <p>Saved recipes and usage tracking data are stored locally on your device using secure storage mechanisms (Keychain for usage data, UserDefaults for recipes). This data persists across app updates but can be cleared by uninstalling the app.</p>
+                
+                <h3>Third-Party Services for Boozly</h3>
                 <ul>
-                    <li><strong>Google Gemini API:</strong> Used for AI-powered route generation and direction creation</li>
-                    <li><strong>OpenWeather API:</strong> Provides weather information along routes</li>
-                    <li><strong>Apple Maps:</strong> Used for map visualization and navigation</li>
-                    <li><strong>Apple StoreKit:</strong> Manages subscription purchases</li>
+                    <li><strong>OpenAI API:</strong> Used for AI-powered image analysis to identify bottles and ingredients, and to generate cocktail recipe suggestions</li>
+                    <li><strong>Apple StoreKit:</strong> Manages subscription purchases, free trials, and payment processing</li>
+                </ul>
+                
+                <h3>Age Requirement and Responsible Use</h3>
+                <p>Boozly is intended for users of legal drinking age in their respective jurisdictions. By using Boozly, you confirm that you are of legal drinking age in your country or region. The app includes an age verification gate that requires users to confirm they are of legal drinking age before accessing the app's features.</p>
+                
+                <div class="highlight">
+                    <p><strong>Important Alcohol-Related Disclaimers:</strong></p>
+                    <ul>
+                        <li><strong>Age Restriction:</strong> Boozly is strictly intended for adults of legal drinking age (21+ in the United States, or the legal drinking age in your jurisdiction). We do not promote, encourage, or condone underage drinking.</li>
+                        <li><strong>Drink Responsibly:</strong> We encourage all users to consume alcohol responsibly and in moderation. Never drink and drive. Know your limits.</li>
+                        <li><strong>No Alcohol Sales:</strong> Boozly does not sell, distribute, or facilitate the purchase of alcohol. We only provide cocktail recipe suggestions based on ingredients you already own.</li>
+                        <li><strong>Health Considerations:</strong> If you are pregnant, nursing, taking medications, or have health conditions affected by alcohol consumption, please consult a healthcare professional before consuming alcoholic beverages.</li>
+                        <li><strong>Recipe Accuracy:</strong> While we strive to provide accurate cocktail recipes, we cannot guarantee the accuracy of all recipes. Users should use their own judgment when preparing and consuming cocktails.</li>
+                        <li><strong>No Liability:</strong> Hev LLC is not responsible for any consequences resulting from the use of recipes provided by Boozly, including but not limited to overconsumption, allergic reactions, or any harm caused by alcohol consumption.</li>
+                    </ul>
+                </div>
+                
+                <h3>Data Retention</h3>
+                <p>We retain your data only as long as necessary to provide our services:</p>
+                <ul>
+                    <li><strong>Photos:</strong> Processed in real-time and not stored permanently</li>
+                    <li><strong>Saved Recipes:</strong> Stored locally until you delete them or uninstall the app</li>
+                    <li><strong>Usage Data:</strong> Stored in device Keychain to persist across reinstalls for abuse prevention</li>
+                    <li><strong>Subscription Data:</strong> Managed by Apple and retained according to their policies</li>
                 </ul>
                 
                 <div class="highlight">
-                    <p><strong>Safety Note:</strong> Pathsight cannot guarantee 100% safety or accuracy of route suggestions. Always prioritize official traffic regulations and exercise caution when traveling.</p>
+                    <p><strong>Your Responsibility:</strong> By using Boozly, you acknowledge that you are solely responsible for your alcohol consumption decisions. Boozly provides recipe suggestions only and does not encourage excessive drinking or any illegal activity related to alcohol.</p>
                 </div>
             </section>
             
@@ -556,6 +585,96 @@
                 
                 <div class="highlight">
                     <p><strong>Health Disclaimer:</strong> GymLens is not a medical device and does not store or process protected health information ("PHI") as defined by HIPAA. Always consult with healthcare professionals before starting any new exercise program.</p>
+                </div>
+            </section>
+            
+            <section id="pathsight" class="app-section app-pathsight">
+                <div class="app-header">
+                    <div class="app-icon">🧭</div>
+                    <h2 class="app-title">Pathsight Privacy Details</h2>
+                </div>
+                
+                <p>This section provides specific privacy details for Pathsight, our AI-powered navigation app.</p>
+                
+                <h3>Data Collection Specific to Pathsight</h3>
+                <ul>
+                    <li><strong>Location Data:</strong> With your permission, we collect precise location data to provide navigation services, route planning, and nearby points of interest information.</li>
+                    <li><strong>Route History:</strong> We store your route history to enable you to access your saved routes.</li>
+                    <li><strong>Search Queries:</strong> Your destination searches and route preferences.</li>
+                    <li><strong>AI Interaction:</strong> We process your inputs with Google Gemini to generate route suggestions and navigation instructions.</li>
+                    <li><strong>Weather Data:</strong> We access weather information via third-party services based on your location to provide weather-informed routing.</li>
+                </ul>
+                
+                <h3>How We Use Pathsight Data</h3>
+                <ul>
+                    <li>Generate personalized navigation routes</li>
+                    <li>Provide real-time travel insights and directions</li>
+                    <li>Offer weather-informed routing suggestions</li>
+                    <li>Save your route history for convenient access</li>
+                    <li>Improve route algorithms and AI suggestions</li>
+                </ul>
+                
+                <h3>Third-Party Services for Pathsight</h3>
+                <ul>
+                    <li><strong>Google Gemini API:</strong> Used for AI-powered route generation and direction creation</li>
+                    <li><strong>OpenWeather API:</strong> Provides weather information along routes</li>
+                    <li><strong>Apple Maps:</strong> Used for map visualization and navigation</li>
+                    <li><strong>Apple StoreKit:</strong> Manages subscription purchases</li>
+                </ul>
+                
+                <div class="highlight">
+                    <p><strong>Safety Note:</strong> Pathsight cannot guarantee 100% safety or accuracy of route suggestions. Always prioritize official traffic regulations and exercise caution when traveling.</p>
+                </div>
+            </section>
+            
+            <section id="martina" class="app-section app-martina">
+                <div class="app-header">
+                    <div class="app-icon">🐾</div>
+                    <h2 class="app-title">Martina Privacy Details</h2>
+                </div>
+                
+                <p>This section provides specific privacy details for Martina, our professional pet care scheduling and route management app.</p>
+                
+                <h3>Data Collection Specific to Martina</h3>
+                <ul>
+                    <li><strong>Pet Information:</strong> Names, service types, and care requirements for pets you serve.</li>
+                    <li><strong>Client Data:</strong> Client names, addresses, contact information, and service history.</li>
+                    <li><strong>Visit Schedules:</strong> Appointment times, service types, duration, and completion status.</li>
+                    <li><strong>Location Data:</strong> Client addresses, your home base location, and route information for navigation and optimization.</li>
+                    <li><strong>Business Analytics:</strong> Visit completion metrics, route efficiency data, and service statistics.</li>
+                    <li><strong>Route History:</strong> Optimized routes, travel patterns, and navigation preferences.</li>
+                </ul>
+                
+                <h3>How We Use Martina Data</h3>
+                <ul>
+                    <li>Schedule and organize pet care visits</li>
+                    <li>Generate optimized routes for efficient travel between clients</li>
+                    <li>Store client and pet information for ongoing service relationships</li>
+                    <li>Track visit completion and service history</li>
+                    <li>Provide navigation assistance to client locations</li>
+                    <li>Enable data export for business record-keeping</li>
+                    <li>Improve route optimization algorithms</li>
+                </ul>
+                
+                <h3>Professional Data Protection</h3>
+                <p>We understand that as a professional pet care provider, you handle sensitive client information. All data is stored locally on your device with optional iCloud backup. Client information, pet details, and business data are never shared with third parties or used for marketing purposes. You maintain complete control over your business data.</p>
+                
+                <h3>Location Privacy</h3>
+                <p>Location data is used exclusively for navigation and route optimization purposes. We do not track your location when the app is not in use. Your home base location and client addresses are stored securely and are only accessed when providing routing services.</p>
+                
+                <h3>Third-Party Services for Martina</h3>
+                <ul>
+                    <li><strong>Google Gemini API:</strong> Used for AI-powered route optimization and scheduling suggestions</li>
+                    <li><strong>Apple Maps:</strong> Provides navigation services and real-time traffic information</li>
+                    <li><strong>iCloud:</strong> Optional backup and synchronization of your data across devices</li>
+                    <li><strong>Apple StoreKit:</strong> Manages app purchases (when applicable)</li>
+                </ul>
+                
+                <h3>Data Export and Portability</h3>
+                <p>You can export your scheduling data, client information, and visit history at any time through the app's export functionality. This ensures you always have access to your business records and can transfer data to other systems as needed.</p>
+                
+                <div class="highlight">
+                    <p><strong>Business Continuity:</strong> Martina is designed to support your professional pet care business. Your data remains under your control, with local storage and optional cloud backup ensuring your business information is always accessible and secure.</p>
                 </div>
             </section>
             
@@ -649,125 +768,6 @@
                 
                 <div class="highlight">
                     <p><strong>Privacy Commitment:</strong> Poli-gone does not track your browsing habits, collect personal information, or share your data with third parties. All processing happens locally in your browser, and we maintain strict privacy controls to protect your online experience.</p>
-                </div>
-            </section>
-            
-            <section id="martina" class="app-section app-martina">
-                <div class="app-header">
-                    <div class="app-icon">🐾</div>
-                    <h2 class="app-title">Martina Privacy Details</h2>
-                </div>
-                
-                <p>This section provides specific privacy details for Martina, our professional pet care scheduling and route management app.</p>
-                
-                <h3>Data Collection Specific to Martina</h3>
-                <ul>
-                    <li><strong>Pet Information:</strong> Names, service types, and care requirements for pets you serve.</li>
-                    <li><strong>Client Data:</strong> Client names, addresses, contact information, and service history.</li>
-                    <li><strong>Visit Schedules:</strong> Appointment times, service types, duration, and completion status.</li>
-                    <li><strong>Location Data:</strong> Client addresses, your home base location, and route information for navigation and optimization.</li>
-                    <li><strong>Business Analytics:</strong> Visit completion metrics, route efficiency data, and service statistics.</li>
-                    <li><strong>Route History:</strong> Optimized routes, travel patterns, and navigation preferences.</li>
-                </ul>
-                
-                <h3>How We Use Martina Data</h3>
-                <ul>
-                    <li>Schedule and organize pet care visits</li>
-                    <li>Generate optimized routes for efficient travel between clients</li>
-                    <li>Store client and pet information for ongoing service relationships</li>
-                    <li>Track visit completion and service history</li>
-                    <li>Provide navigation assistance to client locations</li>
-                    <li>Enable data export for business record-keeping</li>
-                    <li>Improve route optimization algorithms</li>
-                </ul>
-                
-                <h3>Professional Data Protection</h3>
-                <p>We understand that as a professional pet care provider, you handle sensitive client information. All data is stored locally on your device with optional iCloud backup. Client information, pet details, and business data are never shared with third parties or used for marketing purposes. You maintain complete control over your business data.</p>
-                
-                <h3>Location Privacy</h3>
-                <p>Location data is used exclusively for navigation and route optimization purposes. We do not track your location when the app is not in use. Your home base location and client addresses are stored securely and are only accessed when providing routing services.</p>
-                
-                <h3>Third-Party Services for Martina</h3>
-                <ul>
-                    <li><strong>Google Gemini API:</strong> Used for AI-powered route optimization and scheduling suggestions</li>
-                    <li><strong>Apple Maps:</strong> Provides navigation services and real-time traffic information</li>
-                    <li><strong>iCloud:</strong> Optional backup and synchronization of your data across devices</li>
-                    <li><strong>Apple StoreKit:</strong> Manages app purchases (when applicable)</li>
-                </ul>
-                
-                <h3>Data Export and Portability</h3>
-                <p>You can export your scheduling data, client information, and visit history at any time through the app's export functionality. This ensures you always have access to your business records and can transfer data to other systems as needed.</p>
-                
-                <div class="highlight">
-                    <p><strong>Business Continuity:</strong> Martina is designed to support your professional pet care business. Your data remains under your control, with local storage and optional cloud backup ensuring your business information is always accessible and secure.</p>
-                </div>
-            </section>
-            
-            <section id="boozly" class="app-section app-boozly">
-                <div class="app-header">
-                    <div class="app-icon">🥃</div>
-                    <h2 class="app-title">Boozly Privacy Details</h2>
-                </div>
-                
-                <p>This section provides specific privacy details for Boozly, our AI-powered cocktail recipe suggestion app.</p>
-                
-                <h3>Data Collection Specific to Boozly</h3>
-                <ul>
-                    <li><strong>Bar/Shelf Photos:</strong> Images you take or upload of your home bar, liquor shelf, or bottles for analysis. These are processed to identify ingredients and generate cocktail suggestions.</li>
-                    <li><strong>Saved Recipes:</strong> Cocktail recipes you choose to save are stored locally on your device.</li>
-                    <li><strong>Usage Data:</strong> Anonymous usage metrics to track free scan limits and improve the app experience.</li>
-                    <li><strong>Subscription Information:</strong> For subscribers, we process subscription status through Apple's StoreKit.</li>
-                    <li><strong>Device Information:</strong> Basic device information for app optimization and crash reporting.</li>
-                </ul>
-                
-                <h3>How We Use Boozly Data</h3>
-                <ul>
-                    <li>Analyze photos of your bar to identify bottles, spirits, mixers, and ingredients</li>
-                    <li>Generate personalized cocktail recipe suggestions based on identified ingredients</li>
-                    <li>Store your saved recipes locally for convenient access</li>
-                    <li>Track usage limits for free users to prevent API abuse</li>
-                    <li>Process and manage subscription purchases</li>
-                    <li>Improve our ingredient recognition and recipe recommendation algorithms</li>
-                </ul>
-                
-                <h3>Image Processing and Storage</h3>
-                <p>Photos you take or upload are sent securely to OpenAI's API for analysis to identify bottles and ingredients. Images are processed in real-time and are not stored permanently on our servers. OpenAI processes images according to their privacy policy and data usage terms. We do not use your images for training purposes or share them with any other third parties.</p>
-                
-                <h3>Local Data Storage</h3>
-                <p>Saved recipes and usage tracking data are stored locally on your device using secure storage mechanisms (Keychain for usage data, UserDefaults for recipes). This data persists across app updates but can be cleared by uninstalling the app.</p>
-                
-                <h3>Third-Party Services for Boozly</h3>
-                <ul>
-                    <li><strong>OpenAI API:</strong> Used for AI-powered image analysis to identify bottles and ingredients, and to generate cocktail recipe suggestions</li>
-                    <li><strong>Apple StoreKit:</strong> Manages subscription purchases, free trials, and payment processing</li>
-                </ul>
-                
-                <h3>Age Requirement and Responsible Use</h3>
-                <p>Boozly is intended for users of legal drinking age in their respective jurisdictions. By using Boozly, you confirm that you are of legal drinking age in your country or region. The app includes an age verification gate that requires users to confirm they are of legal drinking age before accessing the app's features.</p>
-                
-                <div class="highlight">
-                    <p><strong>Important Alcohol-Related Disclaimers:</strong></p>
-                    <ul>
-                        <li><strong>Age Restriction:</strong> Boozly is strictly intended for adults of legal drinking age (21+ in the United States, or the legal drinking age in your jurisdiction). We do not promote, encourage, or condone underage drinking.</li>
-                        <li><strong>Drink Responsibly:</strong> We encourage all users to consume alcohol responsibly and in moderation. Never drink and drive. Know your limits.</li>
-                        <li><strong>No Alcohol Sales:</strong> Boozly does not sell, distribute, or facilitate the purchase of alcohol. We only provide cocktail recipe suggestions based on ingredients you already own.</li>
-                        <li><strong>Health Considerations:</strong> If you are pregnant, nursing, taking medications, or have health conditions affected by alcohol consumption, please consult a healthcare professional before consuming alcoholic beverages.</li>
-                        <li><strong>Recipe Accuracy:</strong> While we strive to provide accurate cocktail recipes, we cannot guarantee the accuracy of all recipes. Users should use their own judgment when preparing and consuming cocktails.</li>
-                        <li><strong>No Liability:</strong> Hev LLC is not responsible for any consequences resulting from the use of recipes provided by Boozly, including but not limited to overconsumption, allergic reactions, or any harm caused by alcohol consumption.</li>
-                    </ul>
-                </div>
-                
-                <h3>Data Retention</h3>
-                <p>We retain your data only as long as necessary to provide our services:</p>
-                <ul>
-                    <li><strong>Photos:</strong> Processed in real-time and not stored permanently</li>
-                    <li><strong>Saved Recipes:</strong> Stored locally until you delete them or uninstall the app</li>
-                    <li><strong>Usage Data:</strong> Stored in device Keychain to persist across reinstalls for abuse prevention</li>
-                    <li><strong>Subscription Data:</strong> Managed by Apple and retained according to their policies</li>
-                </ul>
-                
-                <div class="highlight">
-                    <p><strong>Your Responsibility:</strong> By using Boozly, you acknowledge that you are solely responsible for your alcohol consumption decisions. Boozly provides recipe suggestions only and does not encourage excessive drinking or any illegal activity related to alcohol.</p>
                 </div>
             </section>
             
