@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hev AI - Smarter Apps for Everyday Life</title>
-    <meta name="description" content="Hev AI develops intelligent mobile apps that simplify your day - from AI travel planning to fitness optimization and route management.">
+    <meta name="description" content="Hev AI develops intelligent mobile apps that simplify your day - from AI travel planning to fitness optimization, route management, and cocktail recipes.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -38,6 +38,7 @@
             --gradient-eggsplore: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
             --gradient-polly: linear-gradient(135deg, #FF6B6B 0%, #FF8E8E 100%);
             --gradient-martina: linear-gradient(135deg, #bed3c4 0%, #a3c4b1 100%);
+            --gradient-boozly: linear-gradient(135deg, #FF8C42 0%, #FFB347 100%);
         }
         
         * {
@@ -375,11 +376,17 @@
             border-color: #bed3c4;
         }
         
+        .btn-boozly {
+            background: var(--gradient-boozly);
+            border-color: #FF8C42;
+        }
+        
         .btn-pathsight:hover,
         .btn-gymlens:hover,
         .btn-eggsplore:hover,
         .btn-polly:hover,
-        .btn-martina:hover {
+        .btn-martina:hover,
+        .btn-boozly:hover {
             transform: translateY(-4px);
             box-shadow: 0 10px 30px rgba(127, 87, 255, 0.4);
         }
@@ -1124,6 +1131,31 @@
                             <li>Smart scheduling for pet sitters</li>
                         </ul>
                         <a href="https://apps.apple.com/us/app/martina/id6748091608" target="_blank" class="btn btn-martina">View on App Store</a>
+                    </div>
+                </div>
+                
+                <div class="feature-card" data-app="boozly">
+                    <div class="feature-image">
+                        <img src="boozly1.png" alt="Boozly App Screenshot">
+                        <video muted loop preload="metadata">
+                            <source src="boozly-demo.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="feature-content">
+                        <div class="feature-tags">
+                            <span class="feature-tag">iOS</span>
+                            <span class="feature-tag">AI</span>
+                            <span class="feature-tag">Cocktails</span>
+                        </div>
+                        <h3 class="feature-title">Boozly 🥃</h3>
+                        <p class="feature-subtitle">AI-powered cocktail recipe suggestions</p>
+                        <ul class="feature-bullets">
+                            <li>Snap your bar for instant drink ideas</li>
+                            <li>Personalized cocktail recipes</li>
+                            <li>Step-by-step mixing instructions</li>
+                        </ul>
+                        <a href="#" class="btn btn-boozly">Coming Soon</a>
                     </div>
                 </div>
             </div>
