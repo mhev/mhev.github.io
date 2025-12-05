@@ -21,6 +21,7 @@
             --eggsplore: #00bcd4;
             --poligone: #6200EA;
             --martina: #2E674E;
+            --boozly: #FF8C42;
         }
         
         * {
@@ -173,6 +174,10 @@
         
         .app-martina {
             border-left: 4px solid var(--martina);
+        }
+        
+        .app-boozly {
+            border-left: 4px solid var(--boozly);
         }
         
         .app-header {
@@ -349,6 +354,7 @@
                     <a href="#eggsplore">Eggsplore</a>
                     <a href="#poligone">Poli-gone</a>
                     <a href="#martina">Martina</a>
+                    <a href="#boozly">Boozly</a>
                     <a href="/terms-of-service">Terms of Service</a>
                     <a href="/cookie-policy">Cookie Policy</a>
                 </div>
@@ -359,7 +365,7 @@
                 <h2>Privacy Policy Overview 🔒</h2>
                 <p class="date">Last Updated: May 1st, 2025</p>
                 
-                <p>Hev LLC ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our applications: Pathsight, GymLens, Eggsplore, Poli-gone, and Martina (collectively, the "Services").</p>
+                <p>Hev LLC ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our applications: Pathsight, GymLens, Eggsplore, Poli-gone, Martina, and Boozly (collectively, the "Services").</p>
                 
                 <p>Please read this Privacy Policy carefully. By accessing or using our Services, you acknowledge that you have read, understood, and agree to be bound by all the terms of this Privacy Policy. If you do not agree with our policies and practices, please do not use our Services.</p>
                 
@@ -378,6 +384,7 @@
                             <li>Eggsplore: Listings, ratings, messages</li>
                             <li>Poli-gone: Content analysis data, browsing preferences</li>
                             <li>Martina: Pet information, visit schedules, client data</li>
+                            <li>Boozly: Bar/shelf photos, saved cocktail recipes</li>
                         </ul>
                     </li>
                     <li><strong>Communication:</strong> Messages, emails, or other communications between you and Hev LLC.</li>
@@ -449,6 +456,7 @@
                     <li><strong>Eggsplore:</strong> Firebase (authentication, storage, database), Apple StoreKit (in-app purchases)</li>
                     <li><strong>Poli-gone:</strong> Google Gemini API (content analysis), Polar.sh (payment processing), Chrome/Safari extension APIs</li>
                     <li><strong>Martina:</strong> Google Gemini API (route optimization), Apple Maps (navigation), iCloud (data backup)</li>
+                    <li><strong>Boozly:</strong> OpenAI API (image analysis, cocktail suggestions), Apple StoreKit (subscription management)</li>
                 </ul>
                 
                 <h3>7. Children's Privacy</h3>
@@ -692,6 +700,74 @@
                 
                 <div class="highlight">
                     <p><strong>Business Continuity:</strong> Martina is designed to support your professional pet care business. Your data remains under your control, with local storage and optional cloud backup ensuring your business information is always accessible and secure.</p>
+                </div>
+            </section>
+            
+            <section id="boozly" class="app-section app-boozly">
+                <div class="app-header">
+                    <div class="app-icon">🥃</div>
+                    <h2 class="app-title">Boozly Privacy Details</h2>
+                </div>
+                
+                <p>This section provides specific privacy details for Boozly, our AI-powered cocktail recipe suggestion app.</p>
+                
+                <h3>Data Collection Specific to Boozly</h3>
+                <ul>
+                    <li><strong>Bar/Shelf Photos:</strong> Images you take or upload of your home bar, liquor shelf, or bottles for analysis. These are processed to identify ingredients and generate cocktail suggestions.</li>
+                    <li><strong>Saved Recipes:</strong> Cocktail recipes you choose to save are stored locally on your device.</li>
+                    <li><strong>Usage Data:</strong> Anonymous usage metrics to track free scan limits and improve the app experience.</li>
+                    <li><strong>Subscription Information:</strong> For subscribers, we process subscription status through Apple's StoreKit.</li>
+                    <li><strong>Device Information:</strong> Basic device information for app optimization and crash reporting.</li>
+                </ul>
+                
+                <h3>How We Use Boozly Data</h3>
+                <ul>
+                    <li>Analyze photos of your bar to identify bottles, spirits, mixers, and ingredients</li>
+                    <li>Generate personalized cocktail recipe suggestions based on identified ingredients</li>
+                    <li>Store your saved recipes locally for convenient access</li>
+                    <li>Track usage limits for free users to prevent API abuse</li>
+                    <li>Process and manage subscription purchases</li>
+                    <li>Improve our ingredient recognition and recipe recommendation algorithms</li>
+                </ul>
+                
+                <h3>Image Processing and Storage</h3>
+                <p>Photos you take or upload are sent securely to OpenAI's API for analysis to identify bottles and ingredients. Images are processed in real-time and are not stored permanently on our servers. OpenAI processes images according to their privacy policy and data usage terms. We do not use your images for training purposes or share them with any other third parties.</p>
+                
+                <h3>Local Data Storage</h3>
+                <p>Saved recipes and usage tracking data are stored locally on your device using secure storage mechanisms (Keychain for usage data, UserDefaults for recipes). This data persists across app updates but can be cleared by uninstalling the app.</p>
+                
+                <h3>Third-Party Services for Boozly</h3>
+                <ul>
+                    <li><strong>OpenAI API:</strong> Used for AI-powered image analysis to identify bottles and ingredients, and to generate cocktail recipe suggestions</li>
+                    <li><strong>Apple StoreKit:</strong> Manages subscription purchases, free trials, and payment processing</li>
+                </ul>
+                
+                <h3>Age Requirement and Responsible Use</h3>
+                <p>Boozly is intended for users of legal drinking age in their respective jurisdictions. By using Boozly, you confirm that you are of legal drinking age in your country or region. The app includes an age verification gate that requires users to confirm they are of legal drinking age before accessing the app's features.</p>
+                
+                <div class="highlight">
+                    <p><strong>Important Alcohol-Related Disclaimers:</strong></p>
+                    <ul>
+                        <li><strong>Age Restriction:</strong> Boozly is strictly intended for adults of legal drinking age (21+ in the United States, or the legal drinking age in your jurisdiction). We do not promote, encourage, or condone underage drinking.</li>
+                        <li><strong>Drink Responsibly:</strong> We encourage all users to consume alcohol responsibly and in moderation. Never drink and drive. Know your limits.</li>
+                        <li><strong>No Alcohol Sales:</strong> Boozly does not sell, distribute, or facilitate the purchase of alcohol. We only provide cocktail recipe suggestions based on ingredients you already own.</li>
+                        <li><strong>Health Considerations:</strong> If you are pregnant, nursing, taking medications, or have health conditions affected by alcohol consumption, please consult a healthcare professional before consuming alcoholic beverages.</li>
+                        <li><strong>Recipe Accuracy:</strong> While we strive to provide accurate cocktail recipes, we cannot guarantee the accuracy of all recipes. Users should use their own judgment when preparing and consuming cocktails.</li>
+                        <li><strong>No Liability:</strong> Hev LLC is not responsible for any consequences resulting from the use of recipes provided by Boozly, including but not limited to overconsumption, allergic reactions, or any harm caused by alcohol consumption.</li>
+                    </ul>
+                </div>
+                
+                <h3>Data Retention</h3>
+                <p>We retain your data only as long as necessary to provide our services:</p>
+                <ul>
+                    <li><strong>Photos:</strong> Processed in real-time and not stored permanently</li>
+                    <li><strong>Saved Recipes:</strong> Stored locally until you delete them or uninstall the app</li>
+                    <li><strong>Usage Data:</strong> Stored in device Keychain to persist across reinstalls for abuse prevention</li>
+                    <li><strong>Subscription Data:</strong> Managed by Apple and retained according to their policies</li>
+                </ul>
+                
+                <div class="highlight">
+                    <p><strong>Your Responsibility:</strong> By using Boozly, you acknowledge that you are solely responsible for your alcohol consumption decisions. Boozly provides recipe suggestions only and does not encourage excessive drinking or any illegal activity related to alcohol.</p>
                 </div>
             </section>
             
