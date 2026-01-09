@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hev LLC - Privacy Policy</title>
-    <meta name="description" content="Privacy policy for Hev LLC apps including Pathsight, GymLens, and Eggsplore.">
+    <meta name="description" content="Privacy policy for Hev LLC apps including Pathsight, GymLens, Eggsplore, and Yap Cal.">
     <style>
         :root {
             --primary: #1a73e8;
@@ -22,6 +22,7 @@
             --poligone: #6200EA;
             --martina: #2E674E;
             --boozly: #FF8C42;
+            --yapcal: #FF6B6B;
         }
         
         * {
@@ -178,6 +179,10 @@
         
         .app-boozly {
             border-left: 4px solid var(--boozly);
+        }
+        
+        .app-yapcal {
+            border-left: 4px solid var(--yapcal);
         }
         
         .app-header {
@@ -355,6 +360,7 @@
                     <a href="#martina">Martina</a>
                     <a href="#eggsplore">Eggsplore</a>
                     <a href="#poligone">Poli-gone</a>
+                    <a href="#yapcal">Yap Cal</a>
                     <a href="/terms-of-service">Terms of Service</a>
                     <a href="/cookie-policy">Cookie Policy</a>
                 </div>
@@ -365,7 +371,7 @@
                 <h2>Privacy Policy Overview 🔒</h2>
                 <p class="date">Last Updated: May 1st, 2025</p>
                 
-                <p>Hev LLC ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our applications: Pathsight, GymLens, Eggsplore, Poli-gone, Martina, and Boozly (collectively, the "Services").</p>
+                <p>Hev LLC ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our applications: Pathsight, GymLens, Eggsplore, Poli-gone, Martina, Boozly, and Yap Cal (collectively, the "Services").</p>
                 
                 <p>Please read this Privacy Policy carefully. By accessing or using our Services, you acknowledge that you have read, understood, and agree to be bound by all the terms of this Privacy Policy. If you do not agree with our policies and practices, please do not use our Services.</p>
                 
@@ -385,6 +391,7 @@
                             <li>Poli-gone: Content analysis data, browsing preferences</li>
                             <li>Martina: Pet information, visit schedules, client data</li>
                             <li>Boozly: Bar/shelf photos, saved cocktail recipes</li>
+                            <li>Yap Cal: Voice recordings (processed locally), food descriptions, calorie logs, nutrition data</li>
                         </ul>
                     </li>
                     <li><strong>Communication:</strong> Messages, emails, or other communications between you and Hev LLC.</li>
@@ -457,6 +464,7 @@
                     <li><strong>Poli-gone:</strong> Google Gemini API (content analysis), Polar.sh (payment processing), Chrome/Safari extension APIs</li>
                     <li><strong>Martina:</strong> Google Gemini API (route optimization), Apple Maps (navigation), iCloud (data backup)</li>
                     <li><strong>Boozly:</strong> OpenAI API (image analysis, cocktail suggestions), Apple StoreKit (subscription management)</li>
+                    <li><strong>Yap Cal:</strong> OpenAI API (calorie estimation), Perplexity API (brand nutrition lookup), Apple Speech Recognition (voice input)</li>
                 </ul>
                 
                 <h3>7. Children's Privacy</h3>
@@ -768,6 +776,70 @@
                 
                 <div class="highlight">
                     <p><strong>Privacy Commitment:</strong> Poli-gone does not track your browsing habits, collect personal information, or share your data with third parties. All processing happens locally in your browser, and we maintain strict privacy controls to protect your online experience.</p>
+                </div>
+            </section>
+            
+            <section id="yapcal" class="app-section app-yapcal">
+                <div class="app-header">
+                    <div class="app-icon">🍎</div>
+                    <h2 class="app-title">Yap Cal Privacy Details</h2>
+                </div>
+                
+                <p>This section provides specific privacy details for Yap Cal, our AI-powered voice calorie tracking app.</p>
+                
+                <h3>Data Collection Specific to Yap Cal</h3>
+                <ul>
+                    <li><strong>Voice Input:</strong> Audio recordings of your food descriptions are processed on-device using Apple's Speech Recognition framework. Voice data is converted to text locally and is not transmitted to our servers.</li>
+                    <li><strong>Food Descriptions:</strong> Text descriptions of meals you log (via voice or text input) are sent to AI services for calorie estimation.</li>
+                    <li><strong>Calorie & Nutrition Logs:</strong> Your logged meals, calorie counts, and macro breakdowns (protein, carbs, fat) are stored locally on your device using SwiftData.</li>
+                    <li><strong>Previously Logged Foods:</strong> Foods you've logged are saved locally for quick re-logging convenience.</li>
+                    <li><strong>Goal Settings:</strong> Your calorie and macro goals are stored locally in UserDefaults.</li>
+                    <li><strong>Device Information:</strong> Basic device information for app optimization and crash reporting.</li>
+                </ul>
+                
+                <h3>How We Use Yap Cal Data</h3>
+                <ul>
+                    <li>Convert voice input to text using on-device speech recognition</li>
+                    <li>Send food descriptions to AI services for calorie and macro estimation</li>
+                    <li>Look up brand-specific nutrition information for accurate estimates</li>
+                    <li>Store your food logs locally to track daily and historical intake</li>
+                    <li>Save previously logged foods for convenient quick-logging</li>
+                    <li>Display your progress toward daily calorie and macro goals</li>
+                    <li>Provide Home Screen widget data showing today's calorie count</li>
+                </ul>
+                
+                <h3>Voice Processing and Privacy</h3>
+                <p>Yap Cal uses Apple's on-device Speech Recognition framework to convert your voice to text. This processing happens entirely on your device — your voice recordings are never sent to Hev LLC servers. Only the resulting text description is sent to AI services for calorie estimation.</p>
+                
+                <h3>AI-Powered Calorie Estimation</h3>
+                <p>When you log a meal, the text description is sent to OpenAI's API to estimate calories and macronutrients. For branded foods (e.g., "Chick-fil-A sandwich"), we may also query Perplexity's API to retrieve accurate nutrition information. These API calls include only the food description — no personal information, device identifiers, or usage history is transmitted.</p>
+                
+                <h3>Local Data Storage</h3>
+                <p>All your food logs, nutrition history, goal settings, and previously logged foods are stored locally on your device using Apple's SwiftData framework and UserDefaults. This data is not uploaded to any cloud service. Uninstalling the app will delete all stored data.</p>
+                
+                <h3>Third-Party Services for Yap Cal</h3>
+                <ul>
+                    <li><strong>Apple Speech Recognition:</strong> On-device voice-to-text conversion (no data transmitted externally)</li>
+                    <li><strong>OpenAI API:</strong> AI-powered calorie and macro estimation from food descriptions</li>
+                    <li><strong>Perplexity API:</strong> Brand-specific nutrition lookup for accurate estimates</li>
+                    <li><strong>Apple WidgetKit:</strong> Home Screen widget displaying daily calorie progress</li>
+                </ul>
+                
+                <h3>Data Retention</h3>
+                <p>We retain your data only as long as necessary to provide our services:</p>
+                <ul>
+                    <li><strong>Voice Recordings:</strong> Processed on-device in real-time and not stored</li>
+                    <li><strong>Food Logs:</strong> Stored locally until you delete them or uninstall the app</li>
+                    <li><strong>Previously Logged Foods:</strong> Stored locally, limited to 50 most recent items</li>
+                    <li><strong>Goal Settings:</strong> Stored locally until you change them or uninstall the app</li>
+                </ul>
+                
+                <div class="highlight">
+                    <p><strong>Privacy-First Design:</strong> Yap Cal is designed to keep your data on your device. We do not create user accounts, do not sync data to the cloud, and do not track your eating habits beyond what's stored locally on your device. Your nutrition journey is yours alone.</p>
+                </div>
+                
+                <div class="highlight">
+                    <p><strong>Health Disclaimer:</strong> Yap Cal provides AI-generated calorie and nutrition estimates for informational purposes only. These estimates may not be 100% accurate. Yap Cal is not a medical device and should not be used as a substitute for professional dietary advice. Always consult with healthcare professionals for personalized nutrition guidance.</p>
                 </div>
             </section>
             
