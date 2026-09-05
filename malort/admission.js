@@ -26,6 +26,15 @@
         return;
       }
       const body = await response.json();
+      if (body.activated === true) {
+        for (const id of ['code', 'copy', 'copy-status', 'legacy-note']) el(id).hidden = true;
+        el('open').href = 'malortchampion://admission';
+        el('open').textContent = 'Open Malört Champion';
+        el('admission').hidden = false;
+        el('retry').hidden = true;
+        show('You’re a member', 'Your membership is active on the Apple account you used before checkout. Return to the app to enter the club. No code needed.');
+        return;
+      }
       if (!/^[ABCDEFGHJKMNPQRSTUVWXYZ23456789]{16}$/.test(body.code || '')) throw Error('invalid_receipt');
       code = body.code;
       el('code').textContent = code;
